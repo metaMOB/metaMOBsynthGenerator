@@ -72,49 +72,233 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uid.Window} instances.
+	 * This keeps track of the one adapter used for all {@link uid.EntityTransition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WindowItemProvider windowItemProvider;
+	protected EntityTransitionItemProvider entityTransitionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uid.Window}.
+	 * This creates an adapter for a {@link uid.EntityTransition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createWindowAdapter() {
-		if (windowItemProvider == null) {
-			windowItemProvider = new WindowItemProvider(this);
+	public Adapter createEntityTransitionAdapter() {
+		if (entityTransitionItemProvider == null) {
+			entityTransitionItemProvider = new EntityTransitionItemProvider(this);
 		}
 
-		return windowItemProvider;
+		return entityTransitionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uid.IE} instances.
+	 * This keeps track of the one adapter used for all {@link uid.Application} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IEItemProvider ieItemProvider;
+	protected ApplicationItemProvider applicationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uid.IE}.
+	 * This creates an adapter for a {@link uid.Application}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createIEAdapter() {
-		if (ieItemProvider == null) {
-			ieItemProvider = new IEItemProvider(this);
+	public Adapter createApplicationAdapter() {
+		if (applicationItemProvider == null) {
+			applicationItemProvider = new ApplicationItemProvider(this);
 		}
 
-		return ieItemProvider;
+		return applicationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.State} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StateItemProvider stateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.State}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStateAdapter() {
+		if (stateItemProvider == null) {
+			stateItemProvider = new StateItemProvider(this);
+		}
+
+		return stateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Entity} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EntityItemProvider entityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Entity}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEntityAdapter() {
+		if (entityItemProvider == null) {
+			entityItemProvider = new EntityItemProvider(this);
+		}
+
+		return entityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Switch} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SwitchItemProvider switchItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Switch}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSwitchAdapter() {
+		if (switchItemProvider == null) {
+			switchItemProvider = new SwitchItemProvider(this);
+		}
+
+		return switchItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Mediator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MediatorItemProvider mediatorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Mediator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMediatorAdapter() {
+		if (mediatorItemProvider == null) {
+			mediatorItemProvider = new MediatorItemProvider(this);
+		}
+
+		return mediatorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Regulator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RegulatorItemProvider regulatorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Regulator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRegulatorAdapter() {
+		if (regulatorItemProvider == null) {
+			regulatorItemProvider = new RegulatorItemProvider(this);
+		}
+
+		return regulatorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Matrix} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatrixItemProvider matrixItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Matrix}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMatrixAdapter() {
+		if (matrixItemProvider == null) {
+			matrixItemProvider = new MatrixItemProvider(this);
+		}
+
+		return matrixItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Container} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContainerItemProvider containerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Container}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContainerAdapter() {
+		if (containerItemProvider == null) {
+			containerItemProvider = new ContainerItemProvider(this);
+		}
+
+		return containerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Display} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DisplayItemProvider displayItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Display}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDisplayAdapter() {
+		if (displayItemProvider == null) {
+			displayItemProvider = new DisplayItemProvider(this);
+		}
+
+		return displayItemProvider;
 	}
 
 	/**
@@ -141,118 +325,26 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uid.TextField} instances.
+	 * This keeps track of the one adapter used for all {@link uid.hallo} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TextFieldItemProvider textFieldItemProvider;
+	protected halloItemProvider halloItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uid.TextField}.
+	 * This creates an adapter for a {@link uid.hallo}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTextFieldAdapter() {
-		if (textFieldItemProvider == null) {
-			textFieldItemProvider = new TextFieldItemProvider(this);
+	public Adapter createhalloAdapter() {
+		if (halloItemProvider == null) {
+			halloItemProvider = new halloItemProvider(this);
 		}
 
-		return textFieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uid.List} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ListItemProvider listItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uid.List}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createListAdapter() {
-		if (listItemProvider == null) {
-			listItemProvider = new ListItemProvider(this);
-		}
-
-		return listItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uid.IEAssoc} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IEAssocItemProvider ieAssocItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uid.IEAssoc}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIEAssocAdapter() {
-		if (ieAssocItemProvider == null) {
-			ieAssocItemProvider = new IEAssocItemProvider(this);
-		}
-
-		return ieAssocItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uid.App} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AppItemProvider appItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uid.App}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAppAdapter() {
-		if (appItemProvider == null) {
-			appItemProvider = new AppItemProvider(this);
-		}
-
-		return appItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uid.CheckBox} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CheckBoxItemProvider checkBoxItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uid.CheckBox}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCheckBoxAdapter() {
-		if (checkBoxItemProvider == null) {
-			checkBoxItemProvider = new CheckBoxItemProvider(this);
-		}
-
-		return checkBoxItemProvider;
+		return halloItemProvider;
 	}
 
 	/**
@@ -354,14 +446,18 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	 * @generated
 	 */
 	public void dispose() {
-		if (windowItemProvider != null) windowItemProvider.dispose();
-		if (ieItemProvider != null) ieItemProvider.dispose();
+		if (entityTransitionItemProvider != null) entityTransitionItemProvider.dispose();
+		if (applicationItemProvider != null) applicationItemProvider.dispose();
+		if (stateItemProvider != null) stateItemProvider.dispose();
+		if (entityItemProvider != null) entityItemProvider.dispose();
+		if (switchItemProvider != null) switchItemProvider.dispose();
+		if (mediatorItemProvider != null) mediatorItemProvider.dispose();
+		if (regulatorItemProvider != null) regulatorItemProvider.dispose();
+		if (matrixItemProvider != null) matrixItemProvider.dispose();
+		if (containerItemProvider != null) containerItemProvider.dispose();
+		if (displayItemProvider != null) displayItemProvider.dispose();
 		if (buttonItemProvider != null) buttonItemProvider.dispose();
-		if (textFieldItemProvider != null) textFieldItemProvider.dispose();
-		if (listItemProvider != null) listItemProvider.dispose();
-		if (ieAssocItemProvider != null) ieAssocItemProvider.dispose();
-		if (appItemProvider != null) appItemProvider.dispose();
-		if (checkBoxItemProvider != null) checkBoxItemProvider.dispose();
+		if (halloItemProvider != null) halloItemProvider.dispose();
 	}
 
 }
