@@ -6,42 +6,6 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="#//IE">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasButton" upperBound="-1"
-        eType="#//Button.1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTextField" upperBound="-1"
-        eType="#//TextField"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasList" upperBound="-1"
-        eType="#//List"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasCheckBox" upperBound="-1"
-        eType="#//CheckBox"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IE">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="nameNotNull"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="nameNotNull" value="name.oclIsUndefined() &lt;> true"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ieAssoc" upperBound="-1"
-        eType="#//IEAssoc"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//IE">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//IE"/>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//IE"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IEAssoc">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ie" lowerBound="1" eType="#//IE"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="App">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//IEAssoc"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasIE" upperBound="-1"
-        eType="#//IE" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//IE"/>
   <eClassifiers xsi:type="ecore:EClass" name="EntityTransition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="animationTypeIn" eType="#//ETransitionTypesIn"/>
@@ -54,25 +18,31 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//EntityTransition"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasEntities" eType="#//Entity"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Mediator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasEntityTransition" upperBound="-1"
+        eType="#//EntityTransition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasEntities" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasMediator" upperBound="-1"
+        eType="#//Mediator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundImage"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Button.1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Regulator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//Container"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Matrix"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_background" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRegulator" upperBound="-1"
+        eType="#//Regulator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasMatrix" upperBound="-1"
+        eType="#//Matrix"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasButton" upperBound="-1"
+        eType="#//Button"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasDisplay" upperBound="-1"
+        eType="#//Display"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType Types.ecore#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType Types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType Types.ecore#//Integer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//EntityTransition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTransition" upperBound="-1"
+        eType="#//EntityTransition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ETransitionTypesIn">
     <eLiterals name="fadeIn"/>
@@ -86,10 +56,7 @@
     <eLiterals name="zoomOut" value="2"/>
     <eLiterals name="none" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//Button.1">
+  <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//Button">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType Types.ecore#//Boolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mediator">
@@ -103,36 +70,38 @@
     <eOperations name="setValue" eType="ecore:EDataType Types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minValue" eType="ecore:EDataType Types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType Types.ecore#//Integer"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changedNotification"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doubleTapNotification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_changed" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_doubleTap"
+        eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType Types.ecore#//Integer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Matrix">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundImage" eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tapImage" eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doubleTapImage" eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tapNotification" eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doubleTapNotification"
+  <eClassifiers xsi:type="ecore:EClass" name="Matrix" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_background" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_tap" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_doubleTap" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_tap" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_doubleTap"
         eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moveSingleTouchNotification"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_moveSingleTouch"
         eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moveMultiTouchNotification"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_moveMultiTouch"
         eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="Display" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundImage"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_background" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_on" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_off" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_disabled" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_pressed" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_released"
+        eType="ecore:EDataType Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="hallo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hallo" eType="ecore:EDataType Types.ecore#//String"/>
   </eClassifiers>
 </ecore:EPackage>

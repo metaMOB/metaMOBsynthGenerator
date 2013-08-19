@@ -9,7 +9,7 @@
  * The documentation of the template generateElement.
  * @param anApp
  */]
-[template public generateElement(anApp : App)]
+[template public generateElement(anApp : Application)]
 [comment @main/]
 
 
@@ -19,9 +19,9 @@ class Main{
 
 public static void main(String [getBrackets()/] args) {
 
-[for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
-   [window.name/] [window.name.toString().toLowerFirst()/] = new [window.name/]();
-[window.name.toString().toLowerFirst()/].setVisible(true);
+[for (state : State| anApp.hasEntities->select(oclIsTypeOf(State)))]
+   [state.name/] [state.name.toString().toLowerFirst()/] = new [state.name/]();
+[state.name.toString().toLowerFirst()/].setVisible(true);
 [/for] 
 
 
@@ -30,16 +30,16 @@ public static void main(String [getBrackets()/] args) {
 
 [/file]
 
-[for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
-   [generateWindow(window)/]
+[for (state : State| anApp.hasEntities->select(oclIsTypeOf(State)))]
+   [generateState(state)/]
 [/for] 
 [/template]
 
 
-[template public generateWindow(window : Window)]
+[template public generateState(state : State)]
 
 
-[file (window.name+'.java', false, 'UTF-8')]
+[file ('state_'+state.name+'.lua', false, 'UTF-8')]
 
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;

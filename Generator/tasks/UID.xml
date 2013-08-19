@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="UID" name="UID_Generator_Matuschek_Hanke">
-    <property name="ECLIPSE_HOME" value="../../../../../../../Applications/eclipse 4"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../Workspaces/runtime-EclipseApplication"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Applications/eclipse 4"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../Workspaces/runtime-EclipseApplication"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="UID_Generator_Matuschek_Hanke.libraryclasspath">
