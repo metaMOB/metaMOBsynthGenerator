@@ -62,6 +62,7 @@ public class StateItemProvider
 			addHasMatrixPropertyDescriptor(object);
 			addHasButtonPropertyDescriptor(object);
 			addHasDisplayPropertyDescriptor(object);
+			addHasTransitionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -168,6 +169,28 @@ public class StateItemProvider
 				 getString("_UI_State_hasDisplay_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_State_hasDisplay_feature", "_UI_State_type"),
 				 UidPackage.Literals.STATE__HAS_DISPLAY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Transition feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasTransitionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_hasTransition_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_hasTransition_feature", "_UI_State_type"),
+				 UidPackage.Literals.STATE__HAS_TRANSITION,
 				 true,
 				 false,
 				 true,
