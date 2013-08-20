@@ -23,6 +23,7 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.RegulatorImpl#getNotification_changed <em>Notification changed</em>}</li>
  *   <li>{@link uid.impl.RegulatorImpl#getNotification_doubleTap <em>Notification double Tap</em>}</li>
  *   <li>{@link uid.impl.RegulatorImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link uid.impl.RegulatorImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +38,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MIN_VALUE_EDEFAULT = 0;
+	protected static final double MIN_VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getMinValue() <em>Min Value</em>}' attribute.
@@ -47,7 +48,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * @generated
 	 * @ordered
 	 */
-	protected int minValue = MIN_VALUE_EDEFAULT;
+	protected double minValue = MIN_VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaxValue() <em>Max Value</em>}' attribute.
@@ -57,7 +58,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MAX_VALUE_EDEFAULT = 0;
+	protected static final double MAX_VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getMaxValue() <em>Max Value</em>}' attribute.
@@ -67,7 +68,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * @generated
 	 * @ordered
 	 */
-	protected int maxValue = MAX_VALUE_EDEFAULT;
+	protected double maxValue = MAX_VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNotification_changed() <em>Notification changed</em>}' attribute.
@@ -117,7 +118,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -127,7 +128,27 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected double value = VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double DEFAULT_VALUE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected double defaultValue = DEFAULT_VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +174,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getMinValue() {
+	public double getMinValue() {
 		return minValue;
 	}
 
@@ -162,8 +183,8 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMinValue(int newMinValue) {
-		int oldMinValue = minValue;
+	public void setMinValue(double newMinValue) {
+		double oldMinValue = minValue;
 		minValue = newMinValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.REGULATOR__MIN_VALUE, oldMinValue, minValue));
@@ -174,7 +195,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getMaxValue() {
+	public double getMaxValue() {
 		return maxValue;
 	}
 
@@ -183,8 +204,8 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMaxValue(int newMaxValue) {
-		int oldMaxValue = maxValue;
+	public void setMaxValue(double newMaxValue) {
+		double oldMaxValue = maxValue;
 		maxValue = newMaxValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.REGULATOR__MAX_VALUE, oldMaxValue, maxValue));
@@ -237,7 +258,7 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
@@ -246,11 +267,32 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.REGULATOR__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getDefaultValue() {
+		return defaultValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultValue(double newDefaultValue) {
+		double oldDefaultValue = defaultValue;
+		defaultValue = newDefaultValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.REGULATOR__DEFAULT_VALUE, oldDefaultValue, defaultValue));
 	}
 
 	/**
@@ -282,6 +324,8 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 				return getNotification_doubleTap();
 			case UidPackage.REGULATOR__VALUE:
 				return getValue();
+			case UidPackage.REGULATOR__DEFAULT_VALUE:
+				return getDefaultValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -295,10 +339,10 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case UidPackage.REGULATOR__MIN_VALUE:
-				setMinValue((Integer)newValue);
+				setMinValue((Double)newValue);
 				return;
 			case UidPackage.REGULATOR__MAX_VALUE:
-				setMaxValue((Integer)newValue);
+				setMaxValue((Double)newValue);
 				return;
 			case UidPackage.REGULATOR__NOTIFICATION_CHANGED:
 				setNotification_changed((String)newValue);
@@ -307,7 +351,10 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 				setNotification_doubleTap((String)newValue);
 				return;
 			case UidPackage.REGULATOR__VALUE:
-				setValue((Integer)newValue);
+				setValue((Double)newValue);
+				return;
+			case UidPackage.REGULATOR__DEFAULT_VALUE:
+				setDefaultValue((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,6 +383,9 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 			case UidPackage.REGULATOR__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
+			case UidPackage.REGULATOR__DEFAULT_VALUE:
+				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +408,8 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 				return NOTIFICATION_DOUBLE_TAP_EDEFAULT == null ? notification_doubleTap != null : !NOTIFICATION_DOUBLE_TAP_EDEFAULT.equals(notification_doubleTap);
 			case UidPackage.REGULATOR__VALUE:
 				return value != VALUE_EDEFAULT;
+			case UidPackage.REGULATOR__DEFAULT_VALUE:
+				return defaultValue != DEFAULT_VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -382,6 +434,8 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 		result.append(notification_doubleTap);
 		result.append(", value: ");
 		result.append(value);
+		result.append(", defaultValue: ");
+		result.append(defaultValue);
 		result.append(')');
 		return result.toString();
 	}

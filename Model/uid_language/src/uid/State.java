@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uid.State#getHasMatrix <em>Has Matrix</em>}</li>
  *   <li>{@link uid.State#getHasButton <em>Has Button</em>}</li>
  *   <li>{@link uid.State#getHasDisplay <em>Has Display</em>}</li>
+ *   <li>{@link uid.State#getHasTransition <em>Has Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -114,5 +115,21 @@ public interface State extends Entity {
 	 * @generated
 	 */
 	EList<Display> getHasDisplay();
+
+	/**
+	 * Returns the value of the '<em><b>Has Transition</b></em>' reference list.
+	 * The list contents are of type {@link uid.EntityTransition}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Transition</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Transition</em>' reference list.
+	 * @see uid.UidPackage#getState_HasTransition()
+	 * @model
+	 * @generated
+	 */
+	EList<EntityTransition> getHasTransition();
 
 } // State

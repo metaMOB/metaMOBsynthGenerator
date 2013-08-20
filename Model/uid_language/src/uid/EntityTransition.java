@@ -173,7 +173,7 @@ public interface EntityTransition extends EObject {
 	 * @return the value of the '<em>Entities</em>' reference.
 	 * @see #setEntities(Entity)
 	 * @see uid.UidPackage#getEntityTransition_Entities()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Entity getEntities();

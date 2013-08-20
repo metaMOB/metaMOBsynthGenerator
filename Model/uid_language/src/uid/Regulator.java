@@ -16,6 +16,7 @@ package uid;
  *   <li>{@link uid.Regulator#getNotification_changed <em>Notification changed</em>}</li>
  *   <li>{@link uid.Regulator#getNotification_doubleTap <em>Notification double Tap</em>}</li>
  *   <li>{@link uid.Regulator#getValue <em>Value</em>}</li>
+ *   <li>{@link uid.Regulator#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,12 +34,12 @@ public interface Regulator extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Min Value</em>' attribute.
-	 * @see #setMinValue(int)
+	 * @see #setMinValue(double)
 	 * @see uid.UidPackage#getRegulator_MinValue()
-	 * @model dataType="types.Integer"
+	 * @model
 	 * @generated
 	 */
-	int getMinValue();
+	double getMinValue();
 
 	/**
 	 * Sets the value of the '{@link uid.Regulator#getMinValue <em>Min Value</em>}' attribute.
@@ -48,7 +49,7 @@ public interface Regulator extends Entity {
 	 * @see #getMinValue()
 	 * @generated
 	 */
-	void setMinValue(int value);
+	void setMinValue(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Value</b></em>' attribute.
@@ -59,12 +60,12 @@ public interface Regulator extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Max Value</em>' attribute.
-	 * @see #setMaxValue(int)
+	 * @see #setMaxValue(double)
 	 * @see uid.UidPackage#getRegulator_MaxValue()
-	 * @model dataType="types.Integer"
+	 * @model
 	 * @generated
 	 */
-	int getMaxValue();
+	double getMaxValue();
 
 	/**
 	 * Sets the value of the '{@link uid.Regulator#getMaxValue <em>Max Value</em>}' attribute.
@@ -74,7 +75,7 @@ public interface Regulator extends Entity {
 	 * @see #getMaxValue()
 	 * @generated
 	 */
-	void setMaxValue(int value);
+	void setMaxValue(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Notification changed</b></em>' attribute.
@@ -137,12 +138,12 @@ public interface Regulator extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
+	 * @see #setValue(double)
 	 * @see uid.UidPackage#getRegulator_Value()
-	 * @model dataType="types.Integer"
+	 * @model
 	 * @generated
 	 */
-	int getValue();
+	double getValue();
 
 	/**
 	 * Sets the value of the '{@link uid.Regulator#getValue <em>Value</em>}' attribute.
@@ -152,7 +153,33 @@ public interface Regulator extends Entity {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(int value);
+	void setValue(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Default Value</em>' attribute.
+	 * @see #setDefaultValue(double)
+	 * @see uid.UidPackage#getRegulator_DefaultValue()
+	 * @model
+	 * @generated
+	 */
+	double getDefaultValue();
+
+	/**
+	 * Sets the value of the '{@link uid.Regulator#getDefaultValue <em>Default Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default Value</em>' attribute.
+	 * @see #getDefaultValue()
+	 * @generated
+	 */
+	void setDefaultValue(double value);
 
 	/**
 	 * <!-- begin-user-doc -->

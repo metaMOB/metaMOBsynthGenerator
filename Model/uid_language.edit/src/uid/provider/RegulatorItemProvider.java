@@ -62,6 +62,7 @@ public class RegulatorItemProvider
 			addNotification_changedPropertyDescriptor(object);
 			addNotification_doubleTapPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
+			addDefaultValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,7 +84,7 @@ public class RegulatorItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -105,7 +106,7 @@ public class RegulatorItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -171,7 +172,29 @@ public class RegulatorItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Regulator_defaultValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Regulator_defaultValue_feature", "_UI_Regulator_type"),
+				 UidPackage.Literals.REGULATOR__DEFAULT_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -218,6 +241,7 @@ public class RegulatorItemProvider
 			case UidPackage.REGULATOR__NOTIFICATION_CHANGED:
 			case UidPackage.REGULATOR__NOTIFICATION_DOUBLE_TAP:
 			case UidPackage.REGULATOR__VALUE:
+			case UidPackage.REGULATOR__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

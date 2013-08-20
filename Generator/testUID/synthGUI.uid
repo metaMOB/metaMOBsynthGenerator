@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uid:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uid="http://uid/1.0">
+  <hasEntities xsi:type="uid:State" name="MainView" visible="true" image_background="" hasRegulator="//@hasEntities.1 //@hasEntities.2" hasMatrix="//@hasEntities.5" hasButton="//@hasEntities.4 //@hasEntities.3 //@hasEntities.7" hasDisplay="//@hasEntities.6"/>
+  <hasEntities xsi:type="uid:Regulator" name="Balance" visible="true" minValue="-1.0" maxValue="1.0" notification_changed="notify_balanceChange" notification_doubleTap="notify_balanceDoubleTap"/>
+  <hasEntities xsi:type="uid:Regulator" name="Volume" visible="true" maxValue="1.0" notification_changed="notify_volumeChanged" notification_doubleTap="notify_volumeDoubleTap" defaultValue="0.5"/>
+  <hasEntities xsi:type="uid:Button" name="Sinus2" visible="true" image_on="" image_off="" image_disabled="" notification_pressed="notify_sinusPressed" notification_released="notify_sinusReleased"/>
+  <hasEntities xsi:type="uid:Button" name="Sinus1" visible="true" notification_pressed="notify_sinusPressed" notification_released="notify_sinusReleased"/>
+  <hasEntities xsi:type="uid:Matrix" name="Matrix" visible="true" notification_tap="" notification_moveSingleTouch="notify_matrixTouch" value=""/>
+  <hasEntities xsi:type="uid:Display" name="Display" visible="true"/>
+  <hasEntities xsi:type="uid:Switch" name="Power" visible="true" image_on="" notification_pressed="notify_switchPressed" notification_released=""/>
+</uid:Application>

@@ -150,7 +150,7 @@ public interface UidPackage extends EPackage {
 	int APPLICATION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Has Entity Transition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Has Entity Transition</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,7 +159,7 @@ public interface UidPackage extends EPackage {
 	int APPLICATION__HAS_ENTITY_TRANSITION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Has Entities</b></em>' containment reference.
+	 * The feature id for the '<em><b>Has Entities</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -232,22 +232,13 @@ public interface UidPackage extends EPackage {
 	int ENTITY__Y = 3;
 
 	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__HAS_TRANSITION = 4;
-
-	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 5;
+	int ENTITY_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.StateImpl <em>State</em>}' class.
@@ -296,15 +287,6 @@ public interface UidPackage extends EPackage {
 	int STATE__Y = ENTITY__Y;
 
 	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__HAS_TRANSITION = ENTITY__HAS_TRANSITION;
-
-	/**
 	 * The feature id for the '<em><b>Image background</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -350,13 +332,22 @@ public interface UidPackage extends EPackage {
 	int STATE__HAS_DISPLAY = ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__HAS_TRANSITION = ENTITY_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 5;
+	int STATE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.ButtonImpl <em>Button</em>}' class.
@@ -403,15 +394,6 @@ public interface UidPackage extends EPackage {
 	 * @ordered
 	 */
 	int BUTTON__Y = ENTITY__Y;
-
-	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUTTON__HAS_TRANSITION = ENTITY__HAS_TRANSITION;
 
 	/**
 	 * The feature id for the '<em><b>Image on</b></em>' attribute.
@@ -512,15 +494,6 @@ public interface UidPackage extends EPackage {
 	 * @ordered
 	 */
 	int SWITCH__Y = BUTTON__Y;
-
-	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SWITCH__HAS_TRANSITION = BUTTON__HAS_TRANSITION;
 
 	/**
 	 * The feature id for the '<em><b>Image on</b></em>' attribute.
@@ -687,15 +660,6 @@ public interface UidPackage extends EPackage {
 	int REGULATOR__Y = ENTITY__Y;
 
 	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGULATOR__HAS_TRANSITION = ENTITY__HAS_TRANSITION;
-
-	/**
 	 * The feature id for the '<em><b>Min Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -741,13 +705,22 @@ public interface UidPackage extends EPackage {
 	int REGULATOR__VALUE = ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULATOR__DEFAULT_VALUE = ENTITY_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Regulator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 5;
+	int REGULATOR_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.MatrixImpl <em>Matrix</em>}' class.
@@ -794,15 +767,6 @@ public interface UidPackage extends EPackage {
 	 * @ordered
 	 */
 	int MATRIX__Y = ENTITY__Y;
-
-	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATRIX__HAS_TRANSITION = ENTITY__HAS_TRANSITION;
 
 	/**
 	 * The feature id for the '<em><b>Image background</b></em>' attribute.
@@ -932,15 +896,6 @@ public interface UidPackage extends EPackage {
 	int CONTAINER__Y = ENTITY__Y;
 
 	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER__HAS_TRANSITION = ENTITY__HAS_TRANSITION;
-
-	/**
 	 * The number of structural features of the '<em>Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -996,15 +951,6 @@ public interface UidPackage extends EPackage {
 	int DISPLAY__Y = ENTITY__Y;
 
 	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISPLAY__HAS_TRANSITION = ENTITY__HAS_TRANSITION;
-
-	/**
 	 * The feature id for the '<em><b>Image background</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1032,34 +978,6 @@ public interface UidPackage extends EPackage {
 	int DISPLAY_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link uid.impl.halloImpl <em>hallo</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uid.impl.halloImpl
-	 * @see uid.impl.UidPackageImpl#gethallo()
-	 * @generated
-	 */
-	int HALLO = 11;
-
-	/**
-	 * The feature id for the '<em><b>Hallo</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HALLO__HALLO = 0;
-
-	/**
-	 * The number of structural features of the '<em>hallo</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HALLO_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1067,7 +985,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypesIn()
 	 * @generated
 	 */
-	int ETRANSITION_TYPES_IN = 12;
+	int ETRANSITION_TYPES_IN = 11;
 
 	/**
 	 * The meta object id for the '{@link uid.ETransitionTypeOut <em>ETransition Type Out</em>}' enum.
@@ -1077,7 +995,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypeOut()
 	 * @generated
 	 */
-	int ETRANSITION_TYPE_OUT = 13;
+	int ETRANSITION_TYPE_OUT = 12;
 
 
 	/**
@@ -1178,10 +1096,10 @@ public interface UidPackage extends EPackage {
 	EAttribute getApplication_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uid.Application#getHasEntityTransition <em>Has Entity Transition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasEntityTransition <em>Has Entity Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Has Entity Transition</em>'.
+	 * @return the meta object for the containment reference list '<em>Has Entity Transition</em>'.
 	 * @see uid.Application#getHasEntityTransition()
 	 * @see #getApplication()
 	 * @generated
@@ -1189,10 +1107,10 @@ public interface UidPackage extends EPackage {
 	EReference getApplication_HasEntityTransition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uid.Application#getHasEntities <em>Has Entities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasEntities <em>Has Entities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Has Entities</em>'.
+	 * @return the meta object for the containment reference list '<em>Has Entities</em>'.
 	 * @see uid.Application#getHasEntities()
 	 * @see #getApplication()
 	 * @generated
@@ -1276,6 +1194,17 @@ public interface UidPackage extends EPackage {
 	EReference getState_HasDisplay();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uid.State#getHasTransition <em>Has Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Has Transition</em>'.
+	 * @see uid.State#getHasTransition()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_HasTransition();
+
+	/**
 	 * Returns the meta object for class '{@link uid.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1328,17 +1257,6 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEntity_Y();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uid.Entity#getHasTransition <em>Has Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Transition</em>'.
-	 * @see uid.Entity#getHasTransition()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EReference getEntity_HasTransition();
 
 	/**
 	 * Returns the meta object for class '{@link uid.Switch <em>Switch</em>}'.
@@ -1479,6 +1397,17 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRegulator_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.Regulator#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Value</em>'.
+	 * @see uid.Regulator#getDefaultValue()
+	 * @see #getRegulator()
+	 * @generated
+	 */
+	EAttribute getRegulator_DefaultValue();
 
 	/**
 	 * Returns the meta object for class '{@link uid.Matrix <em>Matrix</em>}'.
@@ -1686,27 +1615,6 @@ public interface UidPackage extends EPackage {
 	EAttribute getButton_Notification_released();
 
 	/**
-	 * Returns the meta object for class '{@link uid.hallo <em>hallo</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>hallo</em>'.
-	 * @see uid.hallo
-	 * @generated
-	 */
-	EClass gethallo();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.hallo#getHallo <em>Hallo</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Hallo</em>'.
-	 * @see uid.hallo#getHallo()
-	 * @see #gethallo()
-	 * @generated
-	 */
-	EAttribute gethallo_Hallo();
-
-	/**
 	 * Returns the meta object for enum '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1825,7 +1733,7 @@ public interface UidPackage extends EPackage {
 		EAttribute APPLICATION__NAME = eINSTANCE.getApplication_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Entity Transition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Has Entity Transition</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1833,7 +1741,7 @@ public interface UidPackage extends EPackage {
 		EReference APPLICATION__HAS_ENTITY_TRANSITION = eINSTANCE.getApplication_HasEntityTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Entities</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Has Entities</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1899,6 +1807,14 @@ public interface UidPackage extends EPackage {
 		EReference STATE__HAS_DISPLAY = eINSTANCE.getState_HasDisplay();
 
 		/**
+		 * The meta object literal for the '<em><b>Has Transition</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__HAS_TRANSITION = eINSTANCE.getState_HasTransition();
+
+		/**
 		 * The meta object literal for the '{@link uid.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1939,14 +1855,6 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY__Y = eINSTANCE.getEntity_Y();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Transition</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY__HAS_TRANSITION = eINSTANCE.getEntity_HasTransition();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.SwitchImpl <em>Switch</em>}' class.
@@ -2057,6 +1965,14 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REGULATOR__VALUE = eINSTANCE.getRegulator_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGULATOR__DEFAULT_VALUE = eINSTANCE.getRegulator_DefaultValue();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.MatrixImpl <em>Matrix</em>}' class.
@@ -2217,24 +2133,6 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BUTTON__NOTIFICATION_RELEASED = eINSTANCE.getButton_Notification_released();
-
-		/**
-		 * The meta object literal for the '{@link uid.impl.halloImpl <em>hallo</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uid.impl.halloImpl
-		 * @see uid.impl.UidPackageImpl#gethallo()
-		 * @generated
-		 */
-		EClass HALLO = eINSTANCE.gethallo();
-
-		/**
-		 * The meta object literal for the '<em><b>Hallo</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HALLO__HALLO = eINSTANCE.gethallo_Hallo();
 
 		/**
 		 * The meta object literal for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.

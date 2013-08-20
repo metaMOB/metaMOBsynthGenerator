@@ -121,15 +121,6 @@ public interface UidFactory extends EFactory {
 	Button createButton();
 
 	/**
-	 * Returns a new object of class '<em>hallo</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>hallo</em>'.
-	 * @generated
-	 */
-	hallo createhallo();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

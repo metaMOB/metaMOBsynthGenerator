@@ -112,10 +112,6 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 				return createButtonAdapter();
 			}
 			@Override
-			public Adapter casehallo(hallo object) {
-				return createhalloAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -286,20 +282,6 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createButtonAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uid.hallo <em>hallo</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uid.hallo
-	 * @generated
-	 */
-	public Adapter createhalloAdapter() {
 		return null;
 	}
 

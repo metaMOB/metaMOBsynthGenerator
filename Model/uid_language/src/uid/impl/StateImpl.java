@@ -16,9 +16,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import uid.Button;
 import uid.Display;
+import uid.EntityTransition;
 import uid.Matrix;
 import uid.Regulator;
 import uid.State;
+import uid.Switch;
 import uid.UidPackage;
 
 /**
@@ -33,6 +35,7 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.StateImpl#getHasMatrix <em>Has Matrix</em>}</li>
  *   <li>{@link uid.impl.StateImpl#getHasButton <em>Has Button</em>}</li>
  *   <li>{@link uid.impl.StateImpl#getHasDisplay <em>Has Display</em>}</li>
+ *   <li>{@link uid.impl.StateImpl#getHasTransition <em>Has Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,6 +101,16 @@ public class StateImpl extends EntityImpl implements State {
 	 * @ordered
 	 */
 	protected EList<Display> hasDisplay;
+
+	/**
+	 * The cached value of the '{@link #getHasTransition() <em>Has Transition</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasTransition()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntityTransition> hasTransition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,6 +205,18 @@ public class StateImpl extends EntityImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EntityTransition> getHasTransition() {
+		if (hasTransition == null) {
+			hasTransition = new EObjectResolvingEList<EntityTransition>(EntityTransition.class, this, UidPackage.STATE__HAS_TRANSITION);
+		}
+		return hasTransition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -205,6 +230,8 @@ public class StateImpl extends EntityImpl implements State {
 				return getHasButton();
 			case UidPackage.STATE__HAS_DISPLAY:
 				return getHasDisplay();
+			case UidPackage.STATE__HAS_TRANSITION:
+				return getHasTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -237,6 +264,10 @@ public class StateImpl extends EntityImpl implements State {
 				getHasDisplay().clear();
 				getHasDisplay().addAll((Collection<? extends Display>)newValue);
 				return;
+			case UidPackage.STATE__HAS_TRANSITION:
+				getHasTransition().clear();
+				getHasTransition().addAll((Collection<? extends EntityTransition>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -264,6 +295,9 @@ public class StateImpl extends EntityImpl implements State {
 			case UidPackage.STATE__HAS_DISPLAY:
 				getHasDisplay().clear();
 				return;
+			case UidPackage.STATE__HAS_TRANSITION:
+				getHasTransition().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -286,6 +320,8 @@ public class StateImpl extends EntityImpl implements State {
 				return hasButton != null && !hasButton.isEmpty();
 			case UidPackage.STATE__HAS_DISPLAY:
 				return hasDisplay != null && !hasDisplay.isEmpty();
+			case UidPackage.STATE__HAS_TRANSITION:
+				return hasTransition != null && !hasTransition.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -68,7 +68,6 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 			case UidPackage.CONTAINER: return createContainer();
 			case UidPackage.DISPLAY: return createDisplay();
 			case UidPackage.BUTTON: return createButton();
-			case UidPackage.HALLO: return createhallo();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -216,16 +215,6 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	public Button createButton() {
 		ButtonImpl button = new ButtonImpl();
 		return button;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public hallo createhallo() {
-		halloImpl hallo = new halloImpl();
-		return hallo;
 	}
 
 	/**

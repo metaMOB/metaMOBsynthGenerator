@@ -15,7 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uid.Application;
 import uid.Entity;
@@ -61,24 +63,24 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHasEntityTransition() <em>Has Entity Transition</em>}' containment reference.
+	 * The cached value of the '{@link #getHasEntityTransition() <em>Has Entity Transition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHasEntityTransition()
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityTransition hasEntityTransition;
+	protected EList<EntityTransition> hasEntityTransition;
 
 	/**
-	 * The cached value of the '{@link #getHasEntities() <em>Has Entities</em>}' containment reference.
+	 * The cached value of the '{@link #getHasEntities() <em>Has Entities</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHasEntities()
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity hasEntities;
+	protected EList<Entity> hasEntities;
 
 	/**
 	 * The cached value of the '{@link #getHasMediator() <em>Has Mediator</em>}' reference list.
@@ -135,7 +137,10 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityTransition getHasEntityTransition() {
+	public EList<EntityTransition> getHasEntityTransition() {
+		if (hasEntityTransition == null) {
+			hasEntityTransition = new EObjectContainmentEList<EntityTransition>(EntityTransition.class, this, UidPackage.APPLICATION__HAS_ENTITY_TRANSITION);
+		}
 		return hasEntityTransition;
 	}
 
@@ -144,76 +149,11 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetHasEntityTransition(EntityTransition newHasEntityTransition, NotificationChain msgs) {
-		EntityTransition oldHasEntityTransition = hasEntityTransition;
-		hasEntityTransition = newHasEntityTransition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_ENTITY_TRANSITION, oldHasEntityTransition, newHasEntityTransition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Entity> getHasEntities() {
+		if (hasEntities == null) {
+			hasEntities = new EObjectContainmentEList<Entity>(Entity.class, this, UidPackage.APPLICATION__HAS_ENTITIES);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHasEntityTransition(EntityTransition newHasEntityTransition) {
-		if (newHasEntityTransition != hasEntityTransition) {
-			NotificationChain msgs = null;
-			if (hasEntityTransition != null)
-				msgs = ((InternalEObject)hasEntityTransition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_ENTITY_TRANSITION, null, msgs);
-			if (newHasEntityTransition != null)
-				msgs = ((InternalEObject)newHasEntityTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_ENTITY_TRANSITION, null, msgs);
-			msgs = basicSetHasEntityTransition(newHasEntityTransition, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_ENTITY_TRANSITION, newHasEntityTransition, newHasEntityTransition));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity getHasEntities() {
 		return hasEntities;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetHasEntities(Entity newHasEntities, NotificationChain msgs) {
-		Entity oldHasEntities = hasEntities;
-		hasEntities = newHasEntities;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_ENTITIES, oldHasEntities, newHasEntities);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHasEntities(Entity newHasEntities) {
-		if (newHasEntities != hasEntities) {
-			NotificationChain msgs = null;
-			if (hasEntities != null)
-				msgs = ((InternalEObject)hasEntities).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_ENTITIES, null, msgs);
-			if (newHasEntities != null)
-				msgs = ((InternalEObject)newHasEntities).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_ENTITIES, null, msgs);
-			msgs = basicSetHasEntities(newHasEntities, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_ENTITIES, newHasEntities, newHasEntities));
 	}
 
 	/**
@@ -237,9 +177,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
-				return basicSetHasEntityTransition(null, msgs);
+				return ((InternalEList<?>)getHasEntityTransition()).basicRemove(otherEnd, msgs);
 			case UidPackage.APPLICATION__HAS_ENTITIES:
-				return basicSetHasEntities(null, msgs);
+				return ((InternalEList<?>)getHasEntities()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -277,10 +217,12 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				setName((String)newValue);
 				return;
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
-				setHasEntityTransition((EntityTransition)newValue);
+				getHasEntityTransition().clear();
+				getHasEntityTransition().addAll((Collection<? extends EntityTransition>)newValue);
 				return;
 			case UidPackage.APPLICATION__HAS_ENTITIES:
-				setHasEntities((Entity)newValue);
+				getHasEntities().clear();
+				getHasEntities().addAll((Collection<? extends Entity>)newValue);
 				return;
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				getHasMediator().clear();
@@ -302,10 +244,10 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				setName(NAME_EDEFAULT);
 				return;
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
-				setHasEntityTransition((EntityTransition)null);
+				getHasEntityTransition().clear();
 				return;
 			case UidPackage.APPLICATION__HAS_ENTITIES:
-				setHasEntities((Entity)null);
+				getHasEntities().clear();
 				return;
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				getHasMediator().clear();
@@ -325,9 +267,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
-				return hasEntityTransition != null;
+				return hasEntityTransition != null && !hasEntityTransition.isEmpty();
 			case UidPackage.APPLICATION__HAS_ENTITIES:
-				return hasEntities != null;
+				return hasEntities != null && !hasEntities.isEmpty();
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return hasMediator != null && !hasMediator.isEmpty();
 		}

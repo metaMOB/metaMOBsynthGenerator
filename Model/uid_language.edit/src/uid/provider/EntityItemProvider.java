@@ -64,7 +64,6 @@ public class EntityItemProvider
 			addVisiblePropertyDescriptor(object);
 			addXPropertyDescriptor(object);
 			addYPropertyDescriptor(object);
-			addHasTransitionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -153,28 +152,6 @@ public class EntityItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Transition feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasTransitionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_hasTransition_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasTransition_feature", "_UI_Entity_type"),
-				 UidPackage.Literals.ENTITY__HAS_TRANSITION,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

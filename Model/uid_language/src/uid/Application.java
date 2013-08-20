@@ -53,56 +53,36 @@ public interface Application extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Has Entity Transition</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Has Entity Transition</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.EntityTransition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Entity Transition</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Has Entity Transition</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Entity Transition</em>' containment reference.
-	 * @see #setHasEntityTransition(EntityTransition)
+	 * @return the value of the '<em>Has Entity Transition</em>' containment reference list.
 	 * @see uid.UidPackage#getApplication_HasEntityTransition()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EntityTransition getHasEntityTransition();
+	EList<EntityTransition> getHasEntityTransition();
 
 	/**
-	 * Sets the value of the '{@link uid.Application#getHasEntityTransition <em>Has Entity Transition</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Has Entity Transition</em>' containment reference.
-	 * @see #getHasEntityTransition()
-	 * @generated
-	 */
-	void setHasEntityTransition(EntityTransition value);
-
-	/**
-	 * Returns the value of the '<em><b>Has Entities</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Has Entities</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.Entity}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Entities</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Has Entities</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Entities</em>' containment reference.
-	 * @see #setHasEntities(Entity)
+	 * @return the value of the '<em>Has Entities</em>' containment reference list.
 	 * @see uid.UidPackage#getApplication_HasEntities()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Entity getHasEntities();
-
-	/**
-	 * Sets the value of the '{@link uid.Application#getHasEntities <em>Has Entities</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Has Entities</em>' containment reference.
-	 * @see #getHasEntities()
-	 * @generated
-	 */
-	void setHasEntities(Entity value);
+	EList<Entity> getHasEntities();
 
 	/**
 	 * Returns the value of the '<em><b>Has Mediator</b></em>' reference list.

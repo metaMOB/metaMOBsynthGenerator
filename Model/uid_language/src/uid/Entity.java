@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uid.Entity#isVisible <em>Visible</em>}</li>
  *   <li>{@link uid.Entity#getX <em>X</em>}</li>
  *   <li>{@link uid.Entity#getY <em>Y</em>}</li>
- *   <li>{@link uid.Entity#getHasTransition <em>Has Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,21 +129,5 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	void setY(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Has Transition</b></em>' reference list.
-	 * The list contents are of type {@link uid.EntityTransition}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Has Transition</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Transition</em>' reference list.
-	 * @see uid.UidPackage#getEntity_HasTransition()
-	 * @model
-	 * @generated
-	 */
-	EList<EntityTransition> getHasTransition();
 
 } // Entity

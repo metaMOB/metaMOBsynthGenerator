@@ -12,7 +12,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="animationTypeOut" eType="#//ETransitionTypeOut"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="animationInTime" eType="ecore:EDataType Types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="animationOutTime" eType="ecore:EDataType Types.ecore#//Integer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
+        eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Application">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String">
@@ -35,14 +36,14 @@
         eType="#//Button"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasDisplay" upperBound="-1"
         eType="#//Display"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTransition" upperBound="-1"
+        eType="#//EntityTransition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType Types.ecore#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType Types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType Types.ecore#//Integer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTransition" upperBound="-1"
-        eType="#//EntityTransition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ETransitionTypesIn">
     <eLiterals name="fadeIn"/>
@@ -68,12 +69,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Regulator" eSuperTypes="#//Entity">
     <eOperations name="setValue" eType="ecore:EDataType Types.ecore#//Integer"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minValue" eType="ecore:EDataType Types.ecore#//Integer"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType Types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_changed" eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_doubleTap"
         eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType Types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Matrix" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_background" eType="ecore:EDataType Types.ecore#//String"/>
@@ -100,8 +102,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_pressed" eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification_released"
         eType="ecore:EDataType Types.ecore#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="hallo">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hallo" eType="ecore:EDataType Types.ecore#//String"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -28,7 +28,6 @@ import uid.State;
 import uid.Switch;
 import uid.UidFactory;
 import uid.UidPackage;
-import uid.hallo;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,13 +112,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * @generated
 	 */
 	private EClass buttonEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass halloEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -368,6 +360,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getState_HasTransition() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -406,15 +407,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 */
 	public EAttribute getEntity_Y() {
 		return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntity_HasTransition() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -532,6 +524,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 */
 	public EAttribute getRegulator_Value() {
 		return (EAttribute)regulatorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRegulator_DefaultValue() {
+		return (EAttribute)regulatorEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -710,24 +711,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass gethallo() {
-		return halloEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute gethallo_Hallo() {
-		return (EAttribute)halloEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getETransitionTypesIn() {
 		return eTransitionTypesInEEnum;
 	}
@@ -789,13 +772,13 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEReference(stateEClass, STATE__HAS_MATRIX);
 		createEReference(stateEClass, STATE__HAS_BUTTON);
 		createEReference(stateEClass, STATE__HAS_DISPLAY);
+		createEReference(stateEClass, STATE__HAS_TRANSITION);
 
 		entityEClass = createEClass(ENTITY);
 		createEAttribute(entityEClass, ENTITY__NAME);
 		createEAttribute(entityEClass, ENTITY__VISIBLE);
 		createEAttribute(entityEClass, ENTITY__X);
 		createEAttribute(entityEClass, ENTITY__Y);
-		createEReference(entityEClass, ENTITY__HAS_TRANSITION);
 
 		switchEClass = createEClass(SWITCH);
 		createEAttribute(switchEClass, SWITCH__VALUE);
@@ -812,6 +795,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEAttribute(regulatorEClass, REGULATOR__NOTIFICATION_CHANGED);
 		createEAttribute(regulatorEClass, REGULATOR__NOTIFICATION_DOUBLE_TAP);
 		createEAttribute(regulatorEClass, REGULATOR__VALUE);
+		createEAttribute(regulatorEClass, REGULATOR__DEFAULT_VALUE);
 
 		matrixEClass = createEClass(MATRIX);
 		createEAttribute(matrixEClass, MATRIX__IMAGE_BACKGROUND);
@@ -835,9 +819,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEAttribute(buttonEClass, BUTTON__IMAGE_DISABLED);
 		createEAttribute(buttonEClass, BUTTON__NOTIFICATION_PRESSED);
 		createEAttribute(buttonEClass, BUTTON__NOTIFICATION_RELEASED);
-
-		halloEClass = createEClass(HALLO);
-		createEAttribute(halloEClass, HALLO__HALLO);
 
 		// Create enums
 		eTransitionTypesInEEnum = createEEnum(ETRANSITION_TYPES_IN);
@@ -890,12 +871,12 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getEntityTransition_AnimationTypeOut(), this.getETransitionTypeOut(), "animationTypeOut", null, 0, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityTransition_AnimationInTime(), theTypesPackage.getInteger(), "animationInTime", null, 0, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityTransition_AnimationOutTime(), theTypesPackage.getInteger(), "animationOutTime", null, 0, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityTransition_Entities(), this.getEntity(), null, "entities", null, 0, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityTransition_Entities(), this.getEntity(), null, "entities", null, 1, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplication_Name(), theTypesPackage.getString(), "name", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplication_HasEntityTransition(), this.getEntityTransition(), null, "hasEntityTransition", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplication_HasEntities(), this.getEntity(), null, "hasEntities", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_HasEntityTransition(), this.getEntityTransition(), null, "hasEntityTransition", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_HasEntities(), this.getEntity(), null, "hasEntities", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_HasMediator(), this.getMediator(), null, "hasMediator", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -904,13 +885,13 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEReference(getState_HasMatrix(), this.getMatrix(), null, "hasMatrix", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_HasButton(), this.getButton(), null, "hasButton", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_HasDisplay(), this.getDisplay(), null, "hasDisplay", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_HasTransition(), this.getEntityTransition(), null, "hasTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntity_Name(), theTypesPackage.getString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_Visible(), theTypesPackage.getBoolean(), "visible", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_X(), theTypesPackage.getInteger(), "x", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_Y(), theTypesPackage.getInteger(), "y", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_HasTransition(), this.getEntityTransition(), null, "hasTransition", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(switchEClass, Switch.class, "Switch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSwitch_Value(), theTypesPackage.getBoolean(), "value", null, 0, 1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -922,11 +903,12 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getMediator_Listeners(), ecorePackage.getEString(), "listeners", null, 0, 1, Mediator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(regulatorEClass, Regulator.class, "Regulator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRegulator_MinValue(), theTypesPackage.getInteger(), "minValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegulator_MaxValue(), theTypesPackage.getInteger(), "maxValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegulator_MinValue(), ecorePackage.getEDouble(), "minValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegulator_MaxValue(), ecorePackage.getEDouble(), "maxValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegulator_Notification_changed(), theTypesPackage.getString(), "notification_changed", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegulator_Notification_doubleTap(), theTypesPackage.getString(), "notification_doubleTap", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegulator_Value(), theTypesPackage.getInteger(), "value", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegulator_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegulator_DefaultValue(), ecorePackage.getEDouble(), "defaultValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(regulatorEClass, theTypesPackage.getInteger(), "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -952,9 +934,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getButton_Image_disabled(), theTypesPackage.getString(), "image_disabled", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getButton_Notification_pressed(), theTypesPackage.getString(), "notification_pressed", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getButton_Notification_released(), theTypesPackage.getString(), "notification_released", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(halloEClass, hallo.class, "hallo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(gethallo_Hallo(), theTypesPackage.getString(), "hallo", null, 0, 1, hallo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eTransitionTypesInEEnum, ETransitionTypesIn.class, "ETransitionTypesIn");

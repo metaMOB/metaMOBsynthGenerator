@@ -325,29 +325,6 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uid.hallo} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected halloItemProvider halloItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uid.hallo}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createhalloAdapter() {
-		if (halloItemProvider == null) {
-			halloItemProvider = new halloItemProvider(this);
-		}
-
-		return halloItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -457,7 +434,6 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 		if (containerItemProvider != null) containerItemProvider.dispose();
 		if (displayItemProvider != null) displayItemProvider.dispose();
 		if (buttonItemProvider != null) buttonItemProvider.dispose();
-		if (halloItemProvider != null) halloItemProvider.dispose();
 	}
 
 }
