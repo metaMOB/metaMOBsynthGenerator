@@ -2,21 +2,14 @@
  */
 package uid.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import uid.Entity;
-import uid.EntityTransition;
 import uid.UidPackage;
 
 /**
@@ -30,7 +23,6 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.EntityImpl#isVisible <em>Visible</em>}</li>
  *   <li>{@link uid.impl.EntityImpl#getX <em>X</em>}</li>
  *   <li>{@link uid.impl.EntityImpl#getY <em>Y</em>}</li>
- *   <li>{@link uid.impl.EntityImpl#getHasTransition <em>Has Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -116,16 +108,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	 * @ordered
 	 */
 	protected int y = Y_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getHasTransition() <em>Has Transition</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHasTransition()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityTransition> hasTransition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,18 +217,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityTransition> getHasTransition() {
-		if (hasTransition == null) {
-			hasTransition = new EObjectResolvingEList<EntityTransition>(EntityTransition.class, this, UidPackage.ENTITY__HAS_TRANSITION);
-		}
-		return hasTransition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -258,8 +228,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 				return getX();
 			case UidPackage.ENTITY__Y:
 				return getY();
-			case UidPackage.ENTITY__HAS_TRANSITION:
-				return getHasTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,7 +237,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -284,10 +251,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 				return;
 			case UidPackage.ENTITY__Y:
 				setY((Integer)newValue);
-				return;
-			case UidPackage.ENTITY__HAS_TRANSITION:
-				getHasTransition().clear();
-				getHasTransition().addAll((Collection<? extends EntityTransition>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -313,9 +276,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 			case UidPackage.ENTITY__Y:
 				setY(Y_EDEFAULT);
 				return;
-			case UidPackage.ENTITY__HAS_TRANSITION:
-				getHasTransition().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -336,8 +296,6 @@ public class EntityImpl extends EObjectImpl implements Entity {
 				return x != X_EDEFAULT;
 			case UidPackage.ENTITY__Y:
 				return y != Y_EDEFAULT;
-			case UidPackage.ENTITY__HAS_TRANSITION:
-				return hasTransition != null && !hasTransition.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

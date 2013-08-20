@@ -20,7 +20,6 @@ import uid.EntityTransition;
 import uid.Matrix;
 import uid.Regulator;
 import uid.State;
-import uid.Switch;
 import uid.UidPackage;
 
 /**
