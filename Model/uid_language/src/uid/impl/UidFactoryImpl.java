@@ -59,8 +59,8 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 		switch (eClass.getClassifierID()) {
 			case UidPackage.ENTITY_TRANSITION: return createEntityTransition();
 			case UidPackage.APPLICATION: return createApplication();
-			case UidPackage.STATE: return createState();
-			case UidPackage.ENTITY: return createEntity();
+			case UidPackage.VIEW: return createView();
+			case UidPackage.COMPONENT: return createComponent();
 			case UidPackage.SWITCH: return createSwitch();
 			case UidPackage.MEDIATOR: return createMediator();
 			case UidPackage.REGULATOR: return createRegulator();
@@ -68,6 +68,8 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 			case UidPackage.CONTAINER: return createContainer();
 			case UidPackage.DISPLAY: return createDisplay();
 			case UidPackage.BUTTON: return createButton();
+			case UidPackage.NOTIFICATION: return createNotification();
+			case UidPackage.EVENT_NOTIFICATION: return createEventNotification();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -132,9 +134,9 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State createState() {
-		StateImpl state = new StateImpl();
-		return state;
+	public View createView() {
+		ViewImpl view = new ViewImpl();
+		return view;
 	}
 
 	/**
@@ -142,9 +144,9 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity createEntity() {
-		EntityImpl entity = new EntityImpl();
-		return entity;
+	public Component createComponent() {
+		ComponentImpl component = new ComponentImpl();
+		return component;
 	}
 
 	/**
@@ -215,6 +217,26 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	public Button createButton() {
 		ButtonImpl button = new ButtonImpl();
 		return button;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Notification createNotification() {
+		NotificationImpl notification = new NotificationImpl();
+		return notification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventNotification createEventNotification() {
+		EventNotificationImpl eventNotification = new EventNotificationImpl();
+		return eventNotification;
 	}
 
 	/**

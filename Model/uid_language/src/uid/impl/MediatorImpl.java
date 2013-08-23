@@ -5,17 +5,20 @@ package uid.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import uid.Entity;
+import uid.EventNotification;
 import uid.Mediator;
 import uid.UidPackage;
 
@@ -27,9 +30,7 @@ import uid.UidPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uid.impl.MediatorImpl#getName <em>Name</em>}</li>
- *   <li>{@link uid.impl.MediatorImpl#getHasEntities <em>Has Entities</em>}</li>
- *   <li>{@link uid.impl.MediatorImpl#getCommandsToGenerate <em>Commands To Generate</em>}</li>
- *   <li>{@link uid.impl.MediatorImpl#getListeners <em>Listeners</em>}</li>
+ *   <li>{@link uid.impl.MediatorImpl#getHasEventNotification <em>Has Event Notification</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,54 +58,14 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHasEntities() <em>Has Entities</em>}' reference list.
+	 * The cached value of the '{@link #getHasEventNotification() <em>Has Event Notification</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasEntities()
+	 * @see #getHasEventNotification()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entity> hasEntities;
-
-	/**
-	 * The default value of the '{@link #getCommandsToGenerate() <em>Commands To Generate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommandsToGenerate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMANDS_TO_GENERATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCommandsToGenerate() <em>Commands To Generate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommandsToGenerate()
-	 * @generated
-	 * @ordered
-	 */
-	protected String commandsToGenerate = COMMANDS_TO_GENERATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getListeners() <em>Listeners</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getListeners()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LISTENERS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getListeners() <em>Listeners</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getListeners()
-	 * @generated
-	 * @ordered
-	 */
-	protected String listeners = LISTENERS_EDEFAULT;
+	protected EList<EventNotification> hasEventNotification;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,11 +112,11 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Entity> getHasEntities() {
-		if (hasEntities == null) {
-			hasEntities = new EObjectResolvingEList<Entity>(Entity.class, this, UidPackage.MEDIATOR__HAS_ENTITIES);
+	public EList<EventNotification> getHasEventNotification() {
+		if (hasEventNotification == null) {
+			hasEventNotification = new EObjectContainmentWithInverseEList<EventNotification>(EventNotification.class, this, UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION, UidPackage.EVENT_NOTIFICATION__HAS_MEDIATOR);
 		}
-		return hasEntities;
+		return hasEventNotification;
 	}
 
 	/**
@@ -163,8 +124,14 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCommandsToGenerate() {
-		return commandsToGenerate;
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasEventNotification()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -172,32 +139,13 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCommandsToGenerate(String newCommandsToGenerate) {
-		String oldCommandsToGenerate = commandsToGenerate;
-		commandsToGenerate = newCommandsToGenerate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.MEDIATOR__COMMANDS_TO_GENERATE, oldCommandsToGenerate, commandsToGenerate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getListeners() {
-		return listeners;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setListeners(String newListeners) {
-		String oldListeners = listeners;
-		listeners = newListeners;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.MEDIATOR__LISTENERS, oldListeners, listeners));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+				return ((InternalEList<?>)getHasEventNotification()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -210,12 +158,8 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 		switch (featureID) {
 			case UidPackage.MEDIATOR__NAME:
 				return getName();
-			case UidPackage.MEDIATOR__HAS_ENTITIES:
-				return getHasEntities();
-			case UidPackage.MEDIATOR__COMMANDS_TO_GENERATE:
-				return getCommandsToGenerate();
-			case UidPackage.MEDIATOR__LISTENERS:
-				return getListeners();
+			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+				return getHasEventNotification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -232,15 +176,9 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 			case UidPackage.MEDIATOR__NAME:
 				setName((String)newValue);
 				return;
-			case UidPackage.MEDIATOR__HAS_ENTITIES:
-				getHasEntities().clear();
-				getHasEntities().addAll((Collection<? extends Entity>)newValue);
-				return;
-			case UidPackage.MEDIATOR__COMMANDS_TO_GENERATE:
-				setCommandsToGenerate((String)newValue);
-				return;
-			case UidPackage.MEDIATOR__LISTENERS:
-				setListeners((String)newValue);
+			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+				getHasEventNotification().clear();
+				getHasEventNotification().addAll((Collection<? extends EventNotification>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -257,14 +195,8 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 			case UidPackage.MEDIATOR__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case UidPackage.MEDIATOR__HAS_ENTITIES:
-				getHasEntities().clear();
-				return;
-			case UidPackage.MEDIATOR__COMMANDS_TO_GENERATE:
-				setCommandsToGenerate(COMMANDS_TO_GENERATE_EDEFAULT);
-				return;
-			case UidPackage.MEDIATOR__LISTENERS:
-				setListeners(LISTENERS_EDEFAULT);
+			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+				getHasEventNotification().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -280,12 +212,8 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 		switch (featureID) {
 			case UidPackage.MEDIATOR__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case UidPackage.MEDIATOR__HAS_ENTITIES:
-				return hasEntities != null && !hasEntities.isEmpty();
-			case UidPackage.MEDIATOR__COMMANDS_TO_GENERATE:
-				return COMMANDS_TO_GENERATE_EDEFAULT == null ? commandsToGenerate != null : !COMMANDS_TO_GENERATE_EDEFAULT.equals(commandsToGenerate);
-			case UidPackage.MEDIATOR__LISTENERS:
-				return LISTENERS_EDEFAULT == null ? listeners != null : !LISTENERS_EDEFAULT.equals(listeners);
+			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+				return hasEventNotification != null && !hasEventNotification.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -302,10 +230,6 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", commandsToGenerate: ");
-		result.append(commandsToGenerate);
-		result.append(", listeners: ");
-		result.append(listeners);
 		result.append(')');
 		return result.toString();
 	}

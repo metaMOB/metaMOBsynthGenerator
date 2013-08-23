@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link uid.Mediator#getName <em>Name</em>}</li>
- *   <li>{@link uid.Mediator#getHasEntities <em>Has Entities</em>}</li>
- *   <li>{@link uid.Mediator#getCommandsToGenerate <em>Commands To Generate</em>}</li>
- *   <li>{@link uid.Mediator#getListeners <em>Listeners</em>}</li>
+ *   <li>{@link uid.Mediator#getHasEventNotification <em>Has Event Notification</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,71 +51,21 @@ public interface Mediator extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Has Entities</b></em>' reference list.
-	 * The list contents are of type {@link uid.Entity}.
+	 * Returns the value of the '<em><b>Has Event Notification</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.EventNotification}.
+	 * It is bidirectional and its opposite is '{@link uid.EventNotification#getHasMediator <em>Has Mediator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Entities</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Has Event Notification</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Entities</em>' reference list.
-	 * @see uid.UidPackage#getMediator_HasEntities()
-	 * @model
+	 * @return the value of the '<em>Has Event Notification</em>' containment reference list.
+	 * @see uid.UidPackage#getMediator_HasEventNotification()
+	 * @see uid.EventNotification#getHasMediator
+	 * @model opposite="hasMediator" containment="true"
 	 * @generated
 	 */
-	EList<Entity> getHasEntities();
-
-	/**
-	 * Returns the value of the '<em><b>Commands To Generate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Commands To Generate</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Commands To Generate</em>' attribute.
-	 * @see #setCommandsToGenerate(String)
-	 * @see uid.UidPackage#getMediator_CommandsToGenerate()
-	 * @model
-	 * @generated
-	 */
-	String getCommandsToGenerate();
-
-	/**
-	 * Sets the value of the '{@link uid.Mediator#getCommandsToGenerate <em>Commands To Generate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Commands To Generate</em>' attribute.
-	 * @see #getCommandsToGenerate()
-	 * @generated
-	 */
-	void setCommandsToGenerate(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Listeners</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Listeners</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Listeners</em>' attribute.
-	 * @see #setListeners(String)
-	 * @see uid.UidPackage#getMediator_Listeners()
-	 * @model
-	 * @generated
-	 */
-	String getListeners();
-
-	/**
-	 * Sets the value of the '{@link uid.Mediator#getListeners <em>Listeners</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Listeners</em>' attribute.
-	 * @see #getListeners()
-	 * @generated
-	 */
-	void setListeners(String value);
+	EList<EventNotification> getHasEventNotification();
 
 } // Mediator

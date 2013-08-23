@@ -65,7 +65,7 @@ public class EntityTransitionItemProvider
 			addAnimationTypeOutPropertyDescriptor(object);
 			addAnimationInTimePropertyDescriptor(object);
 			addAnimationOutTimePropertyDescriptor(object);
-			addEntitiesPropertyDescriptor(object);
+			addHasComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -181,19 +181,19 @@ public class EntityTransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Entities feature.
+	 * This adds a property descriptor for the Has Component feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntitiesPropertyDescriptor(Object object) {
+	protected void addHasComponentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityTransition_entities_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityTransition_entities_feature", "_UI_EntityTransition_type"),
-				 UidPackage.Literals.ENTITY_TRANSITION__ENTITIES,
+				 getString("_UI_EntityTransition_hasComponent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityTransition_hasComponent_feature", "_UI_EntityTransition_type"),
+				 UidPackage.Literals.ENTITY_TRANSITION__HAS_COMPONENT,
 				 true,
 				 false,
 				 true,

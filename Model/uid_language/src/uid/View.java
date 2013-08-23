@@ -6,26 +6,28 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>State</b></em>'.
+ * A representation of the model object '<em><b>View</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link uid.State#getImage_background <em>Image background</em>}</li>
- *   <li>{@link uid.State#getHasRegulator <em>Has Regulator</em>}</li>
- *   <li>{@link uid.State#getHasMatrix <em>Has Matrix</em>}</li>
- *   <li>{@link uid.State#getHasButton <em>Has Button</em>}</li>
- *   <li>{@link uid.State#getHasDisplay <em>Has Display</em>}</li>
- *   <li>{@link uid.State#getHasTransition <em>Has Transition</em>}</li>
+ *   <li>{@link uid.View#getImage_background <em>Image background</em>}</li>
+ *   <li>{@link uid.View#getHasRegulator <em>Has Regulator</em>}</li>
+ *   <li>{@link uid.View#getHasMatrix <em>Has Matrix</em>}</li>
+ *   <li>{@link uid.View#getHasButton <em>Has Button</em>}</li>
+ *   <li>{@link uid.View#getHasDisplay <em>Has Display</em>}</li>
+ *   <li>{@link uid.View#getHasTransition <em>Has Transition</em>}</li>
+ *   <li>{@link uid.View#getHasComponent <em>Has Component</em>}</li>
+ *   <li>{@link uid.View#getHasEventNotification <em>Has Event Notification</em>}</li>
  * </ul>
  * </p>
  *
- * @see uid.UidPackage#getState()
+ * @see uid.UidPackage#getView()
  * @model
  * @generated
  */
-public interface State extends Entity {
+public interface View extends Component {
 	/**
 	 * Returns the value of the '<em><b>Image background</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -36,14 +38,14 @@ public interface State extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Image background</em>' attribute.
 	 * @see #setImage_background(String)
-	 * @see uid.UidPackage#getState_Image_background()
+	 * @see uid.UidPackage#getView_Image_background()
 	 * @model dataType="types.String"
 	 * @generated
 	 */
 	String getImage_background();
 
 	/**
-	 * Sets the value of the '{@link uid.State#getImage_background <em>Image background</em>}' attribute.
+	 * Sets the value of the '{@link uid.View#getImage_background <em>Image background</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Image background</em>' attribute.
@@ -62,7 +64,7 @@ public interface State extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Regulator</em>' reference list.
-	 * @see uid.UidPackage#getState_HasRegulator()
+	 * @see uid.UidPackage#getView_HasRegulator()
 	 * @model
 	 * @generated
 	 */
@@ -78,7 +80,7 @@ public interface State extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Matrix</em>' reference list.
-	 * @see uid.UidPackage#getState_HasMatrix()
+	 * @see uid.UidPackage#getView_HasMatrix()
 	 * @model
 	 * @generated
 	 */
@@ -94,7 +96,7 @@ public interface State extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Button</em>' reference list.
-	 * @see uid.UidPackage#getState_HasButton()
+	 * @see uid.UidPackage#getView_HasButton()
 	 * @model
 	 * @generated
 	 */
@@ -110,7 +112,7 @@ public interface State extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Display</em>' reference list.
-	 * @see uid.UidPackage#getState_HasDisplay()
+	 * @see uid.UidPackage#getView_HasDisplay()
 	 * @model
 	 * @generated
 	 */
@@ -126,10 +128,44 @@ public interface State extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Transition</em>' reference list.
-	 * @see uid.UidPackage#getState_HasTransition()
+	 * @see uid.UidPackage#getView_HasTransition()
 	 * @model
 	 * @generated
 	 */
 	EList<EntityTransition> getHasTransition();
 
-} // State
+	/**
+	 * Returns the value of the '<em><b>Has Component</b></em>' reference list.
+	 * The list contents are of type {@link uid.Component}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Component</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Component</em>' reference list.
+	 * @see uid.UidPackage#getView_HasComponent()
+	 * @model
+	 * @generated
+	 */
+	EList<Component> getHasComponent();
+
+	/**
+	 * Returns the value of the '<em><b>Has Event Notification</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.EventNotification}.
+	 * It is bidirectional and its opposite is '{@link uid.EventNotification#getHasView <em>Has View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Event Notification</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Event Notification</em>' containment reference list.
+	 * @see uid.UidPackage#getView_HasEventNotification()
+	 * @see uid.EventNotification#getHasView
+	 * @model opposite="hasView" containment="true"
+	 * @generated
+	 */
+	EList<EventNotification> getHasEventNotification();
+
+} // View

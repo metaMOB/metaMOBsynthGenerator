@@ -21,14 +21,12 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.ButtonImpl#getImage_on <em>Image on</em>}</li>
  *   <li>{@link uid.impl.ButtonImpl#getImage_off <em>Image off</em>}</li>
  *   <li>{@link uid.impl.ButtonImpl#getImage_disabled <em>Image disabled</em>}</li>
- *   <li>{@link uid.impl.ButtonImpl#getNotification_pressed <em>Notification pressed</em>}</li>
- *   <li>{@link uid.impl.ButtonImpl#getNotification_released <em>Notification released</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ButtonImpl extends EntityImpl implements Button {
+public class ButtonImpl extends ComponentImpl implements Button {
 	/**
 	 * The default value of the '{@link #getImage_on() <em>Image on</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,46 +86,6 @@ public class ButtonImpl extends EntityImpl implements Button {
 	 * @ordered
 	 */
 	protected String image_disabled = IMAGE_DISABLED_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_pressed() <em>Notification pressed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_pressed()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_PRESSED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_pressed() <em>Notification pressed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_pressed()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_pressed = NOTIFICATION_PRESSED_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_released() <em>Notification released</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_released()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_RELEASED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_released() <em>Notification released</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_released()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_released = NOTIFICATION_RELEASED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,48 +174,6 @@ public class ButtonImpl extends EntityImpl implements Button {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNotification_pressed() {
-		return notification_pressed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_pressed(String newNotification_pressed) {
-		String oldNotification_pressed = notification_pressed;
-		notification_pressed = newNotification_pressed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.BUTTON__NOTIFICATION_PRESSED, oldNotification_pressed, notification_pressed));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNotification_released() {
-		return notification_released;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_released(String newNotification_released) {
-		String oldNotification_released = notification_released;
-		notification_released = newNotification_released;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.BUTTON__NOTIFICATION_RELEASED, oldNotification_released, notification_released));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -267,10 +183,6 @@ public class ButtonImpl extends EntityImpl implements Button {
 				return getImage_off();
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				return getImage_disabled();
-			case UidPackage.BUTTON__NOTIFICATION_PRESSED:
-				return getNotification_pressed();
-			case UidPackage.BUTTON__NOTIFICATION_RELEASED:
-				return getNotification_released();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -291,12 +203,6 @@ public class ButtonImpl extends EntityImpl implements Button {
 				return;
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				setImage_disabled((String)newValue);
-				return;
-			case UidPackage.BUTTON__NOTIFICATION_PRESSED:
-				setNotification_pressed((String)newValue);
-				return;
-			case UidPackage.BUTTON__NOTIFICATION_RELEASED:
-				setNotification_released((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -319,12 +225,6 @@ public class ButtonImpl extends EntityImpl implements Button {
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				setImage_disabled(IMAGE_DISABLED_EDEFAULT);
 				return;
-			case UidPackage.BUTTON__NOTIFICATION_PRESSED:
-				setNotification_pressed(NOTIFICATION_PRESSED_EDEFAULT);
-				return;
-			case UidPackage.BUTTON__NOTIFICATION_RELEASED:
-				setNotification_released(NOTIFICATION_RELEASED_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -343,10 +243,6 @@ public class ButtonImpl extends EntityImpl implements Button {
 				return IMAGE_OFF_EDEFAULT == null ? image_off != null : !IMAGE_OFF_EDEFAULT.equals(image_off);
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				return IMAGE_DISABLED_EDEFAULT == null ? image_disabled != null : !IMAGE_DISABLED_EDEFAULT.equals(image_disabled);
-			case UidPackage.BUTTON__NOTIFICATION_PRESSED:
-				return NOTIFICATION_PRESSED_EDEFAULT == null ? notification_pressed != null : !NOTIFICATION_PRESSED_EDEFAULT.equals(notification_pressed);
-			case UidPackage.BUTTON__NOTIFICATION_RELEASED:
-				return NOTIFICATION_RELEASED_EDEFAULT == null ? notification_released != null : !NOTIFICATION_RELEASED_EDEFAULT.equals(notification_released);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -367,10 +263,6 @@ public class ButtonImpl extends EntityImpl implements Button {
 		result.append(image_off);
 		result.append(", image_disabled: ");
 		result.append(image_disabled);
-		result.append(", notification_pressed: ");
-		result.append(notification_pressed);
-		result.append(", notification_released: ");
-		result.append(notification_released);
 		result.append(')');
 		return result.toString();
 	}

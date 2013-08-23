@@ -22,16 +22,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uid.Entity;
+import uid.Component;
 import uid.UidPackage;
 
 /**
- * This is the item provider adapter for a {@link uid.Entity} object.
+ * This is the item provider adapter for a {@link uid.Component} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityItemProvider
+public class ComponentItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityItemProvider(AdapterFactory adapterFactory) {
+	public ComponentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -79,9 +79,9 @@ public class EntityItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_name_feature", "_UI_Entity_type"),
-				 UidPackage.Literals.ENTITY__NAME,
+				 getString("_UI_Component_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_name_feature", "_UI_Component_type"),
+				 UidPackage.Literals.COMPONENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -101,9 +101,9 @@ public class EntityItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_visible_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_visible_feature", "_UI_Entity_type"),
-				 UidPackage.Literals.ENTITY__VISIBLE,
+				 getString("_UI_Component_visible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_visible_feature", "_UI_Component_type"),
+				 UidPackage.Literals.COMPONENT__VISIBLE,
 				 true,
 				 false,
 				 false,
@@ -123,9 +123,9 @@ public class EntityItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_x_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_x_feature", "_UI_Entity_type"),
-				 UidPackage.Literals.ENTITY__X,
+				 getString("_UI_Component_x_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_x_feature", "_UI_Component_type"),
+				 UidPackage.Literals.COMPONENT__X,
 				 true,
 				 false,
 				 false,
@@ -145,9 +145,9 @@ public class EntityItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_y_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_y_feature", "_UI_Entity_type"),
-				 UidPackage.Literals.ENTITY__Y,
+				 getString("_UI_Component_y_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_y_feature", "_UI_Component_type"),
+				 UidPackage.Literals.COMPONENT__Y,
 				 true,
 				 false,
 				 false,
@@ -157,14 +157,14 @@ public class EntityItemProvider
 	}
 
 	/**
-	 * This returns Entity.gif.
+	 * This returns Component.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Entity"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Component"));
 	}
 
 	/**
@@ -175,10 +175,10 @@ public class EntityItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Entity)object).getName();
+		String label = ((Component)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Entity_type") :
-			getString("_UI_Entity_type") + " " + label;
+			getString("_UI_Component_type") :
+			getString("_UI_Component_type") + " " + label;
 	}
 
 	/**
@@ -192,11 +192,11 @@ public class EntityItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Entity.class)) {
-			case UidPackage.ENTITY__NAME:
-			case UidPackage.ENTITY__VISIBLE:
-			case UidPackage.ENTITY__X:
-			case UidPackage.ENTITY__Y:
+		switch (notification.getFeatureID(Component.class)) {
+			case UidPackage.COMPONENT__NAME:
+			case UidPackage.COMPONENT__VISIBLE:
+			case UidPackage.COMPONENT__X:
+			case UidPackage.COMPONENT__Y:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -29,7 +29,7 @@ import uid.UidPackage;
  * @generated
  */
 public class MatrixItemProvider
-	extends EntityItemProvider
+	extends ComponentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -60,10 +60,6 @@ public class MatrixItemProvider
 			addImage_backgroundPropertyDescriptor(object);
 			addImage_tapPropertyDescriptor(object);
 			addImage_doubleTapPropertyDescriptor(object);
-			addNotification_tapPropertyDescriptor(object);
-			addNotification_doubleTapPropertyDescriptor(object);
-			addNotification_moveSingleTouchPropertyDescriptor(object);
-			addNotification_moveMultiTouchPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -136,94 +132,6 @@ public class MatrixItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Notification tap feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_tapPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Matrix_notification_tap_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Matrix_notification_tap_feature", "_UI_Matrix_type"),
-				 UidPackage.Literals.MATRIX__NOTIFICATION_TAP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Notification double Tap feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_doubleTapPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Matrix_notification_doubleTap_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Matrix_notification_doubleTap_feature", "_UI_Matrix_type"),
-				 UidPackage.Literals.MATRIX__NOTIFICATION_DOUBLE_TAP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Notification move Single Touch feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_moveSingleTouchPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Matrix_notification_moveSingleTouch_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Matrix_notification_moveSingleTouch_feature", "_UI_Matrix_type"),
-				 UidPackage.Literals.MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Notification move Multi Touch feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_moveMultiTouchPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Matrix_notification_moveMultiTouch_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Matrix_notification_moveMultiTouch_feature", "_UI_Matrix_type"),
-				 UidPackage.Literals.MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -285,10 +193,6 @@ public class MatrixItemProvider
 			case UidPackage.MATRIX__IMAGE_BACKGROUND:
 			case UidPackage.MATRIX__IMAGE_TAP:
 			case UidPackage.MATRIX__IMAGE_DOUBLE_TAP:
-			case UidPackage.MATRIX__NOTIFICATION_TAP:
-			case UidPackage.MATRIX__NOTIFICATION_DOUBLE_TAP:
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH:
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH:
 			case UidPackage.MATRIX__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

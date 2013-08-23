@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,6 +25,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uid.Mediator;
+import uid.UidFactory;
 import uid.UidPackage;
 
 /**
@@ -61,9 +64,6 @@ public class MediatorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addHasEntitiesPropertyDescriptor(object);
-			addCommandsToGeneratePropertyDescriptor(object);
-			addListenersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,69 +91,33 @@ public class MediatorItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Entities feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasEntitiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Mediator_hasEntities_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Mediator_hasEntities_feature", "_UI_Mediator_type"),
-				 UidPackage.Literals.MEDIATOR__HAS_ENTITIES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(UidPackage.Literals.MEDIATOR__HAS_EVENT_NOTIFICATION);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Commands To Generate feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommandsToGeneratePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Mediator_commandsToGenerate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Mediator_commandsToGenerate_feature", "_UI_Mediator_type"),
-				 UidPackage.Literals.MEDIATOR__COMMANDS_TO_GENERATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
 
-	/**
-	 * This adds a property descriptor for the Listeners feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addListenersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Mediator_listeners_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Mediator_listeners_feature", "_UI_Mediator_type"),
-				 UidPackage.Literals.MEDIATOR__LISTENERS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -194,9 +158,10 @@ public class MediatorItemProvider
 
 		switch (notification.getFeatureID(Mediator.class)) {
 			case UidPackage.MEDIATOR__NAME:
-			case UidPackage.MEDIATOR__COMMANDS_TO_GENERATE:
-			case UidPackage.MEDIATOR__LISTENERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -212,6 +177,11 @@ public class MediatorItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(UidPackage.Literals.MEDIATOR__HAS_EVENT_NOTIFICATION,
+				 UidFactory.eINSTANCE.createEventNotification()));
 	}
 
 	/**

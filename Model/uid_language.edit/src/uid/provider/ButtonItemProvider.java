@@ -29,7 +29,7 @@ import uid.UidPackage;
  * @generated
  */
 public class ButtonItemProvider
-	extends EntityItemProvider
+	extends ComponentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -60,8 +60,6 @@ public class ButtonItemProvider
 			addImage_onPropertyDescriptor(object);
 			addImage_offPropertyDescriptor(object);
 			addImage_disabledPropertyDescriptor(object);
-			addNotification_pressedPropertyDescriptor(object);
-			addNotification_releasedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -133,50 +131,6 @@ public class ButtonItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Notification pressed feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_pressedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Button_notification_pressed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Button_notification_pressed_feature", "_UI_Button_type"),
-				 UidPackage.Literals.BUTTON__NOTIFICATION_PRESSED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Notification released feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_releasedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Button_notification_released_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Button_notification_released_feature", "_UI_Button_type"),
-				 UidPackage.Literals.BUTTON__NOTIFICATION_RELEASED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns Button.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -216,8 +170,6 @@ public class ButtonItemProvider
 			case UidPackage.BUTTON__IMAGE_ON:
 			case UidPackage.BUTTON__IMAGE_OFF:
 			case UidPackage.BUTTON__IMAGE_DISABLED:
-			case UidPackage.BUTTON__NOTIFICATION_PRESSED:
-			case UidPackage.BUTTON__NOTIFICATION_RELEASED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

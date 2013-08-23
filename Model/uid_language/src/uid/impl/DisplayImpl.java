@@ -25,7 +25,7 @@ import uid.UidPackage;
  *
  * @generated
  */
-public class DisplayImpl extends EntityImpl implements Display {
+public class DisplayImpl extends ComponentImpl implements Display {
 	/**
 	 * The default value of the '{@link #getImage_background() <em>Image background</em>}' attribute.
 	 * <!-- begin-user-doc -->

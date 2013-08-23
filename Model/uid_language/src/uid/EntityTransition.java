@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uid.EntityTransition#getAnimationTypeOut <em>Animation Type Out</em>}</li>
  *   <li>{@link uid.EntityTransition#getAnimationInTime <em>Animation In Time</em>}</li>
  *   <li>{@link uid.EntityTransition#getAnimationOutTime <em>Animation Out Time</em>}</li>
- *   <li>{@link uid.EntityTransition#getEntities <em>Entities</em>}</li>
+ *   <li>{@link uid.EntityTransition#getHasComponent <em>Has Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -163,29 +163,29 @@ public interface EntityTransition extends EObject {
 	void setAnimationOutTime(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Entities</b></em>' reference.
+	 * Returns the value of the '<em><b>Has Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Entities</em>' reference isn't clear,
+	 * If the meaning of the '<em>Has Component</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entities</em>' reference.
-	 * @see #setEntities(Entity)
-	 * @see uid.UidPackage#getEntityTransition_Entities()
+	 * @return the value of the '<em>Has Component</em>' reference.
+	 * @see #setHasComponent(Component)
+	 * @see uid.UidPackage#getEntityTransition_HasComponent()
 	 * @model required="true"
 	 * @generated
 	 */
-	Entity getEntities();
+	Component getHasComponent();
 
 	/**
-	 * Sets the value of the '{@link uid.EntityTransition#getEntities <em>Entities</em>}' reference.
+	 * Sets the value of the '{@link uid.EntityTransition#getHasComponent <em>Has Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entities</em>' reference.
-	 * @see #getEntities()
+	 * @param value the new value of the '<em>Has Component</em>' reference.
+	 * @see #getHasComponent()
 	 * @generated
 	 */
-	void setEntities(Entity value);
+	void setHasComponent(Component value);
 
 } // EntityTransition

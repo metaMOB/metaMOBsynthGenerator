@@ -40,22 +40,22 @@ public interface UidFactory extends EFactory {
 	Application createApplication();
 
 	/**
-	 * Returns a new object of class '<em>State</em>'.
+	 * Returns a new object of class '<em>View</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State</em>'.
+	 * @return a new object of class '<em>View</em>'.
 	 * @generated
 	 */
-	State createState();
+	View createView();
 
 	/**
-	 * Returns a new object of class '<em>Entity</em>'.
+	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entity</em>'.
+	 * @return a new object of class '<em>Component</em>'.
 	 * @generated
 	 */
-	Entity createEntity();
+	Component createComponent();
 
 	/**
 	 * Returns a new object of class '<em>Switch</em>'.
@@ -119,6 +119,24 @@ public interface UidFactory extends EFactory {
 	 * @generated
 	 */
 	Button createButton();
+
+	/**
+	 * Returns a new object of class '<em>Notification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Notification</em>'.
+	 * @generated
+	 */
+	Notification createNotification();
+
+	/**
+	 * Returns a new object of class '<em>Event Notification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Event Notification</em>'.
+	 * @generated
+	 */
+	EventNotification createEventNotification();
 
 	/**
 	 * Returns the package supported by this factory.

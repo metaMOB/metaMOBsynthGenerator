@@ -64,7 +64,6 @@ public class ApplicationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addHasMediatorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,28 +91,6 @@ public class ApplicationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Mediator feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasMediatorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Application_hasMediator_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Application_hasMediator_feature", "_UI_Application_type"),
-				 UidPackage.Literals.APPLICATION__HAS_MEDIATOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -126,7 +103,8 @@ public class ApplicationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_ENTITY_TRANSITION);
-			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_ENTITIES);
+			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_VIEW);
+			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_MEDIATOR);
 		}
 		return childrenFeatures;
 	}
@@ -185,7 +163,8 @@ public class ApplicationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
-			case UidPackage.APPLICATION__HAS_ENTITIES:
+			case UidPackage.APPLICATION__HAS_VIEW:
+			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -210,43 +189,48 @@ public class ApplicationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
-				 UidFactory.eINSTANCE.createEntity()));
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
+				 UidFactory.eINSTANCE.createComponent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
-				 UidFactory.eINSTANCE.createState()));
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
+				 UidFactory.eINSTANCE.createView()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
 				 UidFactory.eINSTANCE.createButton()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
 				 UidFactory.eINSTANCE.createSwitch()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
 				 UidFactory.eINSTANCE.createRegulator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
 				 UidFactory.eINSTANCE.createMatrix()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
 				 UidFactory.eINSTANCE.createContainer()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_ENTITIES,
+				(UidPackage.Literals.APPLICATION__HAS_VIEW,
 				 UidFactory.eINSTANCE.createDisplay()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(UidPackage.Literals.APPLICATION__HAS_MEDIATOR,
+				 UidFactory.eINSTANCE.createMediator()));
 	}
 
 	/**

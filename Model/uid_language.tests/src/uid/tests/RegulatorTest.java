@@ -19,7 +19,7 @@ import uid.UidFactory;
  * </p>
  * @generated
  */
-public class RegulatorTest extends EntityTest {
+public class RegulatorTest extends ComponentTest {
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -113,13 +113,13 @@ public interface UidPackage extends EPackage {
 	int ENTITY_TRANSITION__ANIMATION_OUT_TIME = 4;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference.
+	 * The feature id for the '<em><b>Has Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_TRANSITION__ENTITIES = 5;
+	int ENTITY_TRANSITION__HAS_COMPONENT = 5;
 
 	/**
 	 * The number of structural features of the '<em>Entity Transition</em>' class.
@@ -159,16 +159,16 @@ public interface UidPackage extends EPackage {
 	int APPLICATION__HAS_ENTITY_TRANSITION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Has Entities</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Has View</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HAS_ENTITIES = 2;
+	int APPLICATION__HAS_VIEW = 2;
 
 	/**
-	 * The feature id for the '<em><b>Has Mediator</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Mediator</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -186,14 +186,14 @@ public interface UidPackage extends EPackage {
 	int APPLICATION_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link uid.impl.EntityImpl <em>Entity</em>}' class.
+	 * The meta object id for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uid.impl.EntityImpl
-	 * @see uid.impl.UidPackageImpl#getEntity()
+	 * @see uid.impl.ComponentImpl
+	 * @see uid.impl.UidPackageImpl#getComponent()
 	 * @generated
 	 */
-	int ENTITY = 3;
+	int COMPONENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -202,7 +202,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__NAME = 0;
+	int COMPONENT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -211,7 +211,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__VISIBLE = 1;
+	int COMPONENT__VISIBLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -220,7 +220,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__X = 2;
+	int COMPONENT__X = 2;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -229,26 +229,26 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__Y = 3;
+	int COMPONENT__Y = 3;
 
 	/**
-	 * The number of structural features of the '<em>Entity</em>' class.
+	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 4;
+	int COMPONENT_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link uid.impl.StateImpl <em>State</em>}' class.
+	 * The meta object id for the '{@link uid.impl.ViewImpl <em>View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uid.impl.StateImpl
-	 * @see uid.impl.UidPackageImpl#getState()
+	 * @see uid.impl.ViewImpl
+	 * @see uid.impl.UidPackageImpl#getView()
 	 * @generated
 	 */
-	int STATE = 2;
+	int VIEW = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -257,7 +257,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__NAME = ENTITY__NAME;
+	int VIEW__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -266,7 +266,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__VISIBLE = ENTITY__VISIBLE;
+	int VIEW__VISIBLE = COMPONENT__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -275,7 +275,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__X = ENTITY__X;
+	int VIEW__X = COMPONENT__X;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -284,7 +284,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__Y = ENTITY__Y;
+	int VIEW__Y = COMPONENT__Y;
 
 	/**
 	 * The feature id for the '<em><b>Image background</b></em>' attribute.
@@ -293,7 +293,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IMAGE_BACKGROUND = ENTITY_FEATURE_COUNT + 0;
+	int VIEW__IMAGE_BACKGROUND = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Has Regulator</b></em>' reference list.
@@ -302,7 +302,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__HAS_REGULATOR = ENTITY_FEATURE_COUNT + 1;
+	int VIEW__HAS_REGULATOR = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Matrix</b></em>' reference list.
@@ -311,7 +311,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__HAS_MATRIX = ENTITY_FEATURE_COUNT + 2;
+	int VIEW__HAS_MATRIX = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Has Button</b></em>' reference list.
@@ -320,7 +320,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__HAS_BUTTON = ENTITY_FEATURE_COUNT + 3;
+	int VIEW__HAS_BUTTON = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Has Display</b></em>' reference list.
@@ -329,7 +329,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__HAS_DISPLAY = ENTITY_FEATURE_COUNT + 4;
+	int VIEW__HAS_DISPLAY = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
@@ -338,16 +338,34 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__HAS_TRANSITION = ENTITY_FEATURE_COUNT + 5;
+	int VIEW__HAS_TRANSITION = COMPONENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of structural features of the '<em>State</em>' class.
+	 * The feature id for the '<em><b>Has Component</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
+	int VIEW__HAS_COMPONENT = COMPONENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Has Event Notification</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__HAS_EVENT_NOTIFICATION = COMPONENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of structural features of the '<em>View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.ButtonImpl <em>Button</em>}' class.
@@ -366,7 +384,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__NAME = ENTITY__NAME;
+	int BUTTON__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -375,7 +393,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__VISIBLE = ENTITY__VISIBLE;
+	int BUTTON__VISIBLE = COMPONENT__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -384,7 +402,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__X = ENTITY__X;
+	int BUTTON__X = COMPONENT__X;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -393,7 +411,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__Y = ENTITY__Y;
+	int BUTTON__Y = COMPONENT__Y;
 
 	/**
 	 * The feature id for the '<em><b>Image on</b></em>' attribute.
@@ -402,7 +420,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__IMAGE_ON = ENTITY_FEATURE_COUNT + 0;
+	int BUTTON__IMAGE_ON = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Image off</b></em>' attribute.
@@ -411,7 +429,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__IMAGE_OFF = ENTITY_FEATURE_COUNT + 1;
+	int BUTTON__IMAGE_OFF = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Image disabled</b></em>' attribute.
@@ -420,25 +438,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__IMAGE_DISABLED = ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Notification pressed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUTTON__NOTIFICATION_PRESSED = ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Notification released</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUTTON__NOTIFICATION_RELEASED = ENTITY_FEATURE_COUNT + 4;
+	int BUTTON__IMAGE_DISABLED = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Button</em>' class.
@@ -447,7 +447,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 5;
+	int BUTTON_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.SwitchImpl <em>Switch</em>}' class.
@@ -523,24 +523,6 @@ public interface UidPackage extends EPackage {
 	int SWITCH__IMAGE_DISABLED = BUTTON__IMAGE_DISABLED;
 
 	/**
-	 * The feature id for the '<em><b>Notification pressed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SWITCH__NOTIFICATION_PRESSED = BUTTON__NOTIFICATION_PRESSED;
-
-	/**
-	 * The feature id for the '<em><b>Notification released</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SWITCH__NOTIFICATION_RELEASED = BUTTON__NOTIFICATION_RELEASED;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,31 +560,13 @@ public interface UidPackage extends EPackage {
 	int MEDIATOR__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Has Entities</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Event Notification</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDIATOR__HAS_ENTITIES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Commands To Generate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIATOR__COMMANDS_TO_GENERATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Listeners</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIATOR__LISTENERS = 3;
+	int MEDIATOR__HAS_EVENT_NOTIFICATION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Mediator</em>' class.
@@ -611,7 +575,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDIATOR_FEATURE_COUNT = 4;
+	int MEDIATOR_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.RegulatorImpl <em>Regulator</em>}' class.
@@ -630,7 +594,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__NAME = ENTITY__NAME;
+	int REGULATOR__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -639,7 +603,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__VISIBLE = ENTITY__VISIBLE;
+	int REGULATOR__VISIBLE = COMPONENT__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -648,7 +612,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__X = ENTITY__X;
+	int REGULATOR__X = COMPONENT__X;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -657,7 +621,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__Y = ENTITY__Y;
+	int REGULATOR__Y = COMPONENT__Y;
 
 	/**
 	 * The feature id for the '<em><b>Min Value</b></em>' attribute.
@@ -666,7 +630,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__MIN_VALUE = ENTITY_FEATURE_COUNT + 0;
+	int REGULATOR__MIN_VALUE = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Value</b></em>' attribute.
@@ -675,25 +639,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__MAX_VALUE = ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Notification changed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGULATOR__NOTIFICATION_CHANGED = ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Notification double Tap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGULATOR__NOTIFICATION_DOUBLE_TAP = ENTITY_FEATURE_COUNT + 3;
+	int REGULATOR__MAX_VALUE = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -702,7 +648,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__VALUE = ENTITY_FEATURE_COUNT + 4;
+	int REGULATOR__VALUE = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -711,7 +657,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR__DEFAULT_VALUE = ENTITY_FEATURE_COUNT + 5;
+	int REGULATOR__DEFAULT_VALUE = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Regulator</em>' class.
@@ -720,7 +666,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGULATOR_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
+	int REGULATOR_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.MatrixImpl <em>Matrix</em>}' class.
@@ -739,7 +685,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__NAME = ENTITY__NAME;
+	int MATRIX__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -748,7 +694,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__VISIBLE = ENTITY__VISIBLE;
+	int MATRIX__VISIBLE = COMPONENT__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -757,7 +703,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__X = ENTITY__X;
+	int MATRIX__X = COMPONENT__X;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -766,7 +712,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__Y = ENTITY__Y;
+	int MATRIX__Y = COMPONENT__Y;
 
 	/**
 	 * The feature id for the '<em><b>Image background</b></em>' attribute.
@@ -775,7 +721,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__IMAGE_BACKGROUND = ENTITY_FEATURE_COUNT + 0;
+	int MATRIX__IMAGE_BACKGROUND = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Image tap</b></em>' attribute.
@@ -784,7 +730,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__IMAGE_TAP = ENTITY_FEATURE_COUNT + 1;
+	int MATRIX__IMAGE_TAP = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Image double Tap</b></em>' attribute.
@@ -793,43 +739,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__IMAGE_DOUBLE_TAP = ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Notification tap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATRIX__NOTIFICATION_TAP = ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Notification double Tap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATRIX__NOTIFICATION_DOUBLE_TAP = ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Notification move Single Touch</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH = ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Notification move Multi Touch</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH = ENTITY_FEATURE_COUNT + 6;
+	int MATRIX__IMAGE_DOUBLE_TAP = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -838,7 +748,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__VALUE = ENTITY_FEATURE_COUNT + 7;
+	int MATRIX__VALUE = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Matrix</em>' class.
@@ -847,7 +757,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 8;
+	int MATRIX_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.ContainerImpl <em>Container</em>}' class.
@@ -866,7 +776,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__NAME = ENTITY__NAME;
+	int CONTAINER__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -875,7 +785,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__VISIBLE = ENTITY__VISIBLE;
+	int CONTAINER__VISIBLE = COMPONENT__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -884,7 +794,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__X = ENTITY__X;
+	int CONTAINER__X = COMPONENT__X;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -893,7 +803,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__Y = ENTITY__Y;
+	int CONTAINER__Y = COMPONENT__Y;
 
 	/**
 	 * The number of structural features of the '<em>Container</em>' class.
@@ -902,7 +812,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+	int CONTAINER_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.DisplayImpl <em>Display</em>}' class.
@@ -921,7 +831,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISPLAY__NAME = ENTITY__NAME;
+	int DISPLAY__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -930,7 +840,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISPLAY__VISIBLE = ENTITY__VISIBLE;
+	int DISPLAY__VISIBLE = COMPONENT__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -939,7 +849,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISPLAY__X = ENTITY__X;
+	int DISPLAY__X = COMPONENT__X;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -948,7 +858,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISPLAY__Y = ENTITY__Y;
+	int DISPLAY__Y = COMPONENT__Y;
 
 	/**
 	 * The feature id for the '<em><b>Image background</b></em>' attribute.
@@ -957,7 +867,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISPLAY__IMAGE_BACKGROUND = ENTITY_FEATURE_COUNT + 0;
+	int DISPLAY__IMAGE_BACKGROUND = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -966,7 +876,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISPLAY__VALUE = ENTITY_FEATURE_COUNT + 1;
+	int DISPLAY__VALUE = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Display</em>' class.
@@ -975,7 +885,90 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISPLAY_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int DISPLAY_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link uid.impl.NotificationImpl <em>Notification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.NotificationImpl
+	 * @see uid.impl.UidPackageImpl#getNotification()
+	 * @generated
+	 */
+	int NOTIFICATION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATION__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Notification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link uid.impl.EventNotificationImpl <em>Event Notification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.EventNotificationImpl
+	 * @see uid.impl.UidPackageImpl#getEventNotification()
+	 * @generated
+	 */
+	int EVENT_NOTIFICATION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_NOTIFICATION__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Has Mediator</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_NOTIFICATION__HAS_MEDIATOR = 1;
+
+	/**
+	 * The feature id for the '<em><b>Has View</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_NOTIFICATION__HAS_VIEW = 2;
+
+	/**
+	 * The feature id for the '<em><b>Has Notification</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_NOTIFICATION__HAS_NOTIFICATION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Event Notification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_NOTIFICATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.
@@ -985,7 +978,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypesIn()
 	 * @generated
 	 */
-	int ETRANSITION_TYPES_IN = 11;
+	int ETRANSITION_TYPES_IN = 13;
 
 	/**
 	 * The meta object id for the '{@link uid.ETransitionTypeOut <em>ETransition Type Out</em>}' enum.
@@ -995,7 +988,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypeOut()
 	 * @generated
 	 */
-	int ETRANSITION_TYPE_OUT = 12;
+	int ETRANSITION_TYPE_OUT = 14;
 
 
 	/**
@@ -1064,15 +1057,15 @@ public interface UidPackage extends EPackage {
 	EAttribute getEntityTransition_AnimationOutTime();
 
 	/**
-	 * Returns the meta object for the reference '{@link uid.EntityTransition#getEntities <em>Entities</em>}'.
+	 * Returns the meta object for the reference '{@link uid.EntityTransition#getHasComponent <em>Has Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entities</em>'.
-	 * @see uid.EntityTransition#getEntities()
+	 * @return the meta object for the reference '<em>Has Component</em>'.
+	 * @see uid.EntityTransition#getHasComponent()
 	 * @see #getEntityTransition()
 	 * @generated
 	 */
-	EReference getEntityTransition_Entities();
+	EReference getEntityTransition_HasComponent();
 
 	/**
 	 * Returns the meta object for class '{@link uid.Application <em>Application</em>}'.
@@ -1107,21 +1100,21 @@ public interface UidPackage extends EPackage {
 	EReference getApplication_HasEntityTransition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasEntities <em>Has Entities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasView <em>Has View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Entities</em>'.
-	 * @see uid.Application#getHasEntities()
+	 * @return the meta object for the containment reference list '<em>Has View</em>'.
+	 * @see uid.Application#getHasView()
 	 * @see #getApplication()
 	 * @generated
 	 */
-	EReference getApplication_HasEntities();
+	EReference getApplication_HasView();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.Application#getHasMediator <em>Has Mediator</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasMediator <em>Has Mediator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Mediator</em>'.
+	 * @return the meta object for the containment reference list '<em>Has Mediator</em>'.
 	 * @see uid.Application#getHasMediator()
 	 * @see #getApplication()
 	 * @generated
@@ -1129,134 +1122,156 @@ public interface UidPackage extends EPackage {
 	EReference getApplication_HasMediator();
 
 	/**
-	 * Returns the meta object for class '{@link uid.State <em>State</em>}'.
+	 * Returns the meta object for class '{@link uid.View <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State</em>'.
-	 * @see uid.State
+	 * @return the meta object for class '<em>View</em>'.
+	 * @see uid.View
 	 * @generated
 	 */
-	EClass getState();
+	EClass getView();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uid.State#getImage_background <em>Image background</em>}'.
+	 * Returns the meta object for the attribute '{@link uid.View#getImage_background <em>Image background</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Image background</em>'.
-	 * @see uid.State#getImage_background()
-	 * @see #getState()
+	 * @see uid.View#getImage_background()
+	 * @see #getView()
 	 * @generated
 	 */
-	EAttribute getState_Image_background();
+	EAttribute getView_Image_background();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.State#getHasRegulator <em>Has Regulator</em>}'.
+	 * Returns the meta object for the reference list '{@link uid.View#getHasRegulator <em>Has Regulator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Has Regulator</em>'.
-	 * @see uid.State#getHasRegulator()
-	 * @see #getState()
+	 * @see uid.View#getHasRegulator()
+	 * @see #getView()
 	 * @generated
 	 */
-	EReference getState_HasRegulator();
+	EReference getView_HasRegulator();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.State#getHasMatrix <em>Has Matrix</em>}'.
+	 * Returns the meta object for the reference list '{@link uid.View#getHasMatrix <em>Has Matrix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Has Matrix</em>'.
-	 * @see uid.State#getHasMatrix()
-	 * @see #getState()
+	 * @see uid.View#getHasMatrix()
+	 * @see #getView()
 	 * @generated
 	 */
-	EReference getState_HasMatrix();
+	EReference getView_HasMatrix();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.State#getHasButton <em>Has Button</em>}'.
+	 * Returns the meta object for the reference list '{@link uid.View#getHasButton <em>Has Button</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Has Button</em>'.
-	 * @see uid.State#getHasButton()
-	 * @see #getState()
+	 * @see uid.View#getHasButton()
+	 * @see #getView()
 	 * @generated
 	 */
-	EReference getState_HasButton();
+	EReference getView_HasButton();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.State#getHasDisplay <em>Has Display</em>}'.
+	 * Returns the meta object for the reference list '{@link uid.View#getHasDisplay <em>Has Display</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Has Display</em>'.
-	 * @see uid.State#getHasDisplay()
-	 * @see #getState()
+	 * @see uid.View#getHasDisplay()
+	 * @see #getView()
 	 * @generated
 	 */
-	EReference getState_HasDisplay();
+	EReference getView_HasDisplay();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.State#getHasTransition <em>Has Transition</em>}'.
+	 * Returns the meta object for the reference list '{@link uid.View#getHasTransition <em>Has Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Has Transition</em>'.
-	 * @see uid.State#getHasTransition()
-	 * @see #getState()
+	 * @see uid.View#getHasTransition()
+	 * @see #getView()
 	 * @generated
 	 */
-	EReference getState_HasTransition();
+	EReference getView_HasTransition();
 
 	/**
-	 * Returns the meta object for class '{@link uid.Entity <em>Entity</em>}'.
+	 * Returns the meta object for the reference list '{@link uid.View#getHasComponent <em>Has Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity</em>'.
-	 * @see uid.Entity
+	 * @return the meta object for the reference list '<em>Has Component</em>'.
+	 * @see uid.View#getHasComponent()
+	 * @see #getView()
 	 * @generated
 	 */
-	EClass getEntity();
+	EReference getView_HasComponent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uid.Entity#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uid.View#getHasEventNotification <em>Has Event Notification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Event Notification</em>'.
+	 * @see uid.View#getHasEventNotification()
+	 * @see #getView()
+	 * @generated
+	 */
+	EReference getView_HasEventNotification();
+
+	/**
+	 * Returns the meta object for class '{@link uid.Component <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component</em>'.
+	 * @see uid.Component
+	 * @generated
+	 */
+	EClass getComponent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.Component#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uid.Entity#getName()
-	 * @see #getEntity()
+	 * @see uid.Component#getName()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EAttribute getEntity_Name();
+	EAttribute getComponent_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uid.Entity#isVisible <em>Visible</em>}'.
+	 * Returns the meta object for the attribute '{@link uid.Component#isVisible <em>Visible</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Visible</em>'.
-	 * @see uid.Entity#isVisible()
-	 * @see #getEntity()
+	 * @see uid.Component#isVisible()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EAttribute getEntity_Visible();
+	EAttribute getComponent_Visible();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uid.Entity#getX <em>X</em>}'.
+	 * Returns the meta object for the attribute '{@link uid.Component#getX <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>X</em>'.
-	 * @see uid.Entity#getX()
-	 * @see #getEntity()
+	 * @see uid.Component#getX()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EAttribute getEntity_X();
+	EAttribute getComponent_X();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uid.Entity#getY <em>Y</em>}'.
+	 * Returns the meta object for the attribute '{@link uid.Component#getY <em>Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Y</em>'.
-	 * @see uid.Entity#getY()
-	 * @see #getEntity()
+	 * @see uid.Component#getY()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EAttribute getEntity_Y();
+	EAttribute getComponent_Y();
 
 	/**
 	 * Returns the meta object for class '{@link uid.Switch <em>Switch</em>}'.
@@ -1301,37 +1316,15 @@ public interface UidPackage extends EPackage {
 	EAttribute getMediator_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.Mediator#getHasEntities <em>Has Entities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uid.Mediator#getHasEventNotification <em>Has Event Notification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Entities</em>'.
-	 * @see uid.Mediator#getHasEntities()
+	 * @return the meta object for the containment reference list '<em>Has Event Notification</em>'.
+	 * @see uid.Mediator#getHasEventNotification()
 	 * @see #getMediator()
 	 * @generated
 	 */
-	EReference getMediator_HasEntities();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Mediator#getCommandsToGenerate <em>Commands To Generate</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Commands To Generate</em>'.
-	 * @see uid.Mediator#getCommandsToGenerate()
-	 * @see #getMediator()
-	 * @generated
-	 */
-	EAttribute getMediator_CommandsToGenerate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Mediator#getListeners <em>Listeners</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Listeners</em>'.
-	 * @see uid.Mediator#getListeners()
-	 * @see #getMediator()
-	 * @generated
-	 */
-	EAttribute getMediator_Listeners();
+	EReference getMediator_HasEventNotification();
 
 	/**
 	 * Returns the meta object for class '{@link uid.Regulator <em>Regulator</em>}'.
@@ -1364,28 +1357,6 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRegulator_MaxValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Regulator#getNotification_changed <em>Notification changed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification changed</em>'.
-	 * @see uid.Regulator#getNotification_changed()
-	 * @see #getRegulator()
-	 * @generated
-	 */
-	EAttribute getRegulator_Notification_changed();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Regulator#getNotification_doubleTap <em>Notification double Tap</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification double Tap</em>'.
-	 * @see uid.Regulator#getNotification_doubleTap()
-	 * @see #getRegulator()
-	 * @generated
-	 */
-	EAttribute getRegulator_Notification_doubleTap();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uid.Regulator#getValue <em>Value</em>}'.
@@ -1451,50 +1422,6 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMatrix_Image_doubleTap();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Matrix#getNotification_tap <em>Notification tap</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification tap</em>'.
-	 * @see uid.Matrix#getNotification_tap()
-	 * @see #getMatrix()
-	 * @generated
-	 */
-	EAttribute getMatrix_Notification_tap();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Matrix#getNotification_doubleTap <em>Notification double Tap</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification double Tap</em>'.
-	 * @see uid.Matrix#getNotification_doubleTap()
-	 * @see #getMatrix()
-	 * @generated
-	 */
-	EAttribute getMatrix_Notification_doubleTap();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Matrix#getNotification_moveSingleTouch <em>Notification move Single Touch</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification move Single Touch</em>'.
-	 * @see uid.Matrix#getNotification_moveSingleTouch()
-	 * @see #getMatrix()
-	 * @generated
-	 */
-	EAttribute getMatrix_Notification_moveSingleTouch();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.Matrix#getNotification_moveMultiTouch <em>Notification move Multi Touch</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification move Multi Touch</em>'.
-	 * @see uid.Matrix#getNotification_moveMultiTouch()
-	 * @see #getMatrix()
-	 * @generated
-	 */
-	EAttribute getMatrix_Notification_moveMultiTouch();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uid.Matrix#getValue <em>Value</em>}'.
@@ -1593,26 +1520,79 @@ public interface UidPackage extends EPackage {
 	EAttribute getButton_Image_disabled();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uid.Button#getNotification_pressed <em>Notification pressed</em>}'.
+	 * Returns the meta object for class '{@link uid.Notification <em>Notification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification pressed</em>'.
-	 * @see uid.Button#getNotification_pressed()
-	 * @see #getButton()
+	 * @return the meta object for class '<em>Notification</em>'.
+	 * @see uid.Notification
 	 * @generated
 	 */
-	EAttribute getButton_Notification_pressed();
+	EClass getNotification();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uid.Button#getNotification_released <em>Notification released</em>}'.
+	 * Returns the meta object for the attribute '{@link uid.Notification#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Notification released</em>'.
-	 * @see uid.Button#getNotification_released()
-	 * @see #getButton()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uid.Notification#getName()
+	 * @see #getNotification()
 	 * @generated
 	 */
-	EAttribute getButton_Notification_released();
+	EAttribute getNotification_Name();
+
+	/**
+	 * Returns the meta object for class '{@link uid.EventNotification <em>Event Notification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Event Notification</em>'.
+	 * @see uid.EventNotification
+	 * @generated
+	 */
+	EClass getEventNotification();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.EventNotification#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uid.EventNotification#getName()
+	 * @see #getEventNotification()
+	 * @generated
+	 */
+	EAttribute getEventNotification_Name();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uid.EventNotification#getHasMediator <em>Has Mediator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Has Mediator</em>'.
+	 * @see uid.EventNotification#getHasMediator()
+	 * @see #getEventNotification()
+	 * @generated
+	 */
+	EReference getEventNotification_HasMediator();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uid.EventNotification#getHasView <em>Has View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Has View</em>'.
+	 * @see uid.EventNotification#getHasView()
+	 * @see #getEventNotification()
+	 * @generated
+	 */
+	EReference getEventNotification_HasView();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uid.EventNotification#getHasNotification <em>Has Notification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Has Notification</em>'.
+	 * @see uid.EventNotification#getHasNotification()
+	 * @see #getEventNotification()
+	 * @generated
+	 */
+	EReference getEventNotification_HasNotification();
 
 	/**
 	 * Returns the meta object for enum '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}'.
@@ -1707,12 +1687,12 @@ public interface UidPackage extends EPackage {
 		EAttribute ENTITY_TRANSITION__ANIMATION_OUT_TIME = eINSTANCE.getEntityTransition_AnimationOutTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Entities</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Has Component</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTITY_TRANSITION__ENTITIES = eINSTANCE.getEntityTransition_Entities();
+		EReference ENTITY_TRANSITION__HAS_COMPONENT = eINSTANCE.getEntityTransition_HasComponent();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.ApplicationImpl <em>Application</em>}' class.
@@ -1741,15 +1721,15 @@ public interface UidPackage extends EPackage {
 		EReference APPLICATION__HAS_ENTITY_TRANSITION = eINSTANCE.getApplication_HasEntityTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Entities</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Has View</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APPLICATION__HAS_ENTITIES = eINSTANCE.getApplication_HasEntities();
+		EReference APPLICATION__HAS_VIEW = eINSTANCE.getApplication_HasView();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Mediator</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Has Mediator</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1757,14 +1737,14 @@ public interface UidPackage extends EPackage {
 		EReference APPLICATION__HAS_MEDIATOR = eINSTANCE.getApplication_HasMediator();
 
 		/**
-		 * The meta object literal for the '{@link uid.impl.StateImpl <em>State</em>}' class.
+		 * The meta object literal for the '{@link uid.impl.ViewImpl <em>View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uid.impl.StateImpl
-		 * @see uid.impl.UidPackageImpl#getState()
+		 * @see uid.impl.ViewImpl
+		 * @see uid.impl.UidPackageImpl#getView()
 		 * @generated
 		 */
-		EClass STATE = eINSTANCE.getState();
+		EClass VIEW = eINSTANCE.getView();
 
 		/**
 		 * The meta object literal for the '<em><b>Image background</b></em>' attribute feature.
@@ -1772,7 +1752,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATE__IMAGE_BACKGROUND = eINSTANCE.getState_Image_background();
+		EAttribute VIEW__IMAGE_BACKGROUND = eINSTANCE.getView_Image_background();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Regulator</b></em>' reference list feature.
@@ -1780,7 +1760,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__HAS_REGULATOR = eINSTANCE.getState_HasRegulator();
+		EReference VIEW__HAS_REGULATOR = eINSTANCE.getView_HasRegulator();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Matrix</b></em>' reference list feature.
@@ -1788,7 +1768,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__HAS_MATRIX = eINSTANCE.getState_HasMatrix();
+		EReference VIEW__HAS_MATRIX = eINSTANCE.getView_HasMatrix();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Button</b></em>' reference list feature.
@@ -1796,7 +1776,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__HAS_BUTTON = eINSTANCE.getState_HasButton();
+		EReference VIEW__HAS_BUTTON = eINSTANCE.getView_HasButton();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Display</b></em>' reference list feature.
@@ -1804,7 +1784,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__HAS_DISPLAY = eINSTANCE.getState_HasDisplay();
+		EReference VIEW__HAS_DISPLAY = eINSTANCE.getView_HasDisplay();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Transition</b></em>' reference list feature.
@@ -1812,17 +1792,33 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__HAS_TRANSITION = eINSTANCE.getState_HasTransition();
+		EReference VIEW__HAS_TRANSITION = eINSTANCE.getView_HasTransition();
 
 		/**
-		 * The meta object literal for the '{@link uid.impl.EntityImpl <em>Entity</em>}' class.
+		 * The meta object literal for the '<em><b>Has Component</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uid.impl.EntityImpl
-		 * @see uid.impl.UidPackageImpl#getEntity()
 		 * @generated
 		 */
-		EClass ENTITY = eINSTANCE.getEntity();
+		EReference VIEW__HAS_COMPONENT = eINSTANCE.getView_HasComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Event Notification</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIEW__HAS_EVENT_NOTIFICATION = eINSTANCE.getView_HasEventNotification();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.ComponentImpl
+		 * @see uid.impl.UidPackageImpl#getComponent()
+		 * @generated
+		 */
+		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1830,7 +1826,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
+		EAttribute COMPONENT__NAME = eINSTANCE.getComponent_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Visible</b></em>' attribute feature.
@@ -1838,7 +1834,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY__VISIBLE = eINSTANCE.getEntity_Visible();
+		EAttribute COMPONENT__VISIBLE = eINSTANCE.getComponent_Visible();
 
 		/**
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
@@ -1846,7 +1842,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY__X = eINSTANCE.getEntity_X();
+		EAttribute COMPONENT__X = eINSTANCE.getComponent_X();
 
 		/**
 		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
@@ -1854,7 +1850,7 @@ public interface UidPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY__Y = eINSTANCE.getEntity_Y();
+		EAttribute COMPONENT__Y = eINSTANCE.getComponent_Y();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.SwitchImpl <em>Switch</em>}' class.
@@ -1893,28 +1889,12 @@ public interface UidPackage extends EPackage {
 		EAttribute MEDIATOR__NAME = eINSTANCE.getMediator_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Entities</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Has Event Notification</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEDIATOR__HAS_ENTITIES = eINSTANCE.getMediator_HasEntities();
-
-		/**
-		 * The meta object literal for the '<em><b>Commands To Generate</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MEDIATOR__COMMANDS_TO_GENERATE = eINSTANCE.getMediator_CommandsToGenerate();
-
-		/**
-		 * The meta object literal for the '<em><b>Listeners</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MEDIATOR__LISTENERS = eINSTANCE.getMediator_Listeners();
+		EReference MEDIATOR__HAS_EVENT_NOTIFICATION = eINSTANCE.getMediator_HasEventNotification();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.RegulatorImpl <em>Regulator</em>}' class.
@@ -1941,22 +1921,6 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REGULATOR__MAX_VALUE = eINSTANCE.getRegulator_MaxValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Notification changed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGULATOR__NOTIFICATION_CHANGED = eINSTANCE.getRegulator_Notification_changed();
-
-		/**
-		 * The meta object literal for the '<em><b>Notification double Tap</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGULATOR__NOTIFICATION_DOUBLE_TAP = eINSTANCE.getRegulator_Notification_doubleTap();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -2007,38 +1971,6 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MATRIX__IMAGE_DOUBLE_TAP = eINSTANCE.getMatrix_Image_doubleTap();
-
-		/**
-		 * The meta object literal for the '<em><b>Notification tap</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATRIX__NOTIFICATION_TAP = eINSTANCE.getMatrix_Notification_tap();
-
-		/**
-		 * The meta object literal for the '<em><b>Notification double Tap</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATRIX__NOTIFICATION_DOUBLE_TAP = eINSTANCE.getMatrix_Notification_doubleTap();
-
-		/**
-		 * The meta object literal for the '<em><b>Notification move Single Touch</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH = eINSTANCE.getMatrix_Notification_moveSingleTouch();
-
-		/**
-		 * The meta object literal for the '<em><b>Notification move Multi Touch</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH = eINSTANCE.getMatrix_Notification_moveMultiTouch();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -2119,20 +2051,64 @@ public interface UidPackage extends EPackage {
 		EAttribute BUTTON__IMAGE_DISABLED = eINSTANCE.getButton_Image_disabled();
 
 		/**
-		 * The meta object literal for the '<em><b>Notification pressed</b></em>' attribute feature.
+		 * The meta object literal for the '{@link uid.impl.NotificationImpl <em>Notification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see uid.impl.NotificationImpl
+		 * @see uid.impl.UidPackageImpl#getNotification()
 		 * @generated
 		 */
-		EAttribute BUTTON__NOTIFICATION_PRESSED = eINSTANCE.getButton_Notification_pressed();
+		EClass NOTIFICATION = eINSTANCE.getNotification();
 
 		/**
-		 * The meta object literal for the '<em><b>Notification released</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUTTON__NOTIFICATION_RELEASED = eINSTANCE.getButton_Notification_released();
+		EAttribute NOTIFICATION__NAME = eINSTANCE.getNotification_Name();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.EventNotificationImpl <em>Event Notification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.EventNotificationImpl
+		 * @see uid.impl.UidPackageImpl#getEventNotification()
+		 * @generated
+		 */
+		EClass EVENT_NOTIFICATION = eINSTANCE.getEventNotification();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT_NOTIFICATION__NAME = eINSTANCE.getEventNotification_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Mediator</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_NOTIFICATION__HAS_MEDIATOR = eINSTANCE.getEventNotification_HasMediator();
+
+		/**
+		 * The meta object literal for the '<em><b>Has View</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_NOTIFICATION__HAS_VIEW = eINSTANCE.getEventNotification_HasView();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Notification</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_NOTIFICATION__HAS_NOTIFICATION = eINSTANCE.getEventNotification_HasNotification();
 
 		/**
 		 * The meta object literal for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.

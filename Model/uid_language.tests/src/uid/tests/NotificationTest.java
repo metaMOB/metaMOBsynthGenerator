@@ -6,24 +6,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import uid.Entity;
+import uid.Notification;
 import uid.UidFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Entity</b></em>'.
+ * A test case for the model object '<em><b>Notification</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityTest extends TestCase {
+public class NotificationTest extends TestCase {
 
 	/**
-	 * The fixture for this Entity test case.
+	 * The fixture for this Notification test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Entity fixture = null;
+	protected Notification fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class EntityTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(EntityTest.class);
+		TestRunner.run(NotificationTest.class);
 	}
 
 	/**
-	 * Constructs a new Entity test case with the given name.
+	 * Constructs a new Notification test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityTest(String name) {
+	public NotificationTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Entity test case.
+	 * Sets the fixture for this Notification test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Entity fixture) {
+	protected void setFixture(Notification fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Entity test case.
+	 * Returns the fixture for this Notification test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Entity getFixture() {
+	protected Notification getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class EntityTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(UidFactory.eINSTANCE.createEntity());
+		setFixture(UidFactory.eINSTANCE.createNotification());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class EntityTest extends TestCase {
 		setFixture(null);
 	}
 
-} //EntityTest
+} //NotificationTest

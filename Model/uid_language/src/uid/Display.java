@@ -20,7 +20,7 @@ package uid;
  * @model
  * @generated
  */
-public interface Display extends Entity {
+public interface Display extends Component {
 	/**
 	 * Returns the value of the '<em><b>Image background</b></em>' attribute.
 	 * <!-- begin-user-doc -->

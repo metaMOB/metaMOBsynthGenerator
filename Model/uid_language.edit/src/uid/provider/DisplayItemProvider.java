@@ -29,7 +29,7 @@ import uid.UidPackage;
  * @generated
  */
 public class DisplayItemProvider
-	extends EntityItemProvider
+	extends ComponentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

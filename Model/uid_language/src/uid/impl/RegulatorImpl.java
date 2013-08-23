@@ -20,8 +20,6 @@ import uid.UidPackage;
  * <ul>
  *   <li>{@link uid.impl.RegulatorImpl#getMinValue <em>Min Value</em>}</li>
  *   <li>{@link uid.impl.RegulatorImpl#getMaxValue <em>Max Value</em>}</li>
- *   <li>{@link uid.impl.RegulatorImpl#getNotification_changed <em>Notification changed</em>}</li>
- *   <li>{@link uid.impl.RegulatorImpl#getNotification_doubleTap <em>Notification double Tap</em>}</li>
  *   <li>{@link uid.impl.RegulatorImpl#getValue <em>Value</em>}</li>
  *   <li>{@link uid.impl.RegulatorImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
@@ -29,7 +27,7 @@ import uid.UidPackage;
  *
  * @generated
  */
-public class RegulatorImpl extends EntityImpl implements Regulator {
+public class RegulatorImpl extends ComponentImpl implements Regulator {
 	/**
 	 * The default value of the '{@link #getMinValue() <em>Min Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -69,46 +67,6 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * @ordered
 	 */
 	protected double maxValue = MAX_VALUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_changed() <em>Notification changed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_changed()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_CHANGED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_changed() <em>Notification changed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_changed()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_changed = NOTIFICATION_CHANGED_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_doubleTap() <em>Notification double Tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_doubleTap()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_DOUBLE_TAP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_doubleTap() <em>Notification double Tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_doubleTap()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_doubleTap = NOTIFICATION_DOUBLE_TAP_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -216,48 +174,6 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNotification_changed() {
-		return notification_changed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_changed(String newNotification_changed) {
-		String oldNotification_changed = notification_changed;
-		notification_changed = newNotification_changed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.REGULATOR__NOTIFICATION_CHANGED, oldNotification_changed, notification_changed));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNotification_doubleTap() {
-		return notification_doubleTap;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_doubleTap(String newNotification_doubleTap) {
-		String oldNotification_doubleTap = notification_doubleTap;
-		notification_doubleTap = newNotification_doubleTap;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.REGULATOR__NOTIFICATION_DOUBLE_TAP, oldNotification_doubleTap, notification_doubleTap));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public double getValue() {
 		return value;
 	}
@@ -318,10 +234,6 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 				return getMinValue();
 			case UidPackage.REGULATOR__MAX_VALUE:
 				return getMaxValue();
-			case UidPackage.REGULATOR__NOTIFICATION_CHANGED:
-				return getNotification_changed();
-			case UidPackage.REGULATOR__NOTIFICATION_DOUBLE_TAP:
-				return getNotification_doubleTap();
 			case UidPackage.REGULATOR__VALUE:
 				return getValue();
 			case UidPackage.REGULATOR__DEFAULT_VALUE:
@@ -343,12 +255,6 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 				return;
 			case UidPackage.REGULATOR__MAX_VALUE:
 				setMaxValue((Double)newValue);
-				return;
-			case UidPackage.REGULATOR__NOTIFICATION_CHANGED:
-				setNotification_changed((String)newValue);
-				return;
-			case UidPackage.REGULATOR__NOTIFICATION_DOUBLE_TAP:
-				setNotification_doubleTap((String)newValue);
 				return;
 			case UidPackage.REGULATOR__VALUE:
 				setValue((Double)newValue);
@@ -374,12 +280,6 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 			case UidPackage.REGULATOR__MAX_VALUE:
 				setMaxValue(MAX_VALUE_EDEFAULT);
 				return;
-			case UidPackage.REGULATOR__NOTIFICATION_CHANGED:
-				setNotification_changed(NOTIFICATION_CHANGED_EDEFAULT);
-				return;
-			case UidPackage.REGULATOR__NOTIFICATION_DOUBLE_TAP:
-				setNotification_doubleTap(NOTIFICATION_DOUBLE_TAP_EDEFAULT);
-				return;
 			case UidPackage.REGULATOR__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
@@ -402,10 +302,6 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 				return minValue != MIN_VALUE_EDEFAULT;
 			case UidPackage.REGULATOR__MAX_VALUE:
 				return maxValue != MAX_VALUE_EDEFAULT;
-			case UidPackage.REGULATOR__NOTIFICATION_CHANGED:
-				return NOTIFICATION_CHANGED_EDEFAULT == null ? notification_changed != null : !NOTIFICATION_CHANGED_EDEFAULT.equals(notification_changed);
-			case UidPackage.REGULATOR__NOTIFICATION_DOUBLE_TAP:
-				return NOTIFICATION_DOUBLE_TAP_EDEFAULT == null ? notification_doubleTap != null : !NOTIFICATION_DOUBLE_TAP_EDEFAULT.equals(notification_doubleTap);
 			case UidPackage.REGULATOR__VALUE:
 				return value != VALUE_EDEFAULT;
 			case UidPackage.REGULATOR__DEFAULT_VALUE:
@@ -428,10 +324,6 @@ public class RegulatorImpl extends EntityImpl implements Regulator {
 		result.append(minValue);
 		result.append(", maxValue: ");
 		result.append(maxValue);
-		result.append(", notification_changed: ");
-		result.append(notification_changed);
-		result.append(", notification_doubleTap: ");
-		result.append(notification_doubleTap);
 		result.append(", value: ");
 		result.append(value);
 		result.append(", defaultValue: ");

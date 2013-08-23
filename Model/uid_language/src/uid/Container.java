@@ -13,5 +13,5 @@ package uid;
  * @model
  * @generated
  */
-public interface Container extends Entity {
+public interface Container extends Component {
 } // Container

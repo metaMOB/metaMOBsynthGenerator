@@ -78,16 +78,16 @@ public class UidSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UidPackage.STATE: {
-				State state = (State)theEObject;
-				T result = caseState(state);
-				if (result == null) result = caseEntity(state);
+			case UidPackage.VIEW: {
+				View view = (View)theEObject;
+				T result = caseView(view);
+				if (result == null) result = caseComponent(view);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UidPackage.ENTITY: {
-				Entity entity = (Entity)theEObject;
-				T result = caseEntity(entity);
+			case UidPackage.COMPONENT: {
+				Component component = (Component)theEObject;
+				T result = caseComponent(component);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -95,7 +95,7 @@ public class UidSwitch<T> extends Switch<T> {
 				uid.Switch switch_ = (uid.Switch)theEObject;
 				T result = caseSwitch(switch_);
 				if (result == null) result = caseButton(switch_);
-				if (result == null) result = caseEntity(switch_);
+				if (result == null) result = caseComponent(switch_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,35 +108,47 @@ public class UidSwitch<T> extends Switch<T> {
 			case UidPackage.REGULATOR: {
 				Regulator regulator = (Regulator)theEObject;
 				T result = caseRegulator(regulator);
-				if (result == null) result = caseEntity(regulator);
+				if (result == null) result = caseComponent(regulator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case UidPackage.MATRIX: {
 				Matrix matrix = (Matrix)theEObject;
 				T result = caseMatrix(matrix);
-				if (result == null) result = caseEntity(matrix);
+				if (result == null) result = caseComponent(matrix);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case UidPackage.CONTAINER: {
 				Container container = (Container)theEObject;
 				T result = caseContainer(container);
-				if (result == null) result = caseEntity(container);
+				if (result == null) result = caseComponent(container);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case UidPackage.DISPLAY: {
 				Display display = (Display)theEObject;
 				T result = caseDisplay(display);
-				if (result == null) result = caseEntity(display);
+				if (result == null) result = caseComponent(display);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case UidPackage.BUTTON: {
 				Button button = (Button)theEObject;
 				T result = caseButton(button);
-				if (result == null) result = caseEntity(button);
+				if (result == null) result = caseComponent(button);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.NOTIFICATION: {
+				Notification notification = (Notification)theEObject;
+				T result = caseNotification(notification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.EVENT_NOTIFICATION: {
+				EventNotification eventNotification = (EventNotification)theEObject;
+				T result = caseEventNotification(eventNotification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -175,32 +187,32 @@ public class UidSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>State</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>View</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>State</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>View</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseState(State object) {
+	public T caseView(View object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntity(Entity object) {
+	public T caseComponent(Component object) {
 		return null;
 	}
 
@@ -306,6 +318,36 @@ public class UidSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseButton(Button object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Notification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Notification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNotification(Notification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Notification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Notification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventNotification(EventNotification object) {
 		return null;
 	}
 

@@ -4,16 +4,16 @@ package uid.tests;
 
 import junit.textui.TestRunner;
 
-import uid.State;
 import uid.UidFactory;
+import uid.View;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>State</b></em>'.
+ * A test case for the model object '<em><b>View</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class StateTest extends EntityTest {
+public class ViewTest extends ComponentTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class StateTest extends EntityTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(StateTest.class);
+		TestRunner.run(ViewTest.class);
 	}
 
 	/**
-	 * Constructs a new State test case with the given name.
+	 * Constructs a new View test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StateTest(String name) {
+	public ViewTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this State test case.
+	 * Returns the fixture for this View test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected State getFixture() {
-		return (State)fixture;
+	protected View getFixture() {
+		return (View)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class StateTest extends EntityTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(UidFactory.eINSTANCE.createState());
+		setFixture(UidFactory.eINSTANCE.createView());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class StateTest extends EntityTest {
 		setFixture(null);
 	}
 
-} //StateTest
+} //ViewTest

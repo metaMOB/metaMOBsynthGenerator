@@ -21,17 +21,13 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.MatrixImpl#getImage_background <em>Image background</em>}</li>
  *   <li>{@link uid.impl.MatrixImpl#getImage_tap <em>Image tap</em>}</li>
  *   <li>{@link uid.impl.MatrixImpl#getImage_doubleTap <em>Image double Tap</em>}</li>
- *   <li>{@link uid.impl.MatrixImpl#getNotification_tap <em>Notification tap</em>}</li>
- *   <li>{@link uid.impl.MatrixImpl#getNotification_doubleTap <em>Notification double Tap</em>}</li>
- *   <li>{@link uid.impl.MatrixImpl#getNotification_moveSingleTouch <em>Notification move Single Touch</em>}</li>
- *   <li>{@link uid.impl.MatrixImpl#getNotification_moveMultiTouch <em>Notification move Multi Touch</em>}</li>
  *   <li>{@link uid.impl.MatrixImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MatrixImpl extends EntityImpl implements Matrix {
+public class MatrixImpl extends ComponentImpl implements Matrix {
 	/**
 	 * The default value of the '{@link #getImage_background() <em>Image background</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,86 +87,6 @@ public class MatrixImpl extends EntityImpl implements Matrix {
 	 * @ordered
 	 */
 	protected String image_doubleTap = IMAGE_DOUBLE_TAP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_tap() <em>Notification tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_tap()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_TAP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_tap() <em>Notification tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_tap()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_tap = NOTIFICATION_TAP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_doubleTap() <em>Notification double Tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_doubleTap()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_DOUBLE_TAP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_doubleTap() <em>Notification double Tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_doubleTap()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_doubleTap = NOTIFICATION_DOUBLE_TAP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_moveSingleTouch() <em>Notification move Single Touch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_moveSingleTouch()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_MOVE_SINGLE_TOUCH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_moveSingleTouch() <em>Notification move Single Touch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_moveSingleTouch()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_moveSingleTouch = NOTIFICATION_MOVE_SINGLE_TOUCH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNotification_moveMultiTouch() <em>Notification move Multi Touch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_moveMultiTouch()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTIFICATION_MOVE_MULTI_TOUCH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNotification_moveMultiTouch() <em>Notification move Multi Touch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNotification_moveMultiTouch()
-	 * @generated
-	 * @ordered
-	 */
-	protected String notification_moveMultiTouch = NOTIFICATION_MOVE_MULTI_TOUCH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -279,90 +195,6 @@ public class MatrixImpl extends EntityImpl implements Matrix {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNotification_tap() {
-		return notification_tap;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_tap(String newNotification_tap) {
-		String oldNotification_tap = notification_tap;
-		notification_tap = newNotification_tap;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.MATRIX__NOTIFICATION_TAP, oldNotification_tap, notification_tap));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNotification_doubleTap() {
-		return notification_doubleTap;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_doubleTap(String newNotification_doubleTap) {
-		String oldNotification_doubleTap = notification_doubleTap;
-		notification_doubleTap = newNotification_doubleTap;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.MATRIX__NOTIFICATION_DOUBLE_TAP, oldNotification_doubleTap, notification_doubleTap));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNotification_moveSingleTouch() {
-		return notification_moveSingleTouch;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_moveSingleTouch(String newNotification_moveSingleTouch) {
-		String oldNotification_moveSingleTouch = notification_moveSingleTouch;
-		notification_moveSingleTouch = newNotification_moveSingleTouch;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH, oldNotification_moveSingleTouch, notification_moveSingleTouch));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNotification_moveMultiTouch() {
-		return notification_moveMultiTouch;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNotification_moveMultiTouch(String newNotification_moveMultiTouch) {
-		String oldNotification_moveMultiTouch = notification_moveMultiTouch;
-		notification_moveMultiTouch = newNotification_moveMultiTouch;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH, oldNotification_moveMultiTouch, notification_moveMultiTouch));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getValue() {
 		return value;
 	}
@@ -393,14 +225,6 @@ public class MatrixImpl extends EntityImpl implements Matrix {
 				return getImage_tap();
 			case UidPackage.MATRIX__IMAGE_DOUBLE_TAP:
 				return getImage_doubleTap();
-			case UidPackage.MATRIX__NOTIFICATION_TAP:
-				return getNotification_tap();
-			case UidPackage.MATRIX__NOTIFICATION_DOUBLE_TAP:
-				return getNotification_doubleTap();
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH:
-				return getNotification_moveSingleTouch();
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH:
-				return getNotification_moveMultiTouch();
 			case UidPackage.MATRIX__VALUE:
 				return getValue();
 		}
@@ -423,18 +247,6 @@ public class MatrixImpl extends EntityImpl implements Matrix {
 				return;
 			case UidPackage.MATRIX__IMAGE_DOUBLE_TAP:
 				setImage_doubleTap((String)newValue);
-				return;
-			case UidPackage.MATRIX__NOTIFICATION_TAP:
-				setNotification_tap((String)newValue);
-				return;
-			case UidPackage.MATRIX__NOTIFICATION_DOUBLE_TAP:
-				setNotification_doubleTap((String)newValue);
-				return;
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH:
-				setNotification_moveSingleTouch((String)newValue);
-				return;
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH:
-				setNotification_moveMultiTouch((String)newValue);
 				return;
 			case UidPackage.MATRIX__VALUE:
 				setValue((String)newValue);
@@ -460,18 +272,6 @@ public class MatrixImpl extends EntityImpl implements Matrix {
 			case UidPackage.MATRIX__IMAGE_DOUBLE_TAP:
 				setImage_doubleTap(IMAGE_DOUBLE_TAP_EDEFAULT);
 				return;
-			case UidPackage.MATRIX__NOTIFICATION_TAP:
-				setNotification_tap(NOTIFICATION_TAP_EDEFAULT);
-				return;
-			case UidPackage.MATRIX__NOTIFICATION_DOUBLE_TAP:
-				setNotification_doubleTap(NOTIFICATION_DOUBLE_TAP_EDEFAULT);
-				return;
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH:
-				setNotification_moveSingleTouch(NOTIFICATION_MOVE_SINGLE_TOUCH_EDEFAULT);
-				return;
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH:
-				setNotification_moveMultiTouch(NOTIFICATION_MOVE_MULTI_TOUCH_EDEFAULT);
-				return;
 			case UidPackage.MATRIX__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
@@ -493,14 +293,6 @@ public class MatrixImpl extends EntityImpl implements Matrix {
 				return IMAGE_TAP_EDEFAULT == null ? image_tap != null : !IMAGE_TAP_EDEFAULT.equals(image_tap);
 			case UidPackage.MATRIX__IMAGE_DOUBLE_TAP:
 				return IMAGE_DOUBLE_TAP_EDEFAULT == null ? image_doubleTap != null : !IMAGE_DOUBLE_TAP_EDEFAULT.equals(image_doubleTap);
-			case UidPackage.MATRIX__NOTIFICATION_TAP:
-				return NOTIFICATION_TAP_EDEFAULT == null ? notification_tap != null : !NOTIFICATION_TAP_EDEFAULT.equals(notification_tap);
-			case UidPackage.MATRIX__NOTIFICATION_DOUBLE_TAP:
-				return NOTIFICATION_DOUBLE_TAP_EDEFAULT == null ? notification_doubleTap != null : !NOTIFICATION_DOUBLE_TAP_EDEFAULT.equals(notification_doubleTap);
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH:
-				return NOTIFICATION_MOVE_SINGLE_TOUCH_EDEFAULT == null ? notification_moveSingleTouch != null : !NOTIFICATION_MOVE_SINGLE_TOUCH_EDEFAULT.equals(notification_moveSingleTouch);
-			case UidPackage.MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH:
-				return NOTIFICATION_MOVE_MULTI_TOUCH_EDEFAULT == null ? notification_moveMultiTouch != null : !NOTIFICATION_MOVE_MULTI_TOUCH_EDEFAULT.equals(notification_moveMultiTouch);
 			case UidPackage.MATRIX__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
@@ -523,14 +315,6 @@ public class MatrixImpl extends EntityImpl implements Matrix {
 		result.append(image_tap);
 		result.append(", image_doubleTap: ");
 		result.append(image_doubleTap);
-		result.append(", notification_tap: ");
-		result.append(notification_tap);
-		result.append(", notification_doubleTap: ");
-		result.append(notification_doubleTap);
-		result.append(", notification_moveSingleTouch: ");
-		result.append(notification_moveSingleTouch);
-		result.append(", notification_moveMultiTouch: ");
-		result.append(notification_moveMultiTouch);
 		result.append(", value: ");
 		result.append(value);
 		result.append(')');

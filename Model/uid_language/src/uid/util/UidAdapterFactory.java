@@ -76,12 +76,12 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 				return createApplicationAdapter();
 			}
 			@Override
-			public Adapter caseState(State object) {
-				return createStateAdapter();
+			public Adapter caseView(View object) {
+				return createViewAdapter();
 			}
 			@Override
-			public Adapter caseEntity(Entity object) {
-				return createEntityAdapter();
+			public Adapter caseComponent(Component object) {
+				return createComponentAdapter();
 			}
 			@Override
 			public Adapter caseSwitch(Switch object) {
@@ -110,6 +110,14 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseButton(Button object) {
 				return createButtonAdapter();
+			}
+			@Override
+			public Adapter caseNotification(Notification object) {
+				return createNotificationAdapter();
+			}
+			@Override
+			public Adapter caseEventNotification(EventNotification object) {
+				return createEventNotificationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -160,30 +168,30 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uid.State <em>State</em>}'.
+	 * Creates a new adapter for an object of class '{@link uid.View <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uid.State
+	 * @see uid.View
 	 * @generated
 	 */
-	public Adapter createStateAdapter() {
+	public Adapter createViewAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uid.Entity <em>Entity</em>}'.
+	 * Creates a new adapter for an object of class '{@link uid.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uid.Entity
+	 * @see uid.Component
 	 * @generated
 	 */
-	public Adapter createEntityAdapter() {
+	public Adapter createComponentAdapter() {
 		return null;
 	}
 
@@ -282,6 +290,34 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createButtonAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.Notification <em>Notification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.Notification
+	 * @generated
+	 */
+	public Adapter createNotificationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.EventNotification <em>Event Notification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.EventNotification
+	 * @generated
+	 */
+	public Adapter createEventNotificationAdapter() {
 		return null;
 	}
 

@@ -29,7 +29,7 @@ import uid.UidPackage;
  * @generated
  */
 public class RegulatorItemProvider
-	extends EntityItemProvider
+	extends ComponentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -59,8 +59,6 @@ public class RegulatorItemProvider
 
 			addMinValuePropertyDescriptor(object);
 			addMaxValuePropertyDescriptor(object);
-			addNotification_changedPropertyDescriptor(object);
-			addNotification_doubleTapPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 		}
@@ -107,50 +105,6 @@ public class RegulatorItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Notification changed feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_changedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Regulator_notification_changed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Regulator_notification_changed_feature", "_UI_Regulator_type"),
-				 UidPackage.Literals.REGULATOR__NOTIFICATION_CHANGED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Notification double Tap feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNotification_doubleTapPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Regulator_notification_doubleTap_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Regulator_notification_doubleTap_feature", "_UI_Regulator_type"),
-				 UidPackage.Literals.REGULATOR__NOTIFICATION_DOUBLE_TAP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -238,8 +192,6 @@ public class RegulatorItemProvider
 		switch (notification.getFeatureID(Regulator.class)) {
 			case UidPackage.REGULATOR__MIN_VALUE:
 			case UidPackage.REGULATOR__MAX_VALUE:
-			case UidPackage.REGULATOR__NOTIFICATION_CHANGED:
-			case UidPackage.REGULATOR__NOTIFICATION_DOUBLE_TAP:
 			case UidPackage.REGULATOR__VALUE:
 			case UidPackage.REGULATOR__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

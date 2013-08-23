@@ -14,10 +14,6 @@ package uid;
  *   <li>{@link uid.Matrix#getImage_background <em>Image background</em>}</li>
  *   <li>{@link uid.Matrix#getImage_tap <em>Image tap</em>}</li>
  *   <li>{@link uid.Matrix#getImage_doubleTap <em>Image double Tap</em>}</li>
- *   <li>{@link uid.Matrix#getNotification_tap <em>Notification tap</em>}</li>
- *   <li>{@link uid.Matrix#getNotification_doubleTap <em>Notification double Tap</em>}</li>
- *   <li>{@link uid.Matrix#getNotification_moveSingleTouch <em>Notification move Single Touch</em>}</li>
- *   <li>{@link uid.Matrix#getNotification_moveMultiTouch <em>Notification move Multi Touch</em>}</li>
  *   <li>{@link uid.Matrix#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -26,7 +22,7 @@ package uid;
  * @model
  * @generated
  */
-public interface Matrix extends Entity {
+public interface Matrix extends Component {
 	/**
 	 * Returns the value of the '<em><b>Image background</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -104,110 +100,6 @@ public interface Matrix extends Entity {
 	 * @generated
 	 */
 	void setImage_doubleTap(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Notification tap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Notification tap</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notification tap</em>' attribute.
-	 * @see #setNotification_tap(String)
-	 * @see uid.UidPackage#getMatrix_Notification_tap()
-	 * @model dataType="types.String"
-	 * @generated
-	 */
-	String getNotification_tap();
-
-	/**
-	 * Sets the value of the '{@link uid.Matrix#getNotification_tap <em>Notification tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Notification tap</em>' attribute.
-	 * @see #getNotification_tap()
-	 * @generated
-	 */
-	void setNotification_tap(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Notification double Tap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Notification double Tap</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notification double Tap</em>' attribute.
-	 * @see #setNotification_doubleTap(String)
-	 * @see uid.UidPackage#getMatrix_Notification_doubleTap()
-	 * @model dataType="types.String"
-	 * @generated
-	 */
-	String getNotification_doubleTap();
-
-	/**
-	 * Sets the value of the '{@link uid.Matrix#getNotification_doubleTap <em>Notification double Tap</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Notification double Tap</em>' attribute.
-	 * @see #getNotification_doubleTap()
-	 * @generated
-	 */
-	void setNotification_doubleTap(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Notification move Single Touch</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Notification move Single Touch</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notification move Single Touch</em>' attribute.
-	 * @see #setNotification_moveSingleTouch(String)
-	 * @see uid.UidPackage#getMatrix_Notification_moveSingleTouch()
-	 * @model dataType="types.String"
-	 * @generated
-	 */
-	String getNotification_moveSingleTouch();
-
-	/**
-	 * Sets the value of the '{@link uid.Matrix#getNotification_moveSingleTouch <em>Notification move Single Touch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Notification move Single Touch</em>' attribute.
-	 * @see #getNotification_moveSingleTouch()
-	 * @generated
-	 */
-	void setNotification_moveSingleTouch(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Notification move Multi Touch</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Notification move Multi Touch</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notification move Multi Touch</em>' attribute.
-	 * @see #setNotification_moveMultiTouch(String)
-	 * @see uid.UidPackage#getMatrix_Notification_moveMultiTouch()
-	 * @model dataType="types.String"
-	 * @generated
-	 */
-	String getNotification_moveMultiTouch();
-
-	/**
-	 * Sets the value of the '{@link uid.Matrix#getNotification_moveMultiTouch <em>Notification move Multi Touch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Notification move Multi Touch</em>' attribute.
-	 * @see #getNotification_moveMultiTouch()
-	 * @generated
-	 */
-	void setNotification_moveMultiTouch(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

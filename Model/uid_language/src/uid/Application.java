@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uid.Application#getName <em>Name</em>}</li>
  *   <li>{@link uid.Application#getHasEntityTransition <em>Has Entity Transition</em>}</li>
- *   <li>{@link uid.Application#getHasEntities <em>Has Entities</em>}</li>
+ *   <li>{@link uid.Application#getHasView <em>Has View</em>}</li>
  *   <li>{@link uid.Application#getHasMediator <em>Has Mediator</em>}</li>
  * </ul>
  * </p>
@@ -69,33 +69,33 @@ public interface Application extends EObject {
 	EList<EntityTransition> getHasEntityTransition();
 
 	/**
-	 * Returns the value of the '<em><b>Has Entities</b></em>' containment reference list.
-	 * The list contents are of type {@link uid.Entity}.
+	 * Returns the value of the '<em><b>Has View</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.Component}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Entities</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Has View</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Entities</em>' containment reference list.
-	 * @see uid.UidPackage#getApplication_HasEntities()
+	 * @return the value of the '<em>Has View</em>' containment reference list.
+	 * @see uid.UidPackage#getApplication_HasView()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Entity> getHasEntities();
+	EList<Component> getHasView();
 
 	/**
-	 * Returns the value of the '<em><b>Has Mediator</b></em>' reference list.
+	 * Returns the value of the '<em><b>Has Mediator</b></em>' containment reference list.
 	 * The list contents are of type {@link uid.Mediator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Mediator</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Has Mediator</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Mediator</em>' reference list.
+	 * @return the value of the '<em>Has Mediator</em>' containment reference list.
 	 * @see uid.UidPackage#getApplication_HasMediator()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Mediator> getHasMediator();

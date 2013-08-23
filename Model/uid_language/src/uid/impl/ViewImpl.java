@@ -5,42 +5,50 @@ package uid.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uid.Button;
+import uid.Component;
 import uid.Display;
 import uid.EntityTransition;
+import uid.EventNotification;
 import uid.Matrix;
 import uid.Regulator;
-import uid.State;
 import uid.UidPackage;
+import uid.View;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>State</b></em>'.
+ * An implementation of the model object '<em><b>View</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uid.impl.StateImpl#getImage_background <em>Image background</em>}</li>
- *   <li>{@link uid.impl.StateImpl#getHasRegulator <em>Has Regulator</em>}</li>
- *   <li>{@link uid.impl.StateImpl#getHasMatrix <em>Has Matrix</em>}</li>
- *   <li>{@link uid.impl.StateImpl#getHasButton <em>Has Button</em>}</li>
- *   <li>{@link uid.impl.StateImpl#getHasDisplay <em>Has Display</em>}</li>
- *   <li>{@link uid.impl.StateImpl#getHasTransition <em>Has Transition</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getImage_background <em>Image background</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getHasRegulator <em>Has Regulator</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getHasMatrix <em>Has Matrix</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getHasButton <em>Has Button</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getHasDisplay <em>Has Display</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getHasTransition <em>Has Transition</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getHasComponent <em>Has Component</em>}</li>
+ *   <li>{@link uid.impl.ViewImpl#getHasEventNotification <em>Has Event Notification</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StateImpl extends EntityImpl implements State {
+public class ViewImpl extends ComponentImpl implements View {
 	/**
 	 * The default value of the '{@link #getImage_background() <em>Image background</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,11 +120,31 @@ public class StateImpl extends EntityImpl implements State {
 	protected EList<EntityTransition> hasTransition;
 
 	/**
+	 * The cached value of the '{@link #getHasComponent() <em>Has Component</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Component> hasComponent;
+
+	/**
+	 * The cached value of the '{@link #getHasEventNotification() <em>Has Event Notification</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasEventNotification()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EventNotification> hasEventNotification;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StateImpl() {
+	protected ViewImpl() {
 		super();
 	}
 
@@ -127,7 +155,7 @@ public class StateImpl extends EntityImpl implements State {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UidPackage.Literals.STATE;
+		return UidPackage.Literals.VIEW;
 	}
 
 	/**
@@ -148,7 +176,7 @@ public class StateImpl extends EntityImpl implements State {
 		String oldImage_background = image_background;
 		image_background = newImage_background;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.STATE__IMAGE_BACKGROUND, oldImage_background, image_background));
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.VIEW__IMAGE_BACKGROUND, oldImage_background, image_background));
 	}
 
 	/**
@@ -158,7 +186,7 @@ public class StateImpl extends EntityImpl implements State {
 	 */
 	public EList<Regulator> getHasRegulator() {
 		if (hasRegulator == null) {
-			hasRegulator = new EObjectResolvingEList<Regulator>(Regulator.class, this, UidPackage.STATE__HAS_REGULATOR);
+			hasRegulator = new EObjectResolvingEList<Regulator>(Regulator.class, this, UidPackage.VIEW__HAS_REGULATOR);
 		}
 		return hasRegulator;
 	}
@@ -170,7 +198,7 @@ public class StateImpl extends EntityImpl implements State {
 	 */
 	public EList<Matrix> getHasMatrix() {
 		if (hasMatrix == null) {
-			hasMatrix = new EObjectResolvingEList<Matrix>(Matrix.class, this, UidPackage.STATE__HAS_MATRIX);
+			hasMatrix = new EObjectResolvingEList<Matrix>(Matrix.class, this, UidPackage.VIEW__HAS_MATRIX);
 		}
 		return hasMatrix;
 	}
@@ -182,7 +210,7 @@ public class StateImpl extends EntityImpl implements State {
 	 */
 	public EList<Button> getHasButton() {
 		if (hasButton == null) {
-			hasButton = new EObjectResolvingEList<Button>(Button.class, this, UidPackage.STATE__HAS_BUTTON);
+			hasButton = new EObjectResolvingEList<Button>(Button.class, this, UidPackage.VIEW__HAS_BUTTON);
 		}
 		return hasButton;
 	}
@@ -194,7 +222,7 @@ public class StateImpl extends EntityImpl implements State {
 	 */
 	public EList<Display> getHasDisplay() {
 		if (hasDisplay == null) {
-			hasDisplay = new EObjectResolvingEList<Display>(Display.class, this, UidPackage.STATE__HAS_DISPLAY);
+			hasDisplay = new EObjectResolvingEList<Display>(Display.class, this, UidPackage.VIEW__HAS_DISPLAY);
 		}
 		return hasDisplay;
 	}
@@ -206,9 +234,62 @@ public class StateImpl extends EntityImpl implements State {
 	 */
 	public EList<EntityTransition> getHasTransition() {
 		if (hasTransition == null) {
-			hasTransition = new EObjectResolvingEList<EntityTransition>(EntityTransition.class, this, UidPackage.STATE__HAS_TRANSITION);
+			hasTransition = new EObjectResolvingEList<EntityTransition>(EntityTransition.class, this, UidPackage.VIEW__HAS_TRANSITION);
 		}
 		return hasTransition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Component> getHasComponent() {
+		if (hasComponent == null) {
+			hasComponent = new EObjectResolvingEList<Component>(Component.class, this, UidPackage.VIEW__HAS_COMPONENT);
+		}
+		return hasComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EventNotification> getHasEventNotification() {
+		if (hasEventNotification == null) {
+			hasEventNotification = new EObjectContainmentWithInverseEList<EventNotification>(EventNotification.class, this, UidPackage.VIEW__HAS_EVENT_NOTIFICATION, UidPackage.EVENT_NOTIFICATION__HAS_VIEW);
+		}
+		return hasEventNotification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UidPackage.VIEW__HAS_EVENT_NOTIFICATION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasEventNotification()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UidPackage.VIEW__HAS_EVENT_NOTIFICATION:
+				return ((InternalEList<?>)getHasEventNotification()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -219,18 +300,22 @@ public class StateImpl extends EntityImpl implements State {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UidPackage.STATE__IMAGE_BACKGROUND:
+			case UidPackage.VIEW__IMAGE_BACKGROUND:
 				return getImage_background();
-			case UidPackage.STATE__HAS_REGULATOR:
+			case UidPackage.VIEW__HAS_REGULATOR:
 				return getHasRegulator();
-			case UidPackage.STATE__HAS_MATRIX:
+			case UidPackage.VIEW__HAS_MATRIX:
 				return getHasMatrix();
-			case UidPackage.STATE__HAS_BUTTON:
+			case UidPackage.VIEW__HAS_BUTTON:
 				return getHasButton();
-			case UidPackage.STATE__HAS_DISPLAY:
+			case UidPackage.VIEW__HAS_DISPLAY:
 				return getHasDisplay();
-			case UidPackage.STATE__HAS_TRANSITION:
+			case UidPackage.VIEW__HAS_TRANSITION:
 				return getHasTransition();
+			case UidPackage.VIEW__HAS_COMPONENT:
+				return getHasComponent();
+			case UidPackage.VIEW__HAS_EVENT_NOTIFICATION:
+				return getHasEventNotification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,28 +329,36 @@ public class StateImpl extends EntityImpl implements State {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UidPackage.STATE__IMAGE_BACKGROUND:
+			case UidPackage.VIEW__IMAGE_BACKGROUND:
 				setImage_background((String)newValue);
 				return;
-			case UidPackage.STATE__HAS_REGULATOR:
+			case UidPackage.VIEW__HAS_REGULATOR:
 				getHasRegulator().clear();
 				getHasRegulator().addAll((Collection<? extends Regulator>)newValue);
 				return;
-			case UidPackage.STATE__HAS_MATRIX:
+			case UidPackage.VIEW__HAS_MATRIX:
 				getHasMatrix().clear();
 				getHasMatrix().addAll((Collection<? extends Matrix>)newValue);
 				return;
-			case UidPackage.STATE__HAS_BUTTON:
+			case UidPackage.VIEW__HAS_BUTTON:
 				getHasButton().clear();
 				getHasButton().addAll((Collection<? extends Button>)newValue);
 				return;
-			case UidPackage.STATE__HAS_DISPLAY:
+			case UidPackage.VIEW__HAS_DISPLAY:
 				getHasDisplay().clear();
 				getHasDisplay().addAll((Collection<? extends Display>)newValue);
 				return;
-			case UidPackage.STATE__HAS_TRANSITION:
+			case UidPackage.VIEW__HAS_TRANSITION:
 				getHasTransition().clear();
 				getHasTransition().addAll((Collection<? extends EntityTransition>)newValue);
+				return;
+			case UidPackage.VIEW__HAS_COMPONENT:
+				getHasComponent().clear();
+				getHasComponent().addAll((Collection<? extends Component>)newValue);
+				return;
+			case UidPackage.VIEW__HAS_EVENT_NOTIFICATION:
+				getHasEventNotification().clear();
+				getHasEventNotification().addAll((Collection<? extends EventNotification>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -279,23 +372,29 @@ public class StateImpl extends EntityImpl implements State {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UidPackage.STATE__IMAGE_BACKGROUND:
+			case UidPackage.VIEW__IMAGE_BACKGROUND:
 				setImage_background(IMAGE_BACKGROUND_EDEFAULT);
 				return;
-			case UidPackage.STATE__HAS_REGULATOR:
+			case UidPackage.VIEW__HAS_REGULATOR:
 				getHasRegulator().clear();
 				return;
-			case UidPackage.STATE__HAS_MATRIX:
+			case UidPackage.VIEW__HAS_MATRIX:
 				getHasMatrix().clear();
 				return;
-			case UidPackage.STATE__HAS_BUTTON:
+			case UidPackage.VIEW__HAS_BUTTON:
 				getHasButton().clear();
 				return;
-			case UidPackage.STATE__HAS_DISPLAY:
+			case UidPackage.VIEW__HAS_DISPLAY:
 				getHasDisplay().clear();
 				return;
-			case UidPackage.STATE__HAS_TRANSITION:
+			case UidPackage.VIEW__HAS_TRANSITION:
 				getHasTransition().clear();
+				return;
+			case UidPackage.VIEW__HAS_COMPONENT:
+				getHasComponent().clear();
+				return;
+			case UidPackage.VIEW__HAS_EVENT_NOTIFICATION:
+				getHasEventNotification().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,18 +408,22 @@ public class StateImpl extends EntityImpl implements State {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UidPackage.STATE__IMAGE_BACKGROUND:
+			case UidPackage.VIEW__IMAGE_BACKGROUND:
 				return IMAGE_BACKGROUND_EDEFAULT == null ? image_background != null : !IMAGE_BACKGROUND_EDEFAULT.equals(image_background);
-			case UidPackage.STATE__HAS_REGULATOR:
+			case UidPackage.VIEW__HAS_REGULATOR:
 				return hasRegulator != null && !hasRegulator.isEmpty();
-			case UidPackage.STATE__HAS_MATRIX:
+			case UidPackage.VIEW__HAS_MATRIX:
 				return hasMatrix != null && !hasMatrix.isEmpty();
-			case UidPackage.STATE__HAS_BUTTON:
+			case UidPackage.VIEW__HAS_BUTTON:
 				return hasButton != null && !hasButton.isEmpty();
-			case UidPackage.STATE__HAS_DISPLAY:
+			case UidPackage.VIEW__HAS_DISPLAY:
 				return hasDisplay != null && !hasDisplay.isEmpty();
-			case UidPackage.STATE__HAS_TRANSITION:
+			case UidPackage.VIEW__HAS_TRANSITION:
 				return hasTransition != null && !hasTransition.isEmpty();
+			case UidPackage.VIEW__HAS_COMPONENT:
+				return hasComponent != null && !hasComponent.isEmpty();
+			case UidPackage.VIEW__HAS_EVENT_NOTIFICATION:
+				return hasEventNotification != null && !hasEventNotification.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -341,4 +444,4 @@ public class StateImpl extends EntityImpl implements State {
 		return result.toString();
 	}
 
-} //StateImpl
+} //ViewImpl

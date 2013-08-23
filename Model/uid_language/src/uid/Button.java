@@ -14,8 +14,6 @@ package uid;
  *   <li>{@link uid.Button#getImage_on <em>Image on</em>}</li>
  *   <li>{@link uid.Button#getImage_off <em>Image off</em>}</li>
  *   <li>{@link uid.Button#getImage_disabled <em>Image disabled</em>}</li>
- *   <li>{@link uid.Button#getNotification_pressed <em>Notification pressed</em>}</li>
- *   <li>{@link uid.Button#getNotification_released <em>Notification released</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,7 +21,7 @@ package uid;
  * @model
  * @generated
  */
-public interface Button extends Entity {
+public interface Button extends Component {
 	/**
 	 * Returns the value of the '<em><b>Image on</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,57 +99,5 @@ public interface Button extends Entity {
 	 * @generated
 	 */
 	void setImage_disabled(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Notification pressed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Notification pressed</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notification pressed</em>' attribute.
-	 * @see #setNotification_pressed(String)
-	 * @see uid.UidPackage#getButton_Notification_pressed()
-	 * @model dataType="types.String"
-	 * @generated
-	 */
-	String getNotification_pressed();
-
-	/**
-	 * Sets the value of the '{@link uid.Button#getNotification_pressed <em>Notification pressed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Notification pressed</em>' attribute.
-	 * @see #getNotification_pressed()
-	 * @generated
-	 */
-	void setNotification_pressed(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Notification released</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Notification released</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notification released</em>' attribute.
-	 * @see #setNotification_released(String)
-	 * @see uid.UidPackage#getButton_Notification_released()
-	 * @model dataType="types.String"
-	 * @generated
-	 */
-	String getNotification_released();
-
-	/**
-	 * Sets the value of the '{@link uid.Button#getNotification_released <em>Notification released</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Notification released</em>' attribute.
-	 * @see #getNotification_released()
-	 * @generated
-	 */
-	void setNotification_released(String value);
 
 } // Button

@@ -13,7 +13,7 @@ import uid.UidFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContainerTest extends EntityTest {
+public class ContainerTest extends ComponentTest {
 
 	/**
 	 * <!-- begin-user-doc -->

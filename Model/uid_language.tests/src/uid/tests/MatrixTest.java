@@ -13,7 +13,7 @@ import uid.UidFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MatrixTest extends EntityTest {
+public class MatrixTest extends ComponentTest {
 
 	/**
 	 * <!-- begin-user-doc -->

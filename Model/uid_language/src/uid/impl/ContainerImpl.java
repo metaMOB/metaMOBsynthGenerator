@@ -16,7 +16,7 @@ import uid.UidPackage;
  *
  * @generated
  */
-public class ContainerImpl extends EntityImpl implements Container {
+public class ContainerImpl extends ComponentImpl implements Container {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -10,9 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import uid.Component;
 import uid.ETransitionTypeOut;
 import uid.ETransitionTypesIn;
-import uid.Entity;
 import uid.EntityTransition;
 import uid.UidPackage;
 
@@ -28,7 +28,7 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.EntityTransitionImpl#getAnimationTypeOut <em>Animation Type Out</em>}</li>
  *   <li>{@link uid.impl.EntityTransitionImpl#getAnimationInTime <em>Animation In Time</em>}</li>
  *   <li>{@link uid.impl.EntityTransitionImpl#getAnimationOutTime <em>Animation Out Time</em>}</li>
- *   <li>{@link uid.impl.EntityTransitionImpl#getEntities <em>Entities</em>}</li>
+ *   <li>{@link uid.impl.EntityTransitionImpl#getHasComponent <em>Has Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -136,14 +136,14 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 	protected int animationOutTime = ANIMATION_OUT_TIME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference.
+	 * The cached value of the '{@link #getHasComponent() <em>Has Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntities()
+	 * @see #getHasComponent()
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity entities;
+	protected Component hasComponent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,16 +274,16 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity getEntities() {
-		if (entities != null && entities.eIsProxy()) {
-			InternalEObject oldEntities = (InternalEObject)entities;
-			entities = (Entity)eResolveProxy(oldEntities);
-			if (entities != oldEntities) {
+	public Component getHasComponent() {
+		if (hasComponent != null && hasComponent.eIsProxy()) {
+			InternalEObject oldHasComponent = (InternalEObject)hasComponent;
+			hasComponent = (Component)eResolveProxy(oldHasComponent);
+			if (hasComponent != oldHasComponent) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UidPackage.ENTITY_TRANSITION__ENTITIES, oldEntities, entities));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UidPackage.ENTITY_TRANSITION__HAS_COMPONENT, oldHasComponent, hasComponent));
 			}
 		}
-		return entities;
+		return hasComponent;
 	}
 
 	/**
@@ -291,8 +291,8 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity basicGetEntities() {
-		return entities;
+	public Component basicGetHasComponent() {
+		return hasComponent;
 	}
 
 	/**
@@ -300,11 +300,11 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntities(Entity newEntities) {
-		Entity oldEntities = entities;
-		entities = newEntities;
+	public void setHasComponent(Component newHasComponent) {
+		Component oldHasComponent = hasComponent;
+		hasComponent = newHasComponent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.ENTITY_TRANSITION__ENTITIES, oldEntities, entities));
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.ENTITY_TRANSITION__HAS_COMPONENT, oldHasComponent, hasComponent));
 	}
 
 	/**
@@ -325,9 +325,9 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 				return getAnimationInTime();
 			case UidPackage.ENTITY_TRANSITION__ANIMATION_OUT_TIME:
 				return getAnimationOutTime();
-			case UidPackage.ENTITY_TRANSITION__ENTITIES:
-				if (resolve) return getEntities();
-				return basicGetEntities();
+			case UidPackage.ENTITY_TRANSITION__HAS_COMPONENT:
+				if (resolve) return getHasComponent();
+				return basicGetHasComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -355,8 +355,8 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 			case UidPackage.ENTITY_TRANSITION__ANIMATION_OUT_TIME:
 				setAnimationOutTime((Integer)newValue);
 				return;
-			case UidPackage.ENTITY_TRANSITION__ENTITIES:
-				setEntities((Entity)newValue);
+			case UidPackage.ENTITY_TRANSITION__HAS_COMPONENT:
+				setHasComponent((Component)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,8 +385,8 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 			case UidPackage.ENTITY_TRANSITION__ANIMATION_OUT_TIME:
 				setAnimationOutTime(ANIMATION_OUT_TIME_EDEFAULT);
 				return;
-			case UidPackage.ENTITY_TRANSITION__ENTITIES:
-				setEntities((Entity)null);
+			case UidPackage.ENTITY_TRANSITION__HAS_COMPONENT:
+				setHasComponent((Component)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -410,8 +410,8 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 				return animationInTime != ANIMATION_IN_TIME_EDEFAULT;
 			case UidPackage.ENTITY_TRANSITION__ANIMATION_OUT_TIME:
 				return animationOutTime != ANIMATION_OUT_TIME_EDEFAULT;
-			case UidPackage.ENTITY_TRANSITION__ENTITIES:
-				return entities != null;
+			case UidPackage.ENTITY_TRANSITION__HAS_COMPONENT:
+				return hasComponent != null;
 		}
 		return super.eIsSet(featureID);
 	}

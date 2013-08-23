@@ -16,11 +16,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uid.Application;
-import uid.Entity;
+import uid.Component;
 import uid.EntityTransition;
 import uid.Mediator;
 import uid.UidPackage;
@@ -34,7 +33,7 @@ import uid.UidPackage;
  * <ul>
  *   <li>{@link uid.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasEntityTransition <em>Has Entity Transition</em>}</li>
- *   <li>{@link uid.impl.ApplicationImpl#getHasEntities <em>Has Entities</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasView <em>Has View</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasMediator <em>Has Mediator</em>}</li>
  * </ul>
  * </p>
@@ -73,17 +72,17 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	protected EList<EntityTransition> hasEntityTransition;
 
 	/**
-	 * The cached value of the '{@link #getHasEntities() <em>Has Entities</em>}' containment reference list.
+	 * The cached value of the '{@link #getHasView() <em>Has View</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasEntities()
+	 * @see #getHasView()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entity> hasEntities;
+	protected EList<Component> hasView;
 
 	/**
-	 * The cached value of the '{@link #getHasMediator() <em>Has Mediator</em>}' reference list.
+	 * The cached value of the '{@link #getHasMediator() <em>Has Mediator</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHasMediator()
@@ -149,11 +148,11 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Entity> getHasEntities() {
-		if (hasEntities == null) {
-			hasEntities = new EObjectContainmentEList<Entity>(Entity.class, this, UidPackage.APPLICATION__HAS_ENTITIES);
+	public EList<Component> getHasView() {
+		if (hasView == null) {
+			hasView = new EObjectContainmentEList<Component>(Component.class, this, UidPackage.APPLICATION__HAS_VIEW);
 		}
-		return hasEntities;
+		return hasView;
 	}
 
 	/**
@@ -163,7 +162,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 */
 	public EList<Mediator> getHasMediator() {
 		if (hasMediator == null) {
-			hasMediator = new EObjectResolvingEList<Mediator>(Mediator.class, this, UidPackage.APPLICATION__HAS_MEDIATOR);
+			hasMediator = new EObjectContainmentEList<Mediator>(Mediator.class, this, UidPackage.APPLICATION__HAS_MEDIATOR);
 		}
 		return hasMediator;
 	}
@@ -178,8 +177,10 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 		switch (featureID) {
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return ((InternalEList<?>)getHasEntityTransition()).basicRemove(otherEnd, msgs);
-			case UidPackage.APPLICATION__HAS_ENTITIES:
-				return ((InternalEList<?>)getHasEntities()).basicRemove(otherEnd, msgs);
+			case UidPackage.APPLICATION__HAS_VIEW:
+				return ((InternalEList<?>)getHasView()).basicRemove(otherEnd, msgs);
+			case UidPackage.APPLICATION__HAS_MEDIATOR:
+				return ((InternalEList<?>)getHasMediator()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -196,8 +197,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return getName();
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return getHasEntityTransition();
-			case UidPackage.APPLICATION__HAS_ENTITIES:
-				return getHasEntities();
+			case UidPackage.APPLICATION__HAS_VIEW:
+				return getHasView();
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return getHasMediator();
 		}
@@ -220,9 +221,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				getHasEntityTransition().clear();
 				getHasEntityTransition().addAll((Collection<? extends EntityTransition>)newValue);
 				return;
-			case UidPackage.APPLICATION__HAS_ENTITIES:
-				getHasEntities().clear();
-				getHasEntities().addAll((Collection<? extends Entity>)newValue);
+			case UidPackage.APPLICATION__HAS_VIEW:
+				getHasView().clear();
+				getHasView().addAll((Collection<? extends Component>)newValue);
 				return;
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				getHasMediator().clear();
@@ -246,8 +247,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				getHasEntityTransition().clear();
 				return;
-			case UidPackage.APPLICATION__HAS_ENTITIES:
-				getHasEntities().clear();
+			case UidPackage.APPLICATION__HAS_VIEW:
+				getHasView().clear();
 				return;
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				getHasMediator().clear();
@@ -268,8 +269,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return hasEntityTransition != null && !hasEntityTransition.isEmpty();
-			case UidPackage.APPLICATION__HAS_ENTITIES:
-				return hasEntities != null && !hasEntities.isEmpty();
+			case UidPackage.APPLICATION__HAS_VIEW:
+				return hasView != null && !hasView.isEmpty();
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return hasMediator != null && !hasMediator.isEmpty();
 		}

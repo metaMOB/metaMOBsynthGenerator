@@ -16,18 +16,20 @@ import types.impl.TypesPackageImpl;
 
 import uid.Application;
 import uid.Button;
+import uid.Component;
 import uid.Display;
 import uid.ETransitionTypeOut;
 import uid.ETransitionTypesIn;
-import uid.Entity;
 import uid.EntityTransition;
+import uid.EventNotification;
 import uid.Matrix;
 import uid.Mediator;
+import uid.Notification;
 import uid.Regulator;
-import uid.State;
 import uid.Switch;
 import uid.UidFactory;
 import uid.UidPackage;
+import uid.View;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,14 +57,14 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stateEClass = null;
+	private EClass viewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass entityEClass = null;
+	private EClass componentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,6 +114,20 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * @generated
 	 */
 	private EClass buttonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass notificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventNotificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +268,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityTransition_Entities() {
+	public EReference getEntityTransition_HasComponent() {
 		return (EReference)entityTransitionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -288,7 +304,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getApplication_HasEntities() {
+	public EReference getApplication_HasView() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -306,8 +322,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getState() {
-		return stateEClass;
+	public EClass getView() {
+		return viewEClass;
 	}
 
 	/**
@@ -315,8 +331,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getState_Image_background() {
-		return (EAttribute)stateEClass.getEStructuralFeatures().get(0);
+	public EAttribute getView_Image_background() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -324,8 +340,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_HasRegulator() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(1);
+	public EReference getView_HasRegulator() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -333,8 +349,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_HasMatrix() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(2);
+	public EReference getView_HasMatrix() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -342,8 +358,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_HasButton() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(3);
+	public EReference getView_HasButton() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -351,8 +367,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_HasDisplay() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(4);
+	public EReference getView_HasDisplay() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -360,8 +376,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_HasTransition() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(5);
+	public EReference getView_HasTransition() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -369,8 +385,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEntity() {
-		return entityEClass;
+	public EReference getView_HasComponent() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -378,8 +394,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntity_Name() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
+	public EReference getView_HasEventNotification() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -387,8 +403,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntity_Visible() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(1);
+	public EClass getComponent() {
+		return componentEClass;
 	}
 
 	/**
@@ -396,8 +412,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntity_X() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(2);
+	public EAttribute getComponent_Name() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -405,8 +421,26 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntity_Y() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
+	public EAttribute getComponent_Visible() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponent_X() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponent_Y() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -450,26 +484,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMediator_HasEntities() {
+	public EReference getMediator_HasEventNotification() {
 		return (EReference)mediatorEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMediator_CommandsToGenerate() {
-		return (EAttribute)mediatorEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMediator_Listeners() {
-		return (EAttribute)mediatorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -504,7 +520,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRegulator_Notification_changed() {
+	public EAttribute getRegulator_Value() {
 		return (EAttribute)regulatorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -513,26 +529,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRegulator_Notification_doubleTap() {
-		return (EAttribute)regulatorEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRegulator_Value() {
-		return (EAttribute)regulatorEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getRegulator_DefaultValue() {
-		return (EAttribute)regulatorEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)regulatorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -576,44 +574,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMatrix_Notification_tap() {
-		return (EAttribute)matrixEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMatrix_Notification_doubleTap() {
-		return (EAttribute)matrixEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMatrix_Notification_moveSingleTouch() {
-		return (EAttribute)matrixEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMatrix_Notification_moveMultiTouch() {
-		return (EAttribute)matrixEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getMatrix_Value() {
-		return (EAttribute)matrixEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)matrixEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -693,8 +655,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getButton_Notification_pressed() {
-		return (EAttribute)buttonEClass.getEStructuralFeatures().get(3);
+	public EClass getNotification() {
+		return notificationEClass;
 	}
 
 	/**
@@ -702,8 +664,53 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getButton_Notification_released() {
-		return (EAttribute)buttonEClass.getEStructuralFeatures().get(4);
+	public EAttribute getNotification_Name() {
+		return (EAttribute)notificationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEventNotification() {
+		return eventNotificationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEventNotification_Name() {
+		return (EAttribute)eventNotificationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventNotification_HasMediator() {
+		return (EReference)eventNotificationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventNotification_HasView() {
+		return (EReference)eventNotificationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventNotification_HasNotification() {
+		return (EReference)eventNotificationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -758,42 +765,40 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEAttribute(entityTransitionEClass, ENTITY_TRANSITION__ANIMATION_TYPE_OUT);
 		createEAttribute(entityTransitionEClass, ENTITY_TRANSITION__ANIMATION_IN_TIME);
 		createEAttribute(entityTransitionEClass, ENTITY_TRANSITION__ANIMATION_OUT_TIME);
-		createEReference(entityTransitionEClass, ENTITY_TRANSITION__ENTITIES);
+		createEReference(entityTransitionEClass, ENTITY_TRANSITION__HAS_COMPONENT);
 
 		applicationEClass = createEClass(APPLICATION);
 		createEAttribute(applicationEClass, APPLICATION__NAME);
 		createEReference(applicationEClass, APPLICATION__HAS_ENTITY_TRANSITION);
-		createEReference(applicationEClass, APPLICATION__HAS_ENTITIES);
+		createEReference(applicationEClass, APPLICATION__HAS_VIEW);
 		createEReference(applicationEClass, APPLICATION__HAS_MEDIATOR);
 
-		stateEClass = createEClass(STATE);
-		createEAttribute(stateEClass, STATE__IMAGE_BACKGROUND);
-		createEReference(stateEClass, STATE__HAS_REGULATOR);
-		createEReference(stateEClass, STATE__HAS_MATRIX);
-		createEReference(stateEClass, STATE__HAS_BUTTON);
-		createEReference(stateEClass, STATE__HAS_DISPLAY);
-		createEReference(stateEClass, STATE__HAS_TRANSITION);
+		viewEClass = createEClass(VIEW);
+		createEAttribute(viewEClass, VIEW__IMAGE_BACKGROUND);
+		createEReference(viewEClass, VIEW__HAS_REGULATOR);
+		createEReference(viewEClass, VIEW__HAS_MATRIX);
+		createEReference(viewEClass, VIEW__HAS_BUTTON);
+		createEReference(viewEClass, VIEW__HAS_DISPLAY);
+		createEReference(viewEClass, VIEW__HAS_TRANSITION);
+		createEReference(viewEClass, VIEW__HAS_COMPONENT);
+		createEReference(viewEClass, VIEW__HAS_EVENT_NOTIFICATION);
 
-		entityEClass = createEClass(ENTITY);
-		createEAttribute(entityEClass, ENTITY__NAME);
-		createEAttribute(entityEClass, ENTITY__VISIBLE);
-		createEAttribute(entityEClass, ENTITY__X);
-		createEAttribute(entityEClass, ENTITY__Y);
+		componentEClass = createEClass(COMPONENT);
+		createEAttribute(componentEClass, COMPONENT__NAME);
+		createEAttribute(componentEClass, COMPONENT__VISIBLE);
+		createEAttribute(componentEClass, COMPONENT__X);
+		createEAttribute(componentEClass, COMPONENT__Y);
 
 		switchEClass = createEClass(SWITCH);
 		createEAttribute(switchEClass, SWITCH__VALUE);
 
 		mediatorEClass = createEClass(MEDIATOR);
 		createEAttribute(mediatorEClass, MEDIATOR__NAME);
-		createEReference(mediatorEClass, MEDIATOR__HAS_ENTITIES);
-		createEAttribute(mediatorEClass, MEDIATOR__COMMANDS_TO_GENERATE);
-		createEAttribute(mediatorEClass, MEDIATOR__LISTENERS);
+		createEReference(mediatorEClass, MEDIATOR__HAS_EVENT_NOTIFICATION);
 
 		regulatorEClass = createEClass(REGULATOR);
 		createEAttribute(regulatorEClass, REGULATOR__MIN_VALUE);
 		createEAttribute(regulatorEClass, REGULATOR__MAX_VALUE);
-		createEAttribute(regulatorEClass, REGULATOR__NOTIFICATION_CHANGED);
-		createEAttribute(regulatorEClass, REGULATOR__NOTIFICATION_DOUBLE_TAP);
 		createEAttribute(regulatorEClass, REGULATOR__VALUE);
 		createEAttribute(regulatorEClass, REGULATOR__DEFAULT_VALUE);
 
@@ -801,10 +806,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEAttribute(matrixEClass, MATRIX__IMAGE_BACKGROUND);
 		createEAttribute(matrixEClass, MATRIX__IMAGE_TAP);
 		createEAttribute(matrixEClass, MATRIX__IMAGE_DOUBLE_TAP);
-		createEAttribute(matrixEClass, MATRIX__NOTIFICATION_TAP);
-		createEAttribute(matrixEClass, MATRIX__NOTIFICATION_DOUBLE_TAP);
-		createEAttribute(matrixEClass, MATRIX__NOTIFICATION_MOVE_SINGLE_TOUCH);
-		createEAttribute(matrixEClass, MATRIX__NOTIFICATION_MOVE_MULTI_TOUCH);
 		createEAttribute(matrixEClass, MATRIX__VALUE);
 
 		containerEClass = createEClass(CONTAINER);
@@ -817,8 +818,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEAttribute(buttonEClass, BUTTON__IMAGE_ON);
 		createEAttribute(buttonEClass, BUTTON__IMAGE_OFF);
 		createEAttribute(buttonEClass, BUTTON__IMAGE_DISABLED);
-		createEAttribute(buttonEClass, BUTTON__NOTIFICATION_PRESSED);
-		createEAttribute(buttonEClass, BUTTON__NOTIFICATION_RELEASED);
+
+		notificationEClass = createEClass(NOTIFICATION);
+		createEAttribute(notificationEClass, NOTIFICATION__NAME);
+
+		eventNotificationEClass = createEClass(EVENT_NOTIFICATION);
+		createEAttribute(eventNotificationEClass, EVENT_NOTIFICATION__NAME);
+		createEReference(eventNotificationEClass, EVENT_NOTIFICATION__HAS_MEDIATOR);
+		createEReference(eventNotificationEClass, EVENT_NOTIFICATION__HAS_VIEW);
+		createEReference(eventNotificationEClass, EVENT_NOTIFICATION__HAS_NOTIFICATION);
 
 		// Create enums
 		eTransitionTypesInEEnum = createEEnum(ETRANSITION_TYPES_IN);
@@ -856,13 +864,13 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		stateEClass.getESuperTypes().add(this.getEntity());
+		viewEClass.getESuperTypes().add(this.getComponent());
 		switchEClass.getESuperTypes().add(this.getButton());
-		regulatorEClass.getESuperTypes().add(this.getEntity());
-		matrixEClass.getESuperTypes().add(this.getEntity());
-		containerEClass.getESuperTypes().add(this.getEntity());
-		displayEClass.getESuperTypes().add(this.getEntity());
-		buttonEClass.getESuperTypes().add(this.getEntity());
+		regulatorEClass.getESuperTypes().add(this.getComponent());
+		matrixEClass.getESuperTypes().add(this.getComponent());
+		containerEClass.getESuperTypes().add(this.getComponent());
+		displayEClass.getESuperTypes().add(this.getComponent());
+		buttonEClass.getESuperTypes().add(this.getComponent());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(entityTransitionEClass, EntityTransition.class, "EntityTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -871,42 +879,40 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getEntityTransition_AnimationTypeOut(), this.getETransitionTypeOut(), "animationTypeOut", null, 0, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityTransition_AnimationInTime(), theTypesPackage.getInteger(), "animationInTime", null, 0, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityTransition_AnimationOutTime(), theTypesPackage.getInteger(), "animationOutTime", null, 0, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityTransition_Entities(), this.getEntity(), null, "entities", null, 1, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityTransition_HasComponent(), this.getComponent(), null, "hasComponent", null, 1, 1, EntityTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplication_Name(), theTypesPackage.getString(), "name", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_HasEntityTransition(), this.getEntityTransition(), null, "hasEntityTransition", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplication_HasEntities(), this.getEntity(), null, "hasEntities", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplication_HasMediator(), this.getMediator(), null, "hasMediator", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_HasView(), this.getComponent(), null, "hasView", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_HasMediator(), this.getMediator(), null, "hasMediator", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getState_Image_background(), theTypesPackage.getString(), "image_background", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_HasRegulator(), this.getRegulator(), null, "hasRegulator", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_HasMatrix(), this.getMatrix(), null, "hasMatrix", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_HasButton(), this.getButton(), null, "hasButton", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_HasDisplay(), this.getDisplay(), null, "hasDisplay", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_HasTransition(), this.getEntityTransition(), null, "hasTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getView_Image_background(), theTypesPackage.getString(), "image_background", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_HasRegulator(), this.getRegulator(), null, "hasRegulator", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_HasMatrix(), this.getMatrix(), null, "hasMatrix", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_HasButton(), this.getButton(), null, "hasButton", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_HasDisplay(), this.getDisplay(), null, "hasDisplay", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_HasTransition(), this.getEntityTransition(), null, "hasTransition", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_HasComponent(), this.getComponent(), null, "hasComponent", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_HasEventNotification(), this.getEventNotification(), this.getEventNotification_HasView(), "hasEventNotification", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntity_Name(), theTypesPackage.getString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntity_Visible(), theTypesPackage.getBoolean(), "visible", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntity_X(), theTypesPackage.getInteger(), "x", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntity_Y(), theTypesPackage.getInteger(), "y", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponent_Name(), theTypesPackage.getString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_Visible(), theTypesPackage.getBoolean(), "visible", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_X(), theTypesPackage.getInteger(), "x", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_Y(), theTypesPackage.getInteger(), "y", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(switchEClass, Switch.class, "Switch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSwitch_Value(), theTypesPackage.getBoolean(), "value", null, 0, 1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mediatorEClass, Mediator.class, "Mediator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMediator_Name(), theTypesPackage.getString(), "name", null, 0, 1, Mediator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMediator_HasEntities(), this.getEntity(), null, "hasEntities", null, 0, -1, Mediator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMediator_CommandsToGenerate(), ecorePackage.getEString(), "commandsToGenerate", null, 0, 1, Mediator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMediator_Listeners(), ecorePackage.getEString(), "listeners", null, 0, 1, Mediator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMediator_HasEventNotification(), this.getEventNotification(), this.getEventNotification_HasMediator(), "hasEventNotification", null, 0, -1, Mediator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(regulatorEClass, Regulator.class, "Regulator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRegulator_MinValue(), ecorePackage.getEDouble(), "minValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegulator_MaxValue(), ecorePackage.getEDouble(), "maxValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegulator_Notification_changed(), theTypesPackage.getString(), "notification_changed", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegulator_Notification_doubleTap(), theTypesPackage.getString(), "notification_doubleTap", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegulator_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegulator_DefaultValue(), ecorePackage.getEDouble(), "defaultValue", null, 0, 1, Regulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -916,10 +922,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getMatrix_Image_background(), theTypesPackage.getString(), "image_background", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMatrix_Image_tap(), theTypesPackage.getString(), "image_tap", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMatrix_Image_doubleTap(), theTypesPackage.getString(), "image_doubleTap", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMatrix_Notification_tap(), theTypesPackage.getString(), "notification_tap", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMatrix_Notification_doubleTap(), theTypesPackage.getString(), "notification_doubleTap", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMatrix_Notification_moveSingleTouch(), theTypesPackage.getString(), "notification_moveSingleTouch", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMatrix_Notification_moveMultiTouch(), theTypesPackage.getString(), "notification_moveMultiTouch", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMatrix_Value(), theTypesPackage.getString(), "value", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerEClass, uid.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -932,8 +934,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getButton_Image_on(), theTypesPackage.getString(), "image_on", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getButton_Image_off(), theTypesPackage.getString(), "image_off", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getButton_Image_disabled(), theTypesPackage.getString(), "image_disabled", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getButton_Notification_pressed(), theTypesPackage.getString(), "notification_pressed", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getButton_Notification_released(), theTypesPackage.getString(), "notification_released", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(notificationEClass, Notification.class, "Notification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNotification_Name(), ecorePackage.getEString(), "name", null, 0, 1, Notification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eventNotificationEClass, EventNotification.class, "EventNotification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEventNotification_Name(), ecorePackage.getEString(), "name", null, 0, 1, EventNotification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventNotification_HasMediator(), this.getMediator(), this.getMediator_HasEventNotification(), "hasMediator", null, 0, 1, EventNotification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventNotification_HasView(), this.getView(), this.getView_HasEventNotification(), "hasView", null, 0, 1, EventNotification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventNotification_HasNotification(), this.getNotification(), null, "hasNotification", null, 0, -1, EventNotification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eTransitionTypesInEEnum, ETransitionTypesIn.class, "ETransitionTypesIn");

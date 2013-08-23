@@ -9,26 +9,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import uid.Entity;
+import uid.Component;
 import uid.UidPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Entity</b></em>'.
+ * An implementation of the model object '<em><b>Component</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uid.impl.EntityImpl#getName <em>Name</em>}</li>
- *   <li>{@link uid.impl.EntityImpl#isVisible <em>Visible</em>}</li>
- *   <li>{@link uid.impl.EntityImpl#getX <em>X</em>}</li>
- *   <li>{@link uid.impl.EntityImpl#getY <em>Y</em>}</li>
+ *   <li>{@link uid.impl.ComponentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uid.impl.ComponentImpl#isVisible <em>Visible</em>}</li>
+ *   <li>{@link uid.impl.ComponentImpl#getX <em>X</em>}</li>
+ *   <li>{@link uid.impl.ComponentImpl#getY <em>Y</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EntityImpl extends EObjectImpl implements Entity {
+public class ComponentImpl extends EObjectImpl implements Component {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntityImpl() {
+	protected ComponentImpl() {
 		super();
 	}
 
@@ -125,7 +125,7 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UidPackage.Literals.ENTITY;
+		return UidPackage.Literals.COMPONENT;
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class EntityImpl extends EObjectImpl implements Entity {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.ENTITY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.COMPONENT__NAME, oldName, name));
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class EntityImpl extends EObjectImpl implements Entity {
 		boolean oldVisible = visible;
 		visible = newVisible;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.ENTITY__VISIBLE, oldVisible, visible));
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.COMPONENT__VISIBLE, oldVisible, visible));
 	}
 
 	/**
@@ -188,7 +188,7 @@ public class EntityImpl extends EObjectImpl implements Entity {
 		int oldX = x;
 		x = newX;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.ENTITY__X, oldX, x));
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.COMPONENT__X, oldX, x));
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class EntityImpl extends EObjectImpl implements Entity {
 		int oldY = y;
 		y = newY;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.ENTITY__Y, oldY, y));
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.COMPONENT__Y, oldY, y));
 	}
 
 	/**
@@ -220,13 +220,13 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UidPackage.ENTITY__NAME:
+			case UidPackage.COMPONENT__NAME:
 				return getName();
-			case UidPackage.ENTITY__VISIBLE:
+			case UidPackage.COMPONENT__VISIBLE:
 				return isVisible();
-			case UidPackage.ENTITY__X:
+			case UidPackage.COMPONENT__X:
 				return getX();
-			case UidPackage.ENTITY__Y:
+			case UidPackage.COMPONENT__Y:
 				return getY();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -240,16 +240,16 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UidPackage.ENTITY__NAME:
+			case UidPackage.COMPONENT__NAME:
 				setName((String)newValue);
 				return;
-			case UidPackage.ENTITY__VISIBLE:
+			case UidPackage.COMPONENT__VISIBLE:
 				setVisible((Boolean)newValue);
 				return;
-			case UidPackage.ENTITY__X:
+			case UidPackage.COMPONENT__X:
 				setX((Integer)newValue);
 				return;
-			case UidPackage.ENTITY__Y:
+			case UidPackage.COMPONENT__Y:
 				setY((Integer)newValue);
 				return;
 		}
@@ -264,16 +264,16 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UidPackage.ENTITY__NAME:
+			case UidPackage.COMPONENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case UidPackage.ENTITY__VISIBLE:
+			case UidPackage.COMPONENT__VISIBLE:
 				setVisible(VISIBLE_EDEFAULT);
 				return;
-			case UidPackage.ENTITY__X:
+			case UidPackage.COMPONENT__X:
 				setX(X_EDEFAULT);
 				return;
-			case UidPackage.ENTITY__Y:
+			case UidPackage.COMPONENT__Y:
 				setY(Y_EDEFAULT);
 				return;
 		}
@@ -288,13 +288,13 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UidPackage.ENTITY__NAME:
+			case UidPackage.COMPONENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case UidPackage.ENTITY__VISIBLE:
+			case UidPackage.COMPONENT__VISIBLE:
 				return visible != VISIBLE_EDEFAULT;
-			case UidPackage.ENTITY__X:
+			case UidPackage.COMPONENT__X:
 				return x != X_EDEFAULT;
-			case UidPackage.ENTITY__Y:
+			case UidPackage.COMPONENT__Y:
 				return y != Y_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -322,4 +322,4 @@ public class EntityImpl extends EObjectImpl implements Entity {
 		return result.toString();
 	}
 
-} //EntityImpl
+} //ComponentImpl

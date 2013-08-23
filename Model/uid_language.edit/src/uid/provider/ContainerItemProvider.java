@@ -25,7 +25,7 @@ import uid.Container;
  * @generated
  */
 public class ContainerItemProvider
-	extends EntityItemProvider
+	extends ComponentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
