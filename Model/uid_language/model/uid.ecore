@@ -21,33 +21,40 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasEntityTransition" upperBound="-1"
         eType="#//EntityTransition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasView" upperBound="-1"
-        eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasMediator" upperBound="-1"
         eType="#//Mediator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNotification" upperBound="-1"
+        eType="#//Notification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasCommand" upperBound="-1"
+        eType="#//Command" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasView" upperBound="-1"
+        eType="#//View" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="View">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_background" eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRegulator" upperBound="-1"
-        eType="#//Regulator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasMatrix" upperBound="-1"
-        eType="#//Matrix"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasButton" upperBound="-1"
-        eType="#//Button"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasDisplay" upperBound="-1"
-        eType="#//Display"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasTransition" upperBound="-1"
         eType="#//EntityTransition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasComponent" upperBound="-1"
-        eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sendEvent" upperBound="-1"
-        eType="#//Event" containment="true" eOpposite="#//Event/hasView"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasDisplay" upperBound="-1"
+        eType="#//Display" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasContainer" upperBound="-1"
+        eType="#//Container" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasMatrix" upperBound="-1"
+        eType="#//Matrix" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRegulator" upperBound="-1"
+        eType="#//Regulator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasButton" upperBound="-1"
+        eType="#//Button" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasSwitch" upperBound="-1"
+        eType="#//Switch" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType Types.ecore#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType Types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType Types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasEvents" upperBound="-1"
+        eType="#//Event" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ETransitionTypesIn">
     <eLiterals name="fadeIn"/>
@@ -66,9 +73,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mediator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recieveEvent" upperBound="-1"
-        eType="#//Event" containment="true" eOpposite="#//Event/hasMediator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recieveNotification" eType="#//Notification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNotificationHandler"
+        upperBound="-1" eType="#//NotificationHandler" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Regulator" eSuperTypes="#//Component">
     <eOperations name="setValue" eType="ecore:EDataType Types.ecore#//Integer"/>
@@ -95,29 +101,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Notification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNotification" upperBound="-1"
-        eType="#//Event"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Command"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Event">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasMediator" eType="#//Mediator"
-        eOpposite="#//Mediator/recieveEvent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasView" eType="#//View"
-        eOpposite="#//View/sendEvent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sendNotification" upperBound="-1"
-        eType="#//Notification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recievedByCommand" eType="#//Command"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recieveNotification" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNotification" upperBound="-1"
         eType="#//Notification"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//NotificationHandler"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendsNotification" upperBound="-1"
+        eType="#//Notification"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NotificationHandler">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recieveNotification" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recievesNotification" eType="#//Notification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendsNotification" upperBound="-1"
         eType="#//Notification"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sendNotification" eType="#//Notification"/>
   </eClassifiers>
 </ecore:EPackage>

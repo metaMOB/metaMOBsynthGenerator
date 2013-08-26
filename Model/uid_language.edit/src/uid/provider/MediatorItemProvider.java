@@ -102,7 +102,7 @@ public class MediatorItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(UidPackage.Literals.MEDIATOR__HAS_EVENT_NOTIFICATION);
+			childrenFeatures.add(UidPackage.Literals.MEDIATOR__HAS_NOTIFICATION_HANDLER);
 		}
 		return childrenFeatures;
 	}
@@ -160,7 +160,7 @@ public class MediatorItemProvider
 			case UidPackage.MEDIATOR__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
+			case UidPackage.MEDIATOR__HAS_NOTIFICATION_HANDLER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -180,8 +180,8 @@ public class MediatorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.MEDIATOR__HAS_EVENT_NOTIFICATION,
-				 UidFactory.eINSTANCE.createEventNotification()));
+				(UidPackage.Literals.MEDIATOR__HAS_NOTIFICATION_HANDLER,
+				 UidFactory.eINSTANCE.createNotificationHandler()));
 	}
 
 	/**

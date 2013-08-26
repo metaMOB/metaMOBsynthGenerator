@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link uid.Mediator#getName <em>Name</em>}</li>
- *   <li>{@link uid.Mediator#getHasEventNotification <em>Has Event Notification</em>}</li>
+ *   <li>{@link uid.Mediator#getHasNotificationHandler <em>Has Notification Handler</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,21 +51,19 @@ public interface Mediator extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Has Event Notification</b></em>' containment reference list.
-	 * The list contents are of type {@link uid.EventNotification}.
-	 * It is bidirectional and its opposite is '{@link uid.EventNotification#getHasMediator <em>Has Mediator</em>}'.
+	 * Returns the value of the '<em><b>Has Notification Handler</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.NotificationHandler}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Event Notification</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Has Notification Handler</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Event Notification</em>' containment reference list.
-	 * @see uid.UidPackage#getMediator_HasEventNotification()
-	 * @see uid.EventNotification#getHasMediator
-	 * @model opposite="hasMediator" containment="true"
+	 * @return the value of the '<em>Has Notification Handler</em>' containment reference list.
+	 * @see uid.UidPackage#getMediator_HasNotificationHandler()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EventNotification> getHasEventNotification();
+	EList<NotificationHandler> getHasNotificationHandler();
 
 } // Mediator

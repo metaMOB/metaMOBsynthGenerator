@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uid:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uid="http://uid/1.0">
+  <hasMediator name="ViewAMediator">
+    <hasNotificationHandler recievesNotification="//@hasNotification.5" sendsNotification="//@hasNotification.0"/>
+  </hasMediator>
+  <hasMediator name="ViewBMediator">
+    <hasNotificationHandler recievesNotification="//@hasNotification.3" sendsNotification="//@hasNotification.0"/>
+  </hasMediator>
+  <hasMediator name="ApplicationMediator">
+    <hasNotificationHandler recievesNotification="//@hasNotification.2"/>
+    <hasNotificationHandler name="" recievesNotification="//@hasNotification.4"/>
+  </hasMediator>
+  <hasNotification name="toState2Notification" recievedByCommand="//@hasCommand.0"/>
+  <hasNotification name="toState1Notification" recievedByCommand="//@hasCommand.1"/>
+  <hasNotification name="showState1"/>
+  <hasNotification name="toState1"/>
+  <hasNotification name="showState2"/>
+  <hasNotification name="toState2"/>
+  <hasCommand name="State2Command" hasNotification="//@hasNotification.2"/>
+  <hasCommand name="State1Command" hasNotification="//@hasNotification.4"/>
+  <hasView/>
+</uid:Application>

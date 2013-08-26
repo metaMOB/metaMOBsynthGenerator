@@ -3,10 +3,12 @@
 package uid.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import uid.Command;
 import uid.Notification;
 import uid.UidPackage;
 
@@ -18,6 +20,7 @@ import uid.UidPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uid.impl.NotificationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uid.impl.NotificationImpl#getRecievedByCommand <em>Recieved By Command</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +46,16 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRecievedByCommand() <em>Recieved By Command</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecievedByCommand()
+	 * @generated
+	 * @ordered
+	 */
+	protected Command recievedByCommand;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,11 +102,52 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Command getRecievedByCommand() {
+		if (recievedByCommand != null && recievedByCommand.eIsProxy()) {
+			InternalEObject oldRecievedByCommand = (InternalEObject)recievedByCommand;
+			recievedByCommand = (Command)eResolveProxy(oldRecievedByCommand);
+			if (recievedByCommand != oldRecievedByCommand) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, UidPackage.NOTIFICATION__RECIEVED_BY_COMMAND, oldRecievedByCommand, recievedByCommand));
+			}
+		}
+		return recievedByCommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Command basicGetRecievedByCommand() {
+		return recievedByCommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecievedByCommand(Command newRecievedByCommand) {
+		Command oldRecievedByCommand = recievedByCommand;
+		recievedByCommand = newRecievedByCommand;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, UidPackage.NOTIFICATION__RECIEVED_BY_COMMAND, oldRecievedByCommand, recievedByCommand));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case UidPackage.NOTIFICATION__NAME:
 				return getName();
+			case UidPackage.NOTIFICATION__RECIEVED_BY_COMMAND:
+				if (resolve) return getRecievedByCommand();
+				return basicGetRecievedByCommand();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,6 +162,9 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 		switch (featureID) {
 			case UidPackage.NOTIFICATION__NAME:
 				setName((String)newValue);
+				return;
+			case UidPackage.NOTIFICATION__RECIEVED_BY_COMMAND:
+				setRecievedByCommand((Command)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,6 +181,9 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 			case UidPackage.NOTIFICATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case UidPackage.NOTIFICATION__RECIEVED_BY_COMMAND:
+				setRecievedByCommand((Command)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,6 +198,8 @@ public class NotificationImpl extends EObjectImpl implements Notification {
 		switch (featureID) {
 			case UidPackage.NOTIFICATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case UidPackage.NOTIFICATION__RECIEVED_BY_COMMAND:
+				return recievedByCommand != null;
 		}
 		return super.eIsSet(featureID);
 	}

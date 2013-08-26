@@ -2,14 +2,24 @@
  */
 package uid.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import uid.Component;
+import uid.Event;
 import uid.UidPackage;
 
 /**
@@ -23,6 +33,7 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.ComponentImpl#isVisible <em>Visible</em>}</li>
  *   <li>{@link uid.impl.ComponentImpl#getX <em>X</em>}</li>
  *   <li>{@link uid.impl.ComponentImpl#getY <em>Y</em>}</li>
+ *   <li>{@link uid.impl.ComponentImpl#getHasEvents <em>Has Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,6 +119,16 @@ public class ComponentImpl extends EObjectImpl implements Component {
 	 * @ordered
 	 */
 	protected int y = Y_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHasEvents() <em>Has Events</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasEvents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Event> hasEvents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,6 +238,32 @@ public class ComponentImpl extends EObjectImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Event> getHasEvents() {
+		if (hasEvents == null) {
+			hasEvents = new EObjectContainmentEList<Event>(Event.class, this, UidPackage.COMPONENT__HAS_EVENTS);
+		}
+		return hasEvents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UidPackage.COMPONENT__HAS_EVENTS:
+				return ((InternalEList<?>)getHasEvents()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -228,6 +275,8 @@ public class ComponentImpl extends EObjectImpl implements Component {
 				return getX();
 			case UidPackage.COMPONENT__Y:
 				return getY();
+			case UidPackage.COMPONENT__HAS_EVENTS:
+				return getHasEvents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -237,6 +286,7 @@ public class ComponentImpl extends EObjectImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -251,6 +301,10 @@ public class ComponentImpl extends EObjectImpl implements Component {
 				return;
 			case UidPackage.COMPONENT__Y:
 				setY((Integer)newValue);
+				return;
+			case UidPackage.COMPONENT__HAS_EVENTS:
+				getHasEvents().clear();
+				getHasEvents().addAll((Collection<? extends Event>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,6 +330,9 @@ public class ComponentImpl extends EObjectImpl implements Component {
 			case UidPackage.COMPONENT__Y:
 				setY(Y_EDEFAULT);
 				return;
+			case UidPackage.COMPONENT__HAS_EVENTS:
+				getHasEvents().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,6 +353,8 @@ public class ComponentImpl extends EObjectImpl implements Component {
 				return x != X_EDEFAULT;
 			case UidPackage.COMPONENT__Y:
 				return y != Y_EDEFAULT;
+			case UidPackage.COMPONENT__HAS_EVENTS:
+				return hasEvents != null && !hasEvents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

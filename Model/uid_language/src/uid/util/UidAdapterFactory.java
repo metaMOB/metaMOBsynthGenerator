@@ -116,8 +116,16 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 				return createNotificationAdapter();
 			}
 			@Override
-			public Adapter caseEventNotification(EventNotification object) {
-				return createEventNotificationAdapter();
+			public Adapter caseCommand(Command object) {
+				return createCommandAdapter();
+			}
+			@Override
+			public Adapter caseEvent(Event object) {
+				return createEventAdapter();
+			}
+			@Override
+			public Adapter caseNotificationHandler(NotificationHandler object) {
+				return createNotificationHandlerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -308,16 +316,44 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uid.EventNotification <em>Event Notification</em>}'.
+	 * Creates a new adapter for an object of class '{@link uid.Command <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uid.EventNotification
+	 * @see uid.Command
 	 * @generated
 	 */
-	public Adapter createEventNotificationAdapter() {
+	public Adapter createCommandAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.Event <em>Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.Event
+	 * @generated
+	 */
+	public Adapter createEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.NotificationHandler <em>Notification Handler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.NotificationHandler
+	 * @generated
+	 */
+	public Adapter createNotificationHandlerAdapter() {
 		return null;
 	}
 

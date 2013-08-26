@@ -81,7 +81,6 @@ public class UidSwitch<T> extends Switch<T> {
 			case UidPackage.VIEW: {
 				View view = (View)theEObject;
 				T result = caseView(view);
-				if (result == null) result = caseComponent(view);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,9 +145,21 @@ public class UidSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UidPackage.EVENT_NOTIFICATION: {
-				EventNotification eventNotification = (EventNotification)theEObject;
-				T result = caseEventNotification(eventNotification);
+			case UidPackage.COMMAND: {
+				Command command = (Command)theEObject;
+				T result = caseCommand(command);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.EVENT: {
+				Event event = (Event)theEObject;
+				T result = caseEvent(event);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.NOTIFICATION_HANDLER: {
+				NotificationHandler notificationHandler = (NotificationHandler)theEObject;
+				T result = caseNotificationHandler(notificationHandler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -337,17 +348,47 @@ public class UidSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event Notification</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event Notification</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Command</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEventNotification(EventNotification object) {
+	public T caseCommand(Command object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEvent(Event object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Notification Handler</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Notification Handler</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNotificationHandler(NotificationHandler object) {
 		return null;
 	}
 

@@ -2,6 +2,8 @@
  */
 package uid;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uid.Component#isVisible <em>Visible</em>}</li>
  *   <li>{@link uid.Component#getX <em>X</em>}</li>
  *   <li>{@link uid.Component#getY <em>Y</em>}</li>
+ *   <li>{@link uid.Component#getHasEvents <em>Has Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,5 +130,21 @@ public interface Component extends EObject {
 	 * @generated
 	 */
 	void setY(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Events</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.Event}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Events</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Events</em>' containment reference list.
+	 * @see uid.UidPackage#getComponent_HasEvents()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Event> getHasEvents();
 
 } // Component

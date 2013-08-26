@@ -130,13 +130,31 @@ public interface UidFactory extends EFactory {
 	Notification createNotification();
 
 	/**
-	 * Returns a new object of class '<em>Event Notification</em>'.
+	 * Returns a new object of class '<em>Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Event Notification</em>'.
+	 * @return a new object of class '<em>Command</em>'.
 	 * @generated
 	 */
-	EventNotification createEventNotification();
+	Command createCommand();
+
+	/**
+	 * Returns a new object of class '<em>Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Event</em>'.
+	 * @generated
+	 */
+	Event createEvent();
+
+	/**
+	 * Returns a new object of class '<em>Notification Handler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Notification Handler</em>'.
+	 * @generated
+	 */
+	NotificationHandler createNotificationHandler();
 
 	/**
 	 * Returns the package supported by this factory.

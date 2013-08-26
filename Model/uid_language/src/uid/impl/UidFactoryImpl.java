@@ -69,7 +69,9 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 			case UidPackage.DISPLAY: return createDisplay();
 			case UidPackage.BUTTON: return createButton();
 			case UidPackage.NOTIFICATION: return createNotification();
-			case UidPackage.EVENT_NOTIFICATION: return createEventNotification();
+			case UidPackage.COMMAND: return createCommand();
+			case UidPackage.EVENT: return createEvent();
+			case UidPackage.NOTIFICATION_HANDLER: return createNotificationHandler();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -234,9 +236,29 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventNotification createEventNotification() {
-		EventNotificationImpl eventNotification = new EventNotificationImpl();
-		return eventNotification;
+	public Command createCommand() {
+		CommandImpl command = new CommandImpl();
+		return command;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event createEvent() {
+		EventImpl event = new EventImpl();
+		return event;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationHandler createNotificationHandler() {
+		NotificationHandlerImpl notificationHandler = new NotificationHandlerImpl();
+		return notificationHandler;
 	}
 
 	/**

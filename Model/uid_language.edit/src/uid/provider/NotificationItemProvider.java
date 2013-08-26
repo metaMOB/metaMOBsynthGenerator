@@ -60,6 +60,7 @@ public class NotificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRecievedByCommandPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +83,28 @@ public class NotificationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Recieved By Command feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRecievedByCommandPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Notification_recievedByCommand_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Notification_recievedByCommand_feature", "_UI_Notification_type"),
+				 UidPackage.Literals.NOTIFICATION__RECIEVED_BY_COMMAND,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

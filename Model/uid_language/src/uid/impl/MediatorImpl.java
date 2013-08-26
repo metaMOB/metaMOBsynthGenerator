@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uid.EventNotification;
 import uid.Mediator;
+import uid.NotificationHandler;
 import uid.UidPackage;
 
 /**
@@ -30,7 +30,7 @@ import uid.UidPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uid.impl.MediatorImpl#getName <em>Name</em>}</li>
- *   <li>{@link uid.impl.MediatorImpl#getHasEventNotification <em>Has Event Notification</em>}</li>
+ *   <li>{@link uid.impl.MediatorImpl#getHasNotificationHandler <em>Has Notification Handler</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,14 +58,14 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHasEventNotification() <em>Has Event Notification</em>}' containment reference list.
+	 * The cached value of the '{@link #getHasNotificationHandler() <em>Has Notification Handler</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasEventNotification()
+	 * @see #getHasNotificationHandler()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EventNotification> hasEventNotification;
+	protected EList<NotificationHandler> hasNotificationHandler;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,26 +112,11 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EventNotification> getHasEventNotification() {
-		if (hasEventNotification == null) {
-			hasEventNotification = new EObjectContainmentWithInverseEList<EventNotification>(EventNotification.class, this, UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION, UidPackage.EVENT_NOTIFICATION__HAS_MEDIATOR);
+	public EList<NotificationHandler> getHasNotificationHandler() {
+		if (hasNotificationHandler == null) {
+			hasNotificationHandler = new EObjectContainmentEList<NotificationHandler>(NotificationHandler.class, this, UidPackage.MEDIATOR__HAS_NOTIFICATION_HANDLER);
 		}
-		return hasEventNotification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasEventNotification()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return hasNotificationHandler;
 	}
 
 	/**
@@ -142,8 +127,8 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
-				return ((InternalEList<?>)getHasEventNotification()).basicRemove(otherEnd, msgs);
+			case UidPackage.MEDIATOR__HAS_NOTIFICATION_HANDLER:
+				return ((InternalEList<?>)getHasNotificationHandler()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -158,8 +143,8 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 		switch (featureID) {
 			case UidPackage.MEDIATOR__NAME:
 				return getName();
-			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
-				return getHasEventNotification();
+			case UidPackage.MEDIATOR__HAS_NOTIFICATION_HANDLER:
+				return getHasNotificationHandler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,9 +161,9 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 			case UidPackage.MEDIATOR__NAME:
 				setName((String)newValue);
 				return;
-			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
-				getHasEventNotification().clear();
-				getHasEventNotification().addAll((Collection<? extends EventNotification>)newValue);
+			case UidPackage.MEDIATOR__HAS_NOTIFICATION_HANDLER:
+				getHasNotificationHandler().clear();
+				getHasNotificationHandler().addAll((Collection<? extends NotificationHandler>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,8 +180,8 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 			case UidPackage.MEDIATOR__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
-				getHasEventNotification().clear();
+			case UidPackage.MEDIATOR__HAS_NOTIFICATION_HANDLER:
+				getHasNotificationHandler().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -212,8 +197,8 @@ public class MediatorImpl extends EObjectImpl implements Mediator {
 		switch (featureID) {
 			case UidPackage.MEDIATOR__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case UidPackage.MEDIATOR__HAS_EVENT_NOTIFICATION:
-				return hasEventNotification != null && !hasEventNotification.isEmpty();
+			case UidPackage.MEDIATOR__HAS_NOTIFICATION_HANDLER:
+				return hasNotificationHandler != null && !hasNotificationHandler.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

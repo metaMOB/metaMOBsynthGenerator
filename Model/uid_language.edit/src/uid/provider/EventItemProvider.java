@@ -22,16 +22,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uid.EventNotification;
+import uid.Event;
 import uid.UidPackage;
 
 /**
- * This is the item provider adapter for a {@link uid.EventNotification} object.
+ * This is the item provider adapter for a {@link uid.Event} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EventNotificationItemProvider
+public class EventItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class EventNotificationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventNotificationItemProvider(AdapterFactory adapterFactory) {
+	public EventItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +61,7 @@ public class EventNotificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addHasNotificationPropertyDescriptor(object);
+			addSendsNotificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,9 +77,9 @@ public class EventNotificationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EventNotification_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EventNotification_name_feature", "_UI_EventNotification_type"),
-				 UidPackage.Literals.EVENT_NOTIFICATION__NAME,
+				 getString("_UI_Event_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Event_name_feature", "_UI_Event_type"),
+				 UidPackage.Literals.EVENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -89,19 +89,19 @@ public class EventNotificationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Notification feature.
+	 * This adds a property descriptor for the Sends Notification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasNotificationPropertyDescriptor(Object object) {
+	protected void addSendsNotificationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EventNotification_hasNotification_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EventNotification_hasNotification_feature", "_UI_EventNotification_type"),
-				 UidPackage.Literals.EVENT_NOTIFICATION__HAS_NOTIFICATION,
+				 getString("_UI_Event_sendsNotification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Event_sendsNotification_feature", "_UI_Event_type"),
+				 UidPackage.Literals.EVENT__SENDS_NOTIFICATION,
 				 true,
 				 false,
 				 true,
@@ -111,14 +111,14 @@ public class EventNotificationItemProvider
 	}
 
 	/**
-	 * This returns EventNotification.gif.
+	 * This returns Event.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EventNotification"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Event"));
 	}
 
 	/**
@@ -129,10 +129,10 @@ public class EventNotificationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EventNotification)object).getName();
+		String label = ((Event)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_EventNotification_type") :
-			getString("_UI_EventNotification_type") + " " + label;
+			getString("_UI_Event_type") :
+			getString("_UI_Event_type") + " " + label;
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class EventNotificationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EventNotification.class)) {
-			case UidPackage.EVENT_NOTIFICATION__NAME:
+		switch (notification.getFeatureID(Event.class)) {
+			case UidPackage.EVENT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

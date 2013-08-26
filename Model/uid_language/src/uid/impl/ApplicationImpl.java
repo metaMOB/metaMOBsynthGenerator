@@ -4,7 +4,6 @@ package uid.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,10 +18,12 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uid.Application;
-import uid.Component;
+import uid.Command;
 import uid.EntityTransition;
 import uid.Mediator;
+import uid.Notification;
 import uid.UidPackage;
+import uid.View;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +34,10 @@ import uid.UidPackage;
  * <ul>
  *   <li>{@link uid.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasEntityTransition <em>Has Entity Transition</em>}</li>
- *   <li>{@link uid.impl.ApplicationImpl#getHasView <em>Has View</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasMediator <em>Has Mediator</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasNotification <em>Has Notification</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasCommand <em>Has Command</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasView <em>Has View</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,16 +75,6 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	protected EList<EntityTransition> hasEntityTransition;
 
 	/**
-	 * The cached value of the '{@link #getHasView() <em>Has View</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHasView()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Component> hasView;
-
-	/**
 	 * The cached value of the '{@link #getHasMediator() <em>Has Mediator</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,6 +83,36 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @ordered
 	 */
 	protected EList<Mediator> hasMediator;
+
+	/**
+	 * The cached value of the '{@link #getHasNotification() <em>Has Notification</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasNotification()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Notification> hasNotification;
+
+	/**
+	 * The cached value of the '{@link #getHasCommand() <em>Has Command</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasCommand()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Command> hasCommand;
+
+	/**
+	 * The cached value of the '{@link #getHasView() <em>Has View</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasView()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<View> hasView;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +151,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, UidPackage.APPLICATION__NAME, oldName, name));
 	}
 
 	/**
@@ -148,18 +171,6 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Component> getHasView() {
-		if (hasView == null) {
-			hasView = new EObjectContainmentEList<Component>(Component.class, this, UidPackage.APPLICATION__HAS_VIEW);
-		}
-		return hasView;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Mediator> getHasMediator() {
 		if (hasMediator == null) {
 			hasMediator = new EObjectContainmentEList<Mediator>(Mediator.class, this, UidPackage.APPLICATION__HAS_MEDIATOR);
@@ -172,15 +183,55 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Notification> getHasNotification() {
+		if (hasNotification == null) {
+			hasNotification = new EObjectContainmentEList<Notification>(Notification.class, this, UidPackage.APPLICATION__HAS_NOTIFICATION);
+		}
+		return hasNotification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Command> getHasCommand() {
+		if (hasCommand == null) {
+			hasCommand = new EObjectContainmentEList<Command>(Command.class, this, UidPackage.APPLICATION__HAS_COMMAND);
+		}
+		return hasCommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<View> getHasView() {
+		if (hasView == null) {
+			hasView = new EObjectContainmentEList<View>(View.class, this, UidPackage.APPLICATION__HAS_VIEW);
+		}
+		return hasView;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return ((InternalEList<?>)getHasEntityTransition()).basicRemove(otherEnd, msgs);
-			case UidPackage.APPLICATION__HAS_VIEW:
-				return ((InternalEList<?>)getHasView()).basicRemove(otherEnd, msgs);
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return ((InternalEList<?>)getHasMediator()).basicRemove(otherEnd, msgs);
+			case UidPackage.APPLICATION__HAS_NOTIFICATION:
+				return ((InternalEList<?>)getHasNotification()).basicRemove(otherEnd, msgs);
+			case UidPackage.APPLICATION__HAS_COMMAND:
+				return ((InternalEList<?>)getHasCommand()).basicRemove(otherEnd, msgs);
+			case UidPackage.APPLICATION__HAS_VIEW:
+				return ((InternalEList<?>)getHasView()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,10 +248,14 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return getName();
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return getHasEntityTransition();
-			case UidPackage.APPLICATION__HAS_VIEW:
-				return getHasView();
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return getHasMediator();
+			case UidPackage.APPLICATION__HAS_NOTIFICATION:
+				return getHasNotification();
+			case UidPackage.APPLICATION__HAS_COMMAND:
+				return getHasCommand();
+			case UidPackage.APPLICATION__HAS_VIEW:
+				return getHasView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,13 +276,21 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				getHasEntityTransition().clear();
 				getHasEntityTransition().addAll((Collection<? extends EntityTransition>)newValue);
 				return;
-			case UidPackage.APPLICATION__HAS_VIEW:
-				getHasView().clear();
-				getHasView().addAll((Collection<? extends Component>)newValue);
-				return;
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				getHasMediator().clear();
 				getHasMediator().addAll((Collection<? extends Mediator>)newValue);
+				return;
+			case UidPackage.APPLICATION__HAS_NOTIFICATION:
+				getHasNotification().clear();
+				getHasNotification().addAll((Collection<? extends Notification>)newValue);
+				return;
+			case UidPackage.APPLICATION__HAS_COMMAND:
+				getHasCommand().clear();
+				getHasCommand().addAll((Collection<? extends Command>)newValue);
+				return;
+			case UidPackage.APPLICATION__HAS_VIEW:
+				getHasView().clear();
+				getHasView().addAll((Collection<? extends View>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,11 +310,17 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				getHasEntityTransition().clear();
 				return;
-			case UidPackage.APPLICATION__HAS_VIEW:
-				getHasView().clear();
-				return;
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				getHasMediator().clear();
+				return;
+			case UidPackage.APPLICATION__HAS_NOTIFICATION:
+				getHasNotification().clear();
+				return;
+			case UidPackage.APPLICATION__HAS_COMMAND:
+				getHasCommand().clear();
+				return;
+			case UidPackage.APPLICATION__HAS_VIEW:
+				getHasView().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -269,10 +338,14 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return hasEntityTransition != null && !hasEntityTransition.isEmpty();
-			case UidPackage.APPLICATION__HAS_VIEW:
-				return hasView != null && !hasView.isEmpty();
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return hasMediator != null && !hasMediator.isEmpty();
+			case UidPackage.APPLICATION__HAS_NOTIFICATION:
+				return hasNotification != null && !hasNotification.isEmpty();
+			case UidPackage.APPLICATION__HAS_COMMAND:
+				return hasCommand != null && !hasCommand.isEmpty();
+			case UidPackage.APPLICATION__HAS_VIEW:
+				return hasView != null && !hasView.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

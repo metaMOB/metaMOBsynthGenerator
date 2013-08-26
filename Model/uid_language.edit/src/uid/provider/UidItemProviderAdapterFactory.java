@@ -348,26 +348,72 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uid.EventNotification} instances.
+	 * This keeps track of the one adapter used for all {@link uid.Command} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EventNotificationItemProvider eventNotificationItemProvider;
+	protected CommandItemProvider commandItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uid.EventNotification}.
+	 * This creates an adapter for a {@link uid.Command}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEventNotificationAdapter() {
-		if (eventNotificationItemProvider == null) {
-			eventNotificationItemProvider = new EventNotificationItemProvider(this);
+	public Adapter createCommandAdapter() {
+		if (commandItemProvider == null) {
+			commandItemProvider = new CommandItemProvider(this);
 		}
 
-		return eventNotificationItemProvider;
+		return commandItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Event} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EventItemProvider eventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Event}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEventAdapter() {
+		if (eventItemProvider == null) {
+			eventItemProvider = new EventItemProvider(this);
+		}
+
+		return eventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.NotificationHandler} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NotificationHandlerItemProvider notificationHandlerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.NotificationHandler}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNotificationHandlerAdapter() {
+		if (notificationHandlerItemProvider == null) {
+			notificationHandlerItemProvider = new NotificationHandlerItemProvider(this);
+		}
+
+		return notificationHandlerItemProvider;
 	}
 
 	/**
@@ -481,7 +527,9 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 		if (displayItemProvider != null) displayItemProvider.dispose();
 		if (buttonItemProvider != null) buttonItemProvider.dispose();
 		if (notificationItemProvider != null) notificationItemProvider.dispose();
-		if (eventNotificationItemProvider != null) eventNotificationItemProvider.dispose();
+		if (commandItemProvider != null) commandItemProvider.dispose();
+		if (eventItemProvider != null) eventItemProvider.dispose();
+		if (notificationHandlerItemProvider != null) notificationHandlerItemProvider.dispose();
 	}
 
 }

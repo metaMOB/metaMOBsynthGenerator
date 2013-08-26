@@ -2,6 +2,8 @@
  */
 package uid.tests;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import uid.UidFactory;
@@ -13,7 +15,15 @@ import uid.View;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ViewTest extends ComponentTest {
+public class ViewTest extends TestCase {
+
+	/**
+	 * The fixture for this View test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected View fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +45,23 @@ public class ViewTest extends ComponentTest {
 	}
 
 	/**
+	 * Sets the fixture for this View test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(View fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this View test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected View getFixture() {
-		return (View)fixture;
+		return fixture;
 	}
 
 	/**

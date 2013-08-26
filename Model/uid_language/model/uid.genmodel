@@ -5,21 +5,98 @@
     copyrightFields="false">
   <foreignModel>uid.ecore</foreignModel>
   <genPackages prefix="Uid" disposableProviderFactory="true" ecorePackage="uid.ecore#/">
-    <genClasses ecoreClass="uid.ecore#//Window"/>
-    <genClasses ecoreClass="uid.ecore#//IE">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//IE/ieAssoc"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//IE/name"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="uid.ecore#//ETransitionTypesIn">
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypesIn/fadeIn"/>
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypesIn/swipeIn"/>
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypesIn/zoomIn"/>
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypesIn/none"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="uid.ecore#//ETransitionTypeOut">
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypeOut/fadeOut"/>
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypeOut/swipeOut"/>
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypeOut/zoomOut"/>
+      <genEnumLiterals ecoreEnumLiteral="uid.ecore#//ETransitionTypeOut/none"/>
+    </genEnums>
+    <genClasses ecoreClass="uid.ecore#//EntityTransition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//EntityTransition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//EntityTransition/animationTypeIn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//EntityTransition/animationTypeOut"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//EntityTransition/animationInTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//EntityTransition/animationOutTime"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//EntityTransition/hasComponent"/>
     </genClasses>
-    <genClasses ecoreClass="uid.ecore#//Button"/>
-    <genClasses ecoreClass="uid.ecore#//TextField"/>
-    <genClasses ecoreClass="uid.ecore#//List"/>
-    <genClasses ecoreClass="uid.ecore#//IEAssoc">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//IEAssoc/ie"/>
+    <genClasses ecoreClass="uid.ecore#//Application">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Application/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//Application/hasEntityTransition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//Application/hasView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//Application/hasMediator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//Application/hasNotification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//Application/hasCommand"/>
     </genClasses>
-    <genClasses ecoreClass="uid.ecore#//App">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//App/has"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//App/hasIE"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//App/name"/>
+    <genClasses ecoreClass="uid.ecore#//View">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//View/image_background"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//View/hasRegulator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//View/hasMatrix"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//View/hasButton"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//View/hasDisplay"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//View/hasTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//View/hasComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//View/sendMediatorViewNotification"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Component/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Component/visible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Component/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Component/y"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Switch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Switch/value"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Mediator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Mediator/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//Mediator/recieveMediatorViewNotification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//Mediator/recieveNotification"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Regulator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Regulator/minValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Regulator/maxValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Regulator/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Regulator/defaultValue"/>
+      <genOperations ecoreOperation="uid.ecore#//Regulator/setValue"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Matrix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Matrix/image_background"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Matrix/image_tap"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Matrix/image_doubleTap"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Matrix/value"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Container"/>
+    <genClasses ecoreClass="uid.ecore#//Display">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Display/image_background"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Display/value"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Button">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Button/image_on"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Button/image_off"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Button/image_disabled"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Notification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Notification/name"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//MediatorViewNotification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//MediatorViewNotification/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference uid.ecore#//MediatorViewNotification/hasMediator"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference uid.ecore#//MediatorViewNotification/hasView"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//MediatorViewNotification/sendNotification"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Command">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//Command/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//Command/has"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//NotificationHandler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//NotificationHandler/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//NotificationHandler/recieveNotification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//NotificationHandler/sendNotification"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Types" disposableProviderFactory="true" ecorePackage="Types.ecore#/">
