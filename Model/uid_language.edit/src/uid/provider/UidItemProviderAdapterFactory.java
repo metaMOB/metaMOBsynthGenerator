@@ -118,29 +118,6 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uid.View} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ViewItemProvider viewItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uid.View}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createViewAdapter() {
-		if (viewItemProvider == null) {
-			viewItemProvider = new ViewItemProvider(this);
-		}
-
-		return viewItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uid.Component} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -417,6 +394,121 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uid.Stage} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StageItemProvider stageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Stage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStageAdapter() {
+		if (stageItemProvider == null) {
+			stageItemProvider = new StageItemProvider(this);
+		}
+
+		return stageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Views} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewsItemProvider viewsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Views}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewsAdapter() {
+		if (viewsItemProvider == null) {
+			viewsItemProvider = new ViewsItemProvider(this);
+		}
+
+		return viewsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Controllers} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ControllersItemProvider controllersItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Controllers}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createControllersAdapter() {
+		if (controllersItemProvider == null) {
+			controllersItemProvider = new ControllersItemProvider(this);
+		}
+
+		return controllersItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Models} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelsItemProvider modelsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Models}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelsAdapter() {
+		if (modelsItemProvider == null) {
+			modelsItemProvider = new ModelsItemProvider(this);
+		}
+
+		return modelsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Notifications} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NotificationsItemProvider notificationsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Notifications}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNotificationsAdapter() {
+		if (notificationsItemProvider == null) {
+			notificationsItemProvider = new NotificationsItemProvider(this);
+		}
+
+		return notificationsItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -517,7 +609,6 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	public void dispose() {
 		if (entityTransitionItemProvider != null) entityTransitionItemProvider.dispose();
 		if (applicationItemProvider != null) applicationItemProvider.dispose();
-		if (viewItemProvider != null) viewItemProvider.dispose();
 		if (componentItemProvider != null) componentItemProvider.dispose();
 		if (switchItemProvider != null) switchItemProvider.dispose();
 		if (mediatorItemProvider != null) mediatorItemProvider.dispose();
@@ -530,6 +621,11 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 		if (commandItemProvider != null) commandItemProvider.dispose();
 		if (eventItemProvider != null) eventItemProvider.dispose();
 		if (notificationHandlerItemProvider != null) notificationHandlerItemProvider.dispose();
+		if (stageItemProvider != null) stageItemProvider.dispose();
+		if (viewsItemProvider != null) viewsItemProvider.dispose();
+		if (controllersItemProvider != null) controllersItemProvider.dispose();
+		if (modelsItemProvider != null) modelsItemProvider.dispose();
+		if (notificationsItemProvider != null) notificationsItemProvider.dispose();
 	}
 
 }

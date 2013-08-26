@@ -59,7 +59,6 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 		switch (eClass.getClassifierID()) {
 			case UidPackage.ENTITY_TRANSITION: return createEntityTransition();
 			case UidPackage.APPLICATION: return createApplication();
-			case UidPackage.VIEW: return createView();
 			case UidPackage.COMPONENT: return createComponent();
 			case UidPackage.SWITCH: return createSwitch();
 			case UidPackage.MEDIATOR: return createMediator();
@@ -72,6 +71,11 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 			case UidPackage.COMMAND: return createCommand();
 			case UidPackage.EVENT: return createEvent();
 			case UidPackage.NOTIFICATION_HANDLER: return createNotificationHandler();
+			case UidPackage.STAGE: return createStage();
+			case UidPackage.VIEWS: return createViews();
+			case UidPackage.CONTROLLERS: return createControllers();
+			case UidPackage.MODELS: return createModels();
+			case UidPackage.NOTIFICATIONS: return createNotifications();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,6 +93,8 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 				return createETransitionTypesInFromString(eDataType, initialValue);
 			case UidPackage.ETRANSITION_TYPE_OUT:
 				return createETransitionTypeOutFromString(eDataType, initialValue);
+			case UidPackage.EUI_EVENT_CALLBACKS:
+				return createEuiEventCallbacksFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -106,6 +112,8 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 				return convertETransitionTypesInToString(eDataType, instanceValue);
 			case UidPackage.ETRANSITION_TYPE_OUT:
 				return convertETransitionTypeOutToString(eDataType, instanceValue);
+			case UidPackage.EUI_EVENT_CALLBACKS:
+				return convertEuiEventCallbacksToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -129,16 +137,6 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	public Application createApplication() {
 		ApplicationImpl application = new ApplicationImpl();
 		return application;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public View createView() {
-		ViewImpl view = new ViewImpl();
-		return view;
 	}
 
 	/**
@@ -266,6 +264,56 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Stage createStage() {
+		StageImpl stage = new StageImpl();
+		return stage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Views createViews() {
+		ViewsImpl views = new ViewsImpl();
+		return views;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Controllers createControllers() {
+		ControllersImpl controllers = new ControllersImpl();
+		return controllers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Models createModels() {
+		ModelsImpl models = new ModelsImpl();
+		return models;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Notifications createNotifications() {
+		NotificationsImpl notifications = new NotificationsImpl();
+		return notifications;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ETransitionTypesIn createETransitionTypesInFromString(EDataType eDataType, String initialValue) {
 		ETransitionTypesIn result = ETransitionTypesIn.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -298,6 +346,26 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	 * @generated
 	 */
 	public String convertETransitionTypeOutToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EuiEventCallbacks createEuiEventCallbacksFromString(EDataType eDataType, String initialValue) {
+		EuiEventCallbacks result = EuiEventCallbacks.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEuiEventCallbacksToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

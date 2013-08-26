@@ -62,6 +62,7 @@ public class EventItemProvider
 
 			addNamePropertyDescriptor(object);
 			addSendsNotificationPropertyDescriptor(object);
+			addCallbackPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class EventItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Callback feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCallbackPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Event_callback_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Event_callback_feature", "_UI_Event_type"),
+				 UidPackage.Literals.EVENT__CALLBACK,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Event.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +171,7 @@ public class EventItemProvider
 
 		switch (notification.getFeatureID(Event.class)) {
 			case UidPackage.EVENT__NAME:
+			case UidPackage.EVENT__CALLBACK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import uid.EuiEventCallbacks;
 import uid.Event;
 import uid.Notification;
 import uid.UidPackage;
@@ -26,6 +27,7 @@ import uid.UidPackage;
  * <ul>
  *   <li>{@link uid.impl.EventImpl#getName <em>Name</em>}</li>
  *   <li>{@link uid.impl.EventImpl#getSendsNotification <em>Sends Notification</em>}</li>
+ *   <li>{@link uid.impl.EventImpl#getCallback <em>Callback</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +63,26 @@ public class EventImpl extends EObjectImpl implements Event {
 	 * @ordered
 	 */
 	protected EList<Notification> sendsNotification;
+
+	/**
+	 * The default value of the '{@link #getCallback() <em>Callback</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCallback()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EuiEventCallbacks CALLBACK_EDEFAULT = EuiEventCallbacks.ON_TOUCH_DOWN;
+
+	/**
+	 * The cached value of the '{@link #getCallback() <em>Callback</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCallback()
+	 * @generated
+	 * @ordered
+	 */
+	protected EuiEventCallbacks callback = CALLBACK_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,6 +141,27 @@ public class EventImpl extends EObjectImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EuiEventCallbacks getCallback() {
+		return callback;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCallback(EuiEventCallbacks newCallback) {
+		EuiEventCallbacks oldCallback = callback;
+		callback = newCallback == null ? CALLBACK_EDEFAULT : newCallback;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, UidPackage.EVENT__CALLBACK, oldCallback, callback));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -126,6 +169,8 @@ public class EventImpl extends EObjectImpl implements Event {
 				return getName();
 			case UidPackage.EVENT__SENDS_NOTIFICATION:
 				return getSendsNotification();
+			case UidPackage.EVENT__CALLBACK:
+				return getCallback();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,6 +191,9 @@ public class EventImpl extends EObjectImpl implements Event {
 				getSendsNotification().clear();
 				getSendsNotification().addAll((Collection<? extends Notification>)newValue);
 				return;
+			case UidPackage.EVENT__CALLBACK:
+				setCallback((EuiEventCallbacks)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -164,6 +212,9 @@ public class EventImpl extends EObjectImpl implements Event {
 			case UidPackage.EVENT__SENDS_NOTIFICATION:
 				getSendsNotification().clear();
 				return;
+			case UidPackage.EVENT__CALLBACK:
+				setCallback(CALLBACK_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,6 +231,8 @@ public class EventImpl extends EObjectImpl implements Event {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UidPackage.EVENT__SENDS_NOTIFICATION:
 				return sendsNotification != null && !sendsNotification.isEmpty();
+			case UidPackage.EVENT__CALLBACK:
+				return callback != CALLBACK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -196,6 +249,8 @@ public class EventImpl extends EObjectImpl implements Event {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", callback: ");
+		result.append(callback);
 		result.append(')');
 		return result.toString();
 	}

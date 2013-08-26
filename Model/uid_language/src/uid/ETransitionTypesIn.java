@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ETransitionTypesIn implements Enumerator {
 	/**
-	 * The '<em><b>Fade In</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #FADE_IN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	FADE_IN(0, "fadeIn", "fadeIn"),
-
-	/**
 	 * The '<em><b>Swipe In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,21 +47,6 @@ public enum ETransitionTypesIn implements Enumerator {
 	 * @ordered
 	 */
 	NONE(3, "none", "none");
-
-	/**
-	 * The '<em><b>Fade In</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Fade In</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #FADE_IN
-	 * @model name="fadeIn"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int FADE_IN_VALUE = 0;
 
 	/**
 	 * The '<em><b>Swipe In</b></em>' literal value.
@@ -126,7 +101,6 @@ public enum ETransitionTypesIn implements Enumerator {
 	 */
 	private static final ETransitionTypesIn[] VALUES_ARRAY =
 		new ETransitionTypesIn[] {
-			FADE_IN,
 			SWIPE_IN,
 			ZOOM_IN,
 			NONE,
@@ -180,7 +154,6 @@ public enum ETransitionTypesIn implements Enumerator {
 	 */
 	public static ETransitionTypesIn get(int value) {
 		switch (value) {
-			case FADE_IN_VALUE: return FADE_IN;
 			case SWIPE_IN_VALUE: return SWIPE_IN;
 			case ZOOM_IN_VALUE: return ZOOM_IN;
 			case NONE_VALUE: return NONE;

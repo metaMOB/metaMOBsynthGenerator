@@ -60,6 +60,7 @@ public class ButtonItemProvider
 			addImage_onPropertyDescriptor(object);
 			addImage_offPropertyDescriptor(object);
 			addImage_disabledPropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -131,6 +132,28 @@ public class ButtonItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Button_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Button_label_feature", "_UI_Button_type"),
+				 UidPackage.Literals.BUTTON__LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Button.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,6 +193,7 @@ public class ButtonItemProvider
 			case UidPackage.BUTTON__IMAGE_ON:
 			case UidPackage.BUTTON__IMAGE_OFF:
 			case UidPackage.BUTTON__IMAGE_DISABLED:
+			case UidPackage.BUTTON__LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

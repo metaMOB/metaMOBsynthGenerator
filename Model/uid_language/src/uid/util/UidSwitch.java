@@ -78,12 +78,6 @@ public class UidSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UidPackage.VIEW: {
-				View view = (View)theEObject;
-				T result = caseView(view);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case UidPackage.COMPONENT: {
 				Component component = (Component)theEObject;
 				T result = caseComponent(component);
@@ -163,6 +157,36 @@ public class UidSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case UidPackage.STAGE: {
+				Stage stage = (Stage)theEObject;
+				T result = caseStage(stage);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.VIEWS: {
+				Views views = (Views)theEObject;
+				T result = caseViews(views);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.CONTROLLERS: {
+				Controllers controllers = (Controllers)theEObject;
+				T result = caseControllers(controllers);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.MODELS: {
+				Models models = (Models)theEObject;
+				T result = caseModels(models);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.NOTIFICATIONS: {
+				Notifications notifications = (Notifications)theEObject;
+				T result = caseNotifications(notifications);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -194,21 +218,6 @@ public class UidSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseApplication(Application object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>View</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>View</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseView(View object) {
 		return null;
 	}
 
@@ -389,6 +398,81 @@ public class UidSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNotificationHandler(NotificationHandler object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stage</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stage</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStage(Stage object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Views</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Views</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViews(Views object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Controllers</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Controllers</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseControllers(Controllers object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Models</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Models</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModels(Models object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Notifications</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Notifications</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNotifications(Notifications object) {
 		return null;
 	}
 

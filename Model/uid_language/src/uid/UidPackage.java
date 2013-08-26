@@ -159,40 +159,40 @@ public interface UidPackage extends EPackage {
 	int APPLICATION__HAS_ENTITY_TRANSITION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Has Mediator</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Has Views</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HAS_MEDIATOR = 2;
+	int APPLICATION__HAS_VIEWS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Has Notification</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Has Controllers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HAS_NOTIFICATION = 3;
+	int APPLICATION__HAS_CONTROLLERS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Has Command</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Has Notifications</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HAS_COMMAND = 4;
+	int APPLICATION__HAS_NOTIFICATIONS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Has View</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Has Models</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HAS_VIEW = 5;
+	int APPLICATION__HAS_MODELS = 5;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -204,106 +204,6 @@ public interface UidPackage extends EPackage {
 	int APPLICATION_FEATURE_COUNT = 6;
 
 	/**
-	 * The meta object id for the '{@link uid.impl.ViewImpl <em>View</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uid.impl.ViewImpl
-	 * @see uid.impl.UidPackageImpl#getView()
-	 * @generated
-	 */
-	int VIEW = 2;
-
-	/**
-	 * The feature id for the '<em><b>Image background</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__IMAGE_BACKGROUND = 0;
-
-	/**
-	 * The feature id for the '<em><b>Has Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__HAS_TRANSITION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__NAME = 2;
-
-	/**
-	 * The feature id for the '<em><b>Has Display</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__HAS_DISPLAY = 3;
-
-	/**
-	 * The feature id for the '<em><b>Has Container</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__HAS_CONTAINER = 4;
-
-	/**
-	 * The feature id for the '<em><b>Has Matrix</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__HAS_MATRIX = 5;
-
-	/**
-	 * The feature id for the '<em><b>Has Regulator</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__HAS_REGULATOR = 6;
-
-	/**
-	 * The feature id for the '<em><b>Has Button</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__HAS_BUTTON = 7;
-
-	/**
-	 * The feature id for the '<em><b>Has Switch</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__HAS_SWITCH = 8;
-
-	/**
-	 * The number of structural features of the '<em>View</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_FEATURE_COUNT = 9;
-
-	/**
 	 * The meta object id for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -311,7 +211,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 3;
+	int COMPONENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -375,7 +275,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getButton()
 	 * @generated
 	 */
-	int BUTTON = 10;
+	int BUTTON = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -450,13 +350,22 @@ public interface UidPackage extends EPackage {
 	int BUTTON__IMAGE_DISABLED = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUTTON__LABEL = COMPONENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Button</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
+	int BUTTON_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.SwitchImpl <em>Switch</em>}' class.
@@ -466,7 +375,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getSwitch()
 	 * @generated
 	 */
-	int SWITCH = 4;
+	int SWITCH = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -541,6 +450,15 @@ public interface UidPackage extends EPackage {
 	int SWITCH__IMAGE_DISABLED = BUTTON__IMAGE_DISABLED;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__LABEL = BUTTON__LABEL;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -566,7 +484,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getMediator()
 	 * @generated
 	 */
-	int MEDIATOR = 5;
+	int MEDIATOR = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -603,7 +521,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getRegulator()
 	 * @generated
 	 */
-	int REGULATOR = 6;
+	int REGULATOR = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -703,7 +621,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getMatrix()
 	 * @generated
 	 */
-	int MATRIX = 7;
+	int MATRIX = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -803,7 +721,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getContainer()
 	 * @generated
 	 */
-	int CONTAINER = 8;
+	int CONTAINER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -867,7 +785,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getDisplay()
 	 * @generated
 	 */
-	int DISPLAY = 9;
+	int DISPLAY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -949,7 +867,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getNotification()
 	 * @generated
 	 */
-	int NOTIFICATION = 11;
+	int NOTIFICATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -986,7 +904,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getCommand()
 	 * @generated
 	 */
-	int COMMAND = 12;
+	int COMMAND = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1023,7 +941,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getEvent()
 	 * @generated
 	 */
-	int EVENT = 13;
+	int EVENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1044,13 +962,22 @@ public interface UidPackage extends EPackage {
 	int EVENT__SENDS_NOTIFICATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Callback</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__CALLBACK = 2;
+
+	/**
 	 * The number of structural features of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_FEATURE_COUNT = 2;
+	int EVENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.NotificationHandlerImpl <em>Notification Handler</em>}' class.
@@ -1060,7 +987,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getNotificationHandler()
 	 * @generated
 	 */
-	int NOTIFICATION_HANDLER = 14;
+	int NOTIFICATION_HANDLER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1099,6 +1026,218 @@ public interface UidPackage extends EPackage {
 	int NOTIFICATION_HANDLER_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link uid.impl.StageImpl <em>Stage</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.StageImpl
+	 * @see uid.impl.UidPackageImpl#getStage()
+	 * @generated
+	 */
+	int STAGE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Background</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__BACKGROUND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Has Display</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__HAS_DISPLAY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Has Container</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__HAS_CONTAINER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Has Matrix</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__HAS_MATRIX = 4;
+
+	/**
+	 * The feature id for the '<em><b>Has Regulator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__HAS_REGULATOR = 5;
+
+	/**
+	 * The feature id for the '<em><b>Has Button</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__HAS_BUTTON = 6;
+
+	/**
+	 * The feature id for the '<em><b>Has Switch</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__HAS_SWITCH = 7;
+
+	/**
+	 * The feature id for the '<em><b>Has Events</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__HAS_EVENTS = 8;
+
+	/**
+	 * The number of structural features of the '<em>Stage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE_FEATURE_COUNT = 9;
+
+	/**
+	 * The meta object id for the '{@link uid.impl.ViewsImpl <em>Views</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.ViewsImpl
+	 * @see uid.impl.UidPackageImpl#getViews()
+	 * @generated
+	 */
+	int VIEWS = 15;
+
+	/**
+	 * The feature id for the '<em><b>Has Stage</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWS__HAS_STAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Has Mediator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWS__HAS_MEDIATOR = 1;
+
+	/**
+	 * The number of structural features of the '<em>Views</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWS_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link uid.impl.ControllersImpl <em>Controllers</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.ControllersImpl
+	 * @see uid.impl.UidPackageImpl#getControllers()
+	 * @generated
+	 */
+	int CONTROLLERS = 16;
+
+	/**
+	 * The feature id for the '<em><b>Has Command</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLERS__HAS_COMMAND = 0;
+
+	/**
+	 * The number of structural features of the '<em>Controllers</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLERS_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link uid.impl.ModelsImpl <em>Models</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.ModelsImpl
+	 * @see uid.impl.UidPackageImpl#getModels()
+	 * @generated
+	 */
+	int MODELS = 17;
+
+	/**
+	 * The number of structural features of the '<em>Models</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODELS_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uid.impl.NotificationsImpl <em>Notifications</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.NotificationsImpl
+	 * @see uid.impl.UidPackageImpl#getNotifications()
+	 * @generated
+	 */
+	int NOTIFICATIONS = 18;
+
+	/**
+	 * The feature id for the '<em><b>Has Notification</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATIONS__HAS_NOTIFICATION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Notifications</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATIONS_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1106,7 +1245,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypesIn()
 	 * @generated
 	 */
-	int ETRANSITION_TYPES_IN = 15;
+	int ETRANSITION_TYPES_IN = 19;
 
 	/**
 	 * The meta object id for the '{@link uid.ETransitionTypeOut <em>ETransition Type Out</em>}' enum.
@@ -1116,7 +1255,17 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypeOut()
 	 * @generated
 	 */
-	int ETRANSITION_TYPE_OUT = 16;
+	int ETRANSITION_TYPE_OUT = 20;
+
+	/**
+	 * The meta object id for the '{@link uid.EuiEventCallbacks <em>Eui Event Callbacks</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.EuiEventCallbacks
+	 * @see uid.impl.UidPackageImpl#getEuiEventCallbacks()
+	 * @generated
+	 */
+	int EUI_EVENT_CALLBACKS = 21;
 
 
 	/**
@@ -1228,157 +1377,48 @@ public interface UidPackage extends EPackage {
 	EReference getApplication_HasEntityTransition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasMediator <em>Has Mediator</em>}'.
+	 * Returns the meta object for the containment reference '{@link uid.Application#getHasViews <em>Has Views</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Mediator</em>'.
-	 * @see uid.Application#getHasMediator()
+	 * @return the meta object for the containment reference '<em>Has Views</em>'.
+	 * @see uid.Application#getHasViews()
 	 * @see #getApplication()
 	 * @generated
 	 */
-	EReference getApplication_HasMediator();
+	EReference getApplication_HasViews();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasNotification <em>Has Notification</em>}'.
+	 * Returns the meta object for the containment reference '{@link uid.Application#getHasControllers <em>Has Controllers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Notification</em>'.
-	 * @see uid.Application#getHasNotification()
+	 * @return the meta object for the containment reference '<em>Has Controllers</em>'.
+	 * @see uid.Application#getHasControllers()
 	 * @see #getApplication()
 	 * @generated
 	 */
-	EReference getApplication_HasNotification();
+	EReference getApplication_HasControllers();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasCommand <em>Has Command</em>}'.
+	 * Returns the meta object for the containment reference '{@link uid.Application#getHasNotifications <em>Has Notifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Command</em>'.
-	 * @see uid.Application#getHasCommand()
+	 * @return the meta object for the containment reference '<em>Has Notifications</em>'.
+	 * @see uid.Application#getHasNotifications()
 	 * @see #getApplication()
 	 * @generated
 	 */
-	EReference getApplication_HasCommand();
+	EReference getApplication_HasNotifications();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uid.Application#getHasView <em>Has View</em>}'.
+	 * Returns the meta object for the containment reference '{@link uid.Application#getHasModels <em>Has Models</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has View</em>'.
-	 * @see uid.Application#getHasView()
+	 * @return the meta object for the containment reference '<em>Has Models</em>'.
+	 * @see uid.Application#getHasModels()
 	 * @see #getApplication()
 	 * @generated
 	 */
-	EReference getApplication_HasView();
-
-	/**
-	 * Returns the meta object for class '{@link uid.View <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View</em>'.
-	 * @see uid.View
-	 * @generated
-	 */
-	EClass getView();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.View#getImage_background <em>Image background</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Image background</em>'.
-	 * @see uid.View#getImage_background()
-	 * @see #getView()
-	 * @generated
-	 */
-	EAttribute getView_Image_background();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uid.View#getHasTransition <em>Has Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Transition</em>'.
-	 * @see uid.View#getHasTransition()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_HasTransition();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uid.View#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uid.View#getName()
-	 * @see #getView()
-	 * @generated
-	 */
-	EAttribute getView_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uid.View#getHasDisplay <em>Has Display</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Display</em>'.
-	 * @see uid.View#getHasDisplay()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_HasDisplay();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uid.View#getHasContainer <em>Has Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Container</em>'.
-	 * @see uid.View#getHasContainer()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_HasContainer();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uid.View#getHasMatrix <em>Has Matrix</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Matrix</em>'.
-	 * @see uid.View#getHasMatrix()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_HasMatrix();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uid.View#getHasRegulator <em>Has Regulator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Regulator</em>'.
-	 * @see uid.View#getHasRegulator()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_HasRegulator();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uid.View#getHasButton <em>Has Button</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Button</em>'.
-	 * @see uid.View#getHasButton()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_HasButton();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uid.View#getHasSwitch <em>Has Switch</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has Switch</em>'.
-	 * @see uid.View#getHasSwitch()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_HasSwitch();
+	EReference getApplication_HasModels();
 
 	/**
 	 * Returns the meta object for class '{@link uid.Component <em>Component</em>}'.
@@ -1692,6 +1732,17 @@ public interface UidPackage extends EPackage {
 	EAttribute getButton_Image_disabled();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uid.Button#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see uid.Button#getLabel()
+	 * @see #getButton()
+	 * @generated
+	 */
+	EAttribute getButton_Label();
+
+	/**
 	 * Returns the meta object for class '{@link uid.Notification <em>Notification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1788,6 +1839,17 @@ public interface UidPackage extends EPackage {
 	EReference getEvent_SendsNotification();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uid.Event#getCallback <em>Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Callback</em>'.
+	 * @see uid.Event#getCallback()
+	 * @see #getEvent()
+	 * @generated
+	 */
+	EAttribute getEvent_Callback();
+
+	/**
 	 * Returns the meta object for class '{@link uid.NotificationHandler <em>Notification Handler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1831,6 +1893,199 @@ public interface UidPackage extends EPackage {
 	EReference getNotificationHandler_SendsNotification();
 
 	/**
+	 * Returns the meta object for class '{@link uid.Stage <em>Stage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Stage</em>'.
+	 * @see uid.Stage
+	 * @generated
+	 */
+	EClass getStage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.Stage#getBackground <em>Background</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Background</em>'.
+	 * @see uid.Stage#getBackground()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EAttribute getStage_Background();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.Stage#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uid.Stage#getName()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EAttribute getStage_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Stage#getHasDisplay <em>Has Display</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Display</em>'.
+	 * @see uid.Stage#getHasDisplay()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_HasDisplay();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Stage#getHasContainer <em>Has Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Container</em>'.
+	 * @see uid.Stage#getHasContainer()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_HasContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Stage#getHasMatrix <em>Has Matrix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Matrix</em>'.
+	 * @see uid.Stage#getHasMatrix()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_HasMatrix();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Stage#getHasRegulator <em>Has Regulator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Regulator</em>'.
+	 * @see uid.Stage#getHasRegulator()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_HasRegulator();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Stage#getHasButton <em>Has Button</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Button</em>'.
+	 * @see uid.Stage#getHasButton()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_HasButton();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Stage#getHasSwitch <em>Has Switch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Switch</em>'.
+	 * @see uid.Stage#getHasSwitch()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_HasSwitch();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Stage#getHasEvents <em>Has Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Events</em>'.
+	 * @see uid.Stage#getHasEvents()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_HasEvents();
+
+	/**
+	 * Returns the meta object for class '{@link uid.Views <em>Views</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Views</em>'.
+	 * @see uid.Views
+	 * @generated
+	 */
+	EClass getViews();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Views#getHasStage <em>Has Stage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Stage</em>'.
+	 * @see uid.Views#getHasStage()
+	 * @see #getViews()
+	 * @generated
+	 */
+	EReference getViews_HasStage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Views#getHasMediator <em>Has Mediator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Mediator</em>'.
+	 * @see uid.Views#getHasMediator()
+	 * @see #getViews()
+	 * @generated
+	 */
+	EReference getViews_HasMediator();
+
+	/**
+	 * Returns the meta object for class '{@link uid.Controllers <em>Controllers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Controllers</em>'.
+	 * @see uid.Controllers
+	 * @generated
+	 */
+	EClass getControllers();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Controllers#getHasCommand <em>Has Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Command</em>'.
+	 * @see uid.Controllers#getHasCommand()
+	 * @see #getControllers()
+	 * @generated
+	 */
+	EReference getControllers_HasCommand();
+
+	/**
+	 * Returns the meta object for class '{@link uid.Models <em>Models</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Models</em>'.
+	 * @see uid.Models
+	 * @generated
+	 */
+	EClass getModels();
+
+	/**
+	 * Returns the meta object for class '{@link uid.Notifications <em>Notifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Notifications</em>'.
+	 * @see uid.Notifications
+	 * @generated
+	 */
+	EClass getNotifications();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Notifications#getHasNotification <em>Has Notification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Notification</em>'.
+	 * @see uid.Notifications#getHasNotification()
+	 * @see #getNotifications()
+	 * @generated
+	 */
+	EReference getNotifications_HasNotification();
+
+	/**
 	 * Returns the meta object for enum '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1849,6 +2104,16 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getETransitionTypeOut();
+
+	/**
+	 * Returns the meta object for enum '{@link uid.EuiEventCallbacks <em>Eui Event Callbacks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Eui Event Callbacks</em>'.
+	 * @see uid.EuiEventCallbacks
+	 * @generated
+	 */
+	EEnum getEuiEventCallbacks();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1957,118 +2222,36 @@ public interface UidPackage extends EPackage {
 		EReference APPLICATION__HAS_ENTITY_TRANSITION = eINSTANCE.getApplication_HasEntityTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Mediator</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Has Views</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APPLICATION__HAS_MEDIATOR = eINSTANCE.getApplication_HasMediator();
+		EReference APPLICATION__HAS_VIEWS = eINSTANCE.getApplication_HasViews();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Notification</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Has Controllers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APPLICATION__HAS_NOTIFICATION = eINSTANCE.getApplication_HasNotification();
+		EReference APPLICATION__HAS_CONTROLLERS = eINSTANCE.getApplication_HasControllers();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Command</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Has Notifications</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APPLICATION__HAS_COMMAND = eINSTANCE.getApplication_HasCommand();
+		EReference APPLICATION__HAS_NOTIFICATIONS = eINSTANCE.getApplication_HasNotifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Has View</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Has Models</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APPLICATION__HAS_VIEW = eINSTANCE.getApplication_HasView();
-
-		/**
-		 * The meta object literal for the '{@link uid.impl.ViewImpl <em>View</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uid.impl.ViewImpl
-		 * @see uid.impl.UidPackageImpl#getView()
-		 * @generated
-		 */
-		EClass VIEW = eINSTANCE.getView();
-
-		/**
-		 * The meta object literal for the '<em><b>Image background</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW__IMAGE_BACKGROUND = eINSTANCE.getView_Image_background();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Transition</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__HAS_TRANSITION = eINSTANCE.getView_HasTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW__NAME = eINSTANCE.getView_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Display</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__HAS_DISPLAY = eINSTANCE.getView_HasDisplay();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Container</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__HAS_CONTAINER = eINSTANCE.getView_HasContainer();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Matrix</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__HAS_MATRIX = eINSTANCE.getView_HasMatrix();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Regulator</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__HAS_REGULATOR = eINSTANCE.getView_HasRegulator();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Button</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__HAS_BUTTON = eINSTANCE.getView_HasButton();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Switch</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__HAS_SWITCH = eINSTANCE.getView_HasSwitch();
+		EReference APPLICATION__HAS_MODELS = eINSTANCE.getApplication_HasModels();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.
@@ -2319,6 +2502,14 @@ public interface UidPackage extends EPackage {
 		EAttribute BUTTON__IMAGE_DISABLED = eINSTANCE.getButton_Image_disabled();
 
 		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUTTON__LABEL = eINSTANCE.getButton_Label();
+
+		/**
 		 * The meta object literal for the '{@link uid.impl.NotificationImpl <em>Notification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2397,6 +2588,14 @@ public interface UidPackage extends EPackage {
 		EReference EVENT__SENDS_NOTIFICATION = eINSTANCE.getEvent_SendsNotification();
 
 		/**
+		 * The meta object literal for the '<em><b>Callback</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT__CALLBACK = eINSTANCE.getEvent_Callback();
+
+		/**
 		 * The meta object literal for the '{@link uid.impl.NotificationHandlerImpl <em>Notification Handler</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2431,6 +2630,160 @@ public interface UidPackage extends EPackage {
 		EReference NOTIFICATION_HANDLER__SENDS_NOTIFICATION = eINSTANCE.getNotificationHandler_SendsNotification();
 
 		/**
+		 * The meta object literal for the '{@link uid.impl.StageImpl <em>Stage</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.StageImpl
+		 * @see uid.impl.UidPackageImpl#getStage()
+		 * @generated
+		 */
+		EClass STAGE = eINSTANCE.getStage();
+
+		/**
+		 * The meta object literal for the '<em><b>Background</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAGE__BACKGROUND = eINSTANCE.getStage_Background();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAGE__NAME = eINSTANCE.getStage_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Display</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__HAS_DISPLAY = eINSTANCE.getStage_HasDisplay();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Container</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__HAS_CONTAINER = eINSTANCE.getStage_HasContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Matrix</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__HAS_MATRIX = eINSTANCE.getStage_HasMatrix();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Regulator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__HAS_REGULATOR = eINSTANCE.getStage_HasRegulator();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Button</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__HAS_BUTTON = eINSTANCE.getStage_HasButton();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Switch</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__HAS_SWITCH = eINSTANCE.getStage_HasSwitch();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Events</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__HAS_EVENTS = eINSTANCE.getStage_HasEvents();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.ViewsImpl <em>Views</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.ViewsImpl
+		 * @see uid.impl.UidPackageImpl#getViews()
+		 * @generated
+		 */
+		EClass VIEWS = eINSTANCE.getViews();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Stage</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIEWS__HAS_STAGE = eINSTANCE.getViews_HasStage();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Mediator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIEWS__HAS_MEDIATOR = eINSTANCE.getViews_HasMediator();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.ControllersImpl <em>Controllers</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.ControllersImpl
+		 * @see uid.impl.UidPackageImpl#getControllers()
+		 * @generated
+		 */
+		EClass CONTROLLERS = eINSTANCE.getControllers();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Command</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLERS__HAS_COMMAND = eINSTANCE.getControllers_HasCommand();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.ModelsImpl <em>Models</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.ModelsImpl
+		 * @see uid.impl.UidPackageImpl#getModels()
+		 * @generated
+		 */
+		EClass MODELS = eINSTANCE.getModels();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.NotificationsImpl <em>Notifications</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.NotificationsImpl
+		 * @see uid.impl.UidPackageImpl#getNotifications()
+		 * @generated
+		 */
+		EClass NOTIFICATIONS = eINSTANCE.getNotifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Notification</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NOTIFICATIONS__HAS_NOTIFICATION = eINSTANCE.getNotifications_HasNotification();
+
+		/**
 		 * The meta object literal for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2449,6 +2802,16 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ETRANSITION_TYPE_OUT = eINSTANCE.getETransitionTypeOut();
+
+		/**
+		 * The meta object literal for the '{@link uid.EuiEventCallbacks <em>Eui Event Callbacks</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.EuiEventCallbacks
+		 * @see uid.impl.UidPackageImpl#getEuiEventCallbacks()
+		 * @generated
+		 */
+		EEnum EUI_EVENT_CALLBACKS = eINSTANCE.getEuiEventCallbacks();
 
 	}
 

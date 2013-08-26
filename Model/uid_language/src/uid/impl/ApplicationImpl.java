@@ -4,6 +4,7 @@ package uid.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,12 +19,12 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uid.Application;
-import uid.Command;
+import uid.Controllers;
 import uid.EntityTransition;
-import uid.Mediator;
-import uid.Notification;
+import uid.Models;
+import uid.Notifications;
 import uid.UidPackage;
-import uid.View;
+import uid.Views;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,10 +35,10 @@ import uid.View;
  * <ul>
  *   <li>{@link uid.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasEntityTransition <em>Has Entity Transition</em>}</li>
- *   <li>{@link uid.impl.ApplicationImpl#getHasMediator <em>Has Mediator</em>}</li>
- *   <li>{@link uid.impl.ApplicationImpl#getHasNotification <em>Has Notification</em>}</li>
- *   <li>{@link uid.impl.ApplicationImpl#getHasCommand <em>Has Command</em>}</li>
- *   <li>{@link uid.impl.ApplicationImpl#getHasView <em>Has View</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasViews <em>Has Views</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasControllers <em>Has Controllers</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasNotifications <em>Has Notifications</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasModels <em>Has Models</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,44 +76,44 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	protected EList<EntityTransition> hasEntityTransition;
 
 	/**
-	 * The cached value of the '{@link #getHasMediator() <em>Has Mediator</em>}' containment reference list.
+	 * The cached value of the '{@link #getHasViews() <em>Has Views</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasMediator()
+	 * @see #getHasViews()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Mediator> hasMediator;
+	protected Views hasViews;
 
 	/**
-	 * The cached value of the '{@link #getHasNotification() <em>Has Notification</em>}' containment reference list.
+	 * The cached value of the '{@link #getHasControllers() <em>Has Controllers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasNotification()
+	 * @see #getHasControllers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Notification> hasNotification;
+	protected Controllers hasControllers;
 
 	/**
-	 * The cached value of the '{@link #getHasCommand() <em>Has Command</em>}' containment reference list.
+	 * The cached value of the '{@link #getHasNotifications() <em>Has Notifications</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasCommand()
+	 * @see #getHasNotifications()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Command> hasCommand;
+	protected Notifications hasNotifications;
 
 	/**
-	 * The cached value of the '{@link #getHasView() <em>Has View</em>}' containment reference list.
+	 * The cached value of the '{@link #getHasModels() <em>Has Models</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasView()
+	 * @see #getHasModels()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<View> hasView;
+	protected Models hasModels;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,7 +152,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, UidPackage.APPLICATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__NAME, oldName, name));
 	}
 
 	/**
@@ -171,11 +172,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Mediator> getHasMediator() {
-		if (hasMediator == null) {
-			hasMediator = new EObjectContainmentEList<Mediator>(Mediator.class, this, UidPackage.APPLICATION__HAS_MEDIATOR);
-		}
-		return hasMediator;
+	public Views getHasViews() {
+		return hasViews;
 	}
 
 	/**
@@ -183,11 +181,14 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Notification> getHasNotification() {
-		if (hasNotification == null) {
-			hasNotification = new EObjectContainmentEList<Notification>(Notification.class, this, UidPackage.APPLICATION__HAS_NOTIFICATION);
+	public NotificationChain basicSetHasViews(Views newHasViews, NotificationChain msgs) {
+		Views oldHasViews = hasViews;
+		hasViews = newHasViews;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_VIEWS, oldHasViews, newHasViews);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return hasNotification;
+		return msgs;
 	}
 
 	/**
@@ -195,11 +196,18 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Command> getHasCommand() {
-		if (hasCommand == null) {
-			hasCommand = new EObjectContainmentEList<Command>(Command.class, this, UidPackage.APPLICATION__HAS_COMMAND);
+	public void setHasViews(Views newHasViews) {
+		if (newHasViews != hasViews) {
+			NotificationChain msgs = null;
+			if (hasViews != null)
+				msgs = ((InternalEObject)hasViews).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_VIEWS, null, msgs);
+			if (newHasViews != null)
+				msgs = ((InternalEObject)newHasViews).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_VIEWS, null, msgs);
+			msgs = basicSetHasViews(newHasViews, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return hasCommand;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_VIEWS, newHasViews, newHasViews));
 	}
 
 	/**
@@ -207,11 +215,128 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<View> getHasView() {
-		if (hasView == null) {
-			hasView = new EObjectContainmentEList<View>(View.class, this, UidPackage.APPLICATION__HAS_VIEW);
+	public Controllers getHasControllers() {
+		return hasControllers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHasControllers(Controllers newHasControllers, NotificationChain msgs) {
+		Controllers oldHasControllers = hasControllers;
+		hasControllers = newHasControllers;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_CONTROLLERS, oldHasControllers, newHasControllers);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return hasView;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasControllers(Controllers newHasControllers) {
+		if (newHasControllers != hasControllers) {
+			NotificationChain msgs = null;
+			if (hasControllers != null)
+				msgs = ((InternalEObject)hasControllers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_CONTROLLERS, null, msgs);
+			if (newHasControllers != null)
+				msgs = ((InternalEObject)newHasControllers).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_CONTROLLERS, null, msgs);
+			msgs = basicSetHasControllers(newHasControllers, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_CONTROLLERS, newHasControllers, newHasControllers));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Notifications getHasNotifications() {
+		return hasNotifications;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHasNotifications(Notifications newHasNotifications, NotificationChain msgs) {
+		Notifications oldHasNotifications = hasNotifications;
+		hasNotifications = newHasNotifications;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_NOTIFICATIONS, oldHasNotifications, newHasNotifications);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasNotifications(Notifications newHasNotifications) {
+		if (newHasNotifications != hasNotifications) {
+			NotificationChain msgs = null;
+			if (hasNotifications != null)
+				msgs = ((InternalEObject)hasNotifications).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_NOTIFICATIONS, null, msgs);
+			if (newHasNotifications != null)
+				msgs = ((InternalEObject)newHasNotifications).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_NOTIFICATIONS, null, msgs);
+			msgs = basicSetHasNotifications(newHasNotifications, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_NOTIFICATIONS, newHasNotifications, newHasNotifications));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Models getHasModels() {
+		return hasModels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHasModels(Models newHasModels, NotificationChain msgs) {
+		Models oldHasModels = hasModels;
+		hasModels = newHasModels;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_MODELS, oldHasModels, newHasModels);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasModels(Models newHasModels) {
+		if (newHasModels != hasModels) {
+			NotificationChain msgs = null;
+			if (hasModels != null)
+				msgs = ((InternalEObject)hasModels).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_MODELS, null, msgs);
+			if (newHasModels != null)
+				msgs = ((InternalEObject)newHasModels).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_MODELS, null, msgs);
+			msgs = basicSetHasModels(newHasModels, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_MODELS, newHasModels, newHasModels));
 	}
 
 	/**
@@ -224,14 +349,14 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 		switch (featureID) {
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return ((InternalEList<?>)getHasEntityTransition()).basicRemove(otherEnd, msgs);
-			case UidPackage.APPLICATION__HAS_MEDIATOR:
-				return ((InternalEList<?>)getHasMediator()).basicRemove(otherEnd, msgs);
-			case UidPackage.APPLICATION__HAS_NOTIFICATION:
-				return ((InternalEList<?>)getHasNotification()).basicRemove(otherEnd, msgs);
-			case UidPackage.APPLICATION__HAS_COMMAND:
-				return ((InternalEList<?>)getHasCommand()).basicRemove(otherEnd, msgs);
-			case UidPackage.APPLICATION__HAS_VIEW:
-				return ((InternalEList<?>)getHasView()).basicRemove(otherEnd, msgs);
+			case UidPackage.APPLICATION__HAS_VIEWS:
+				return basicSetHasViews(null, msgs);
+			case UidPackage.APPLICATION__HAS_CONTROLLERS:
+				return basicSetHasControllers(null, msgs);
+			case UidPackage.APPLICATION__HAS_NOTIFICATIONS:
+				return basicSetHasNotifications(null, msgs);
+			case UidPackage.APPLICATION__HAS_MODELS:
+				return basicSetHasModels(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -248,14 +373,14 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return getName();
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return getHasEntityTransition();
-			case UidPackage.APPLICATION__HAS_MEDIATOR:
-				return getHasMediator();
-			case UidPackage.APPLICATION__HAS_NOTIFICATION:
-				return getHasNotification();
-			case UidPackage.APPLICATION__HAS_COMMAND:
-				return getHasCommand();
-			case UidPackage.APPLICATION__HAS_VIEW:
-				return getHasView();
+			case UidPackage.APPLICATION__HAS_VIEWS:
+				return getHasViews();
+			case UidPackage.APPLICATION__HAS_CONTROLLERS:
+				return getHasControllers();
+			case UidPackage.APPLICATION__HAS_NOTIFICATIONS:
+				return getHasNotifications();
+			case UidPackage.APPLICATION__HAS_MODELS:
+				return getHasModels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -276,21 +401,17 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				getHasEntityTransition().clear();
 				getHasEntityTransition().addAll((Collection<? extends EntityTransition>)newValue);
 				return;
-			case UidPackage.APPLICATION__HAS_MEDIATOR:
-				getHasMediator().clear();
-				getHasMediator().addAll((Collection<? extends Mediator>)newValue);
+			case UidPackage.APPLICATION__HAS_VIEWS:
+				setHasViews((Views)newValue);
 				return;
-			case UidPackage.APPLICATION__HAS_NOTIFICATION:
-				getHasNotification().clear();
-				getHasNotification().addAll((Collection<? extends Notification>)newValue);
+			case UidPackage.APPLICATION__HAS_CONTROLLERS:
+				setHasControllers((Controllers)newValue);
 				return;
-			case UidPackage.APPLICATION__HAS_COMMAND:
-				getHasCommand().clear();
-				getHasCommand().addAll((Collection<? extends Command>)newValue);
+			case UidPackage.APPLICATION__HAS_NOTIFICATIONS:
+				setHasNotifications((Notifications)newValue);
 				return;
-			case UidPackage.APPLICATION__HAS_VIEW:
-				getHasView().clear();
-				getHasView().addAll((Collection<? extends View>)newValue);
+			case UidPackage.APPLICATION__HAS_MODELS:
+				setHasModels((Models)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -310,17 +431,17 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				getHasEntityTransition().clear();
 				return;
-			case UidPackage.APPLICATION__HAS_MEDIATOR:
-				getHasMediator().clear();
+			case UidPackage.APPLICATION__HAS_VIEWS:
+				setHasViews((Views)null);
 				return;
-			case UidPackage.APPLICATION__HAS_NOTIFICATION:
-				getHasNotification().clear();
+			case UidPackage.APPLICATION__HAS_CONTROLLERS:
+				setHasControllers((Controllers)null);
 				return;
-			case UidPackage.APPLICATION__HAS_COMMAND:
-				getHasCommand().clear();
+			case UidPackage.APPLICATION__HAS_NOTIFICATIONS:
+				setHasNotifications((Notifications)null);
 				return;
-			case UidPackage.APPLICATION__HAS_VIEW:
-				getHasView().clear();
+			case UidPackage.APPLICATION__HAS_MODELS:
+				setHasModels((Models)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -338,14 +459,14 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
 				return hasEntityTransition != null && !hasEntityTransition.isEmpty();
-			case UidPackage.APPLICATION__HAS_MEDIATOR:
-				return hasMediator != null && !hasMediator.isEmpty();
-			case UidPackage.APPLICATION__HAS_NOTIFICATION:
-				return hasNotification != null && !hasNotification.isEmpty();
-			case UidPackage.APPLICATION__HAS_COMMAND:
-				return hasCommand != null && !hasCommand.isEmpty();
-			case UidPackage.APPLICATION__HAS_VIEW:
-				return hasView != null && !hasView.isEmpty();
+			case UidPackage.APPLICATION__HAS_VIEWS:
+				return hasViews != null;
+			case UidPackage.APPLICATION__HAS_CONTROLLERS:
+				return hasControllers != null;
+			case UidPackage.APPLICATION__HAS_NOTIFICATIONS:
+				return hasNotifications != null;
+			case UidPackage.APPLICATION__HAS_MODELS:
+				return hasModels != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -17,35 +17,105 @@
 [generateRegulator()/]
 [generateDisplay()/]
 
+[comment Stages/]
+[for (stage : Stage| anApp.hasViews.hasStage->select(oclIsTypeOf(Stage)))]
+	[generateStage(stage)/]
+[/for] 
+
+[comment Mediators/]
+[for (mediator : Mediator| anApp.hasViews.hasMediator->select(oclIsTypeOf(Mediator)))]
+[/for] 
+
+[comment Controllers/]
+[for (command : Command| anApp.hasControllers.hasCommand->select(oclIsTypeOf(Command)))]
+[/for] 
+
+[comment Notifications/]
+[for (notification : Notification| anApp.hasNotifications.hasNotification->select(oclIsTypeOf(Notification)))]
+[/for] 
+
+
 [file ('main.lua', false, 'UTF-8')]
-	[for (state : State| anApp.hasEntities->select(oclIsTypeOf(State)))]
 	
-	    [state.name/] [state.name.toString().toLowerFirst()/] = new [state.name/]();
-		[state.name.toString().toLowerFirst()/].setVisible(true);
-	[/for] 
 [/file]
 
-[for (state : State| anApp.hasEntities->select(oclIsTypeOf(State)))]
-   [generateState(state)/]
+[/template]
+
+
+[template public generateStage(stage : Stage)]
+[file ('/view/stage_'+stage.name.toString().toLowerCase()+'.lua', false, 'UTF-8')]
+[stage.name.toString().toLowerFirst()/] = {}
+
+function [stage.name.toString().toLowerFirst()/]:new (parentGroup)
+	local view = RNGroup:new()
+  	view.classType = "[stage.name.toString().toLowerFirst()/]"
+
+	[comment Funktionen generiert durch die in den Komponenten hinterlegten Events/]
+	[generateStageComponentEventFunction(stage)/]
+
+	[generateStageComponentInits(stage)/]
+
+	[generateStageDestroy(stage)/]
+
+	view:init()
+	return view
+end
+return [stage.name.toString().toLowerFirst()/]
+[/file]
+[/template]
+
+
+[template public generateStageComponentEventFunction(stage : Stage)]
+[comment Button Event-Listener/]
+[for (button : Button| stage.hasButton->select(oclIsTypeOf(Button)))]
+	[for (event : Event| button.hasEvents->select(oclIsTypeOf(Event)))]
+	function view:[button.name.toString().toLowerCase()/]_[event.name.toString().toLowerCase()/](event)    
+		[for (notification : Notification| event.sendsNotification->select(oclIsTypeOf(Notification)))]
+		Runtime:dispatchEvent({name="[notification.name.toLowerCase()/]"})
+		[/for] 
+	end
+	[/for] 
 [/for] 
 [/template]
 
-
-[template public generateState(state : State)]
-[file ('state_'+state.name+'.lua', false, 'UTF-8')]
-local state = {}
-local state_mt = { __index = state }
-
-function [state.name/]:new ()
-	[if (state.image_background > '')]
-	state.backgroundImage = [state.image_background/]
-	[else]
-	state.backgroundImage = stateBackground.png
-	[/if]
-	return setmetatable( state, state_mt )
-end
-[/file]
+[template public generateStageComponentInits(stage : Stage)]
+	function view:init()
+	[comment init Buttons/]
+	[for (button : Button| stage.hasButton->select(oclIsTypeOf(Button)))]
+		self.[button.name.toString().toLowerCase()/] = RNFactory.createButton ( 
+			[if (button.image_off <> null)] [button.image_off/] [else]"button_off.png"[/if]
+			, {
+			imageOver = [if (button.image_on <> null)] [button.image_on/] [else]"button_over.png" [/if],
+	  		imageDisabled = [if (button.image_disabled <> null)] [button.image_disabled/] [else]"button_disabled.png" [/if],
+	[for (event : Event| button.hasEvents->select(oclIsTypeOf(Event)))]
+			[event.callback/] = self.[button.name.toString().toLowerCase()/]_[event.name.toString().toLowerCase()/],
+	[/for] 	
+			font = "arial.ttf",
+			width = 200,
+			height = 50,
+			left = [button.x/],
+			top = [button.y/]
+	 	})
+	[/for] 
+		Runtime:dispatchEvent({name="onRobotlegsViewCreated", target=self})
+	end
 [/template]
+
+[template public generateStageDestroy(stage : Stage)]
+	function view:destroy()
+	[for (button : Button| stage.hasButton->select(oclIsTypeOf(Button)))]
+		self.[button.name.toString().toLowerCase()/]:remove()
+	[/for] 
+		Runtime:dispatchEvent({name="onRobotlegsViewDestroyed", target=self})
+		self:removeSelf()
+	end
+[/template]
+	
+
+
+
+
+
 
 [template public generateButton()]
 [file ('/view/view_button.lua', false, 'UTF-8')]

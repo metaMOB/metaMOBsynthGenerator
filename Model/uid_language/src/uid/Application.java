@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uid.Application#getName <em>Name</em>}</li>
  *   <li>{@link uid.Application#getHasEntityTransition <em>Has Entity Transition</em>}</li>
- *   <li>{@link uid.Application#getHasMediator <em>Has Mediator</em>}</li>
- *   <li>{@link uid.Application#getHasNotification <em>Has Notification</em>}</li>
- *   <li>{@link uid.Application#getHasCommand <em>Has Command</em>}</li>
- *   <li>{@link uid.Application#getHasView <em>Has View</em>}</li>
+ *   <li>{@link uid.Application#getHasViews <em>Has Views</em>}</li>
+ *   <li>{@link uid.Application#getHasControllers <em>Has Controllers</em>}</li>
+ *   <li>{@link uid.Application#getHasNotifications <em>Has Notifications</em>}</li>
+ *   <li>{@link uid.Application#getHasModels <em>Has Models</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,67 +71,107 @@ public interface Application extends EObject {
 	EList<EntityTransition> getHasEntityTransition();
 
 	/**
-	 * Returns the value of the '<em><b>Has Mediator</b></em>' containment reference list.
-	 * The list contents are of type {@link uid.Mediator}.
+	 * Returns the value of the '<em><b>Has Views</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Mediator</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Has Views</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Mediator</em>' containment reference list.
-	 * @see uid.UidPackage#getApplication_HasMediator()
-	 * @model containment="true"
+	 * @return the value of the '<em>Has Views</em>' containment reference.
+	 * @see #setHasViews(Views)
+	 * @see uid.UidPackage#getApplication_HasViews()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Mediator> getHasMediator();
+	Views getHasViews();
 
 	/**
-	 * Returns the value of the '<em><b>Has Notification</b></em>' containment reference list.
-	 * The list contents are of type {@link uid.Notification}.
+	 * Sets the value of the '{@link uid.Application#getHasViews <em>Has Views</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Has Notification</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Notification</em>' containment reference list.
-	 * @see uid.UidPackage#getApplication_HasNotification()
-	 * @model containment="true"
+	 * @param value the new value of the '<em>Has Views</em>' containment reference.
+	 * @see #getHasViews()
 	 * @generated
 	 */
-	EList<Notification> getHasNotification();
+	void setHasViews(Views value);
 
 	/**
-	 * Returns the value of the '<em><b>Has Command</b></em>' containment reference list.
-	 * The list contents are of type {@link uid.Command}.
+	 * Returns the value of the '<em><b>Has Controllers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Command</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Has Controllers</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Command</em>' containment reference list.
-	 * @see uid.UidPackage#getApplication_HasCommand()
-	 * @model containment="true"
+	 * @return the value of the '<em>Has Controllers</em>' containment reference.
+	 * @see #setHasControllers(Controllers)
+	 * @see uid.UidPackage#getApplication_HasControllers()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Command> getHasCommand();
+	Controllers getHasControllers();
 
 	/**
-	 * Returns the value of the '<em><b>Has View</b></em>' containment reference list.
-	 * The list contents are of type {@link uid.View}.
+	 * Sets the value of the '{@link uid.Application#getHasControllers <em>Has Controllers</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Controllers</em>' containment reference.
+	 * @see #getHasControllers()
+	 * @generated
+	 */
+	void setHasControllers(Controllers value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Notifications</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has View</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Has Notifications</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has View</em>' containment reference list.
-	 * @see uid.UidPackage#getApplication_HasView()
-	 * @model containment="true"
+	 * @return the value of the '<em>Has Notifications</em>' containment reference.
+	 * @see #setHasNotifications(Notifications)
+	 * @see uid.UidPackage#getApplication_HasNotifications()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<View> getHasView();
+	Notifications getHasNotifications();
+
+	/**
+	 * Sets the value of the '{@link uid.Application#getHasNotifications <em>Has Notifications</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Notifications</em>' containment reference.
+	 * @see #getHasNotifications()
+	 * @generated
+	 */
+	void setHasNotifications(Notifications value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Models</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Models</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Models</em>' containment reference.
+	 * @see #setHasModels(Models)
+	 * @see uid.UidPackage#getApplication_HasModels()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Models getHasModels();
+
+	/**
+	 * Sets the value of the '{@link uid.Application#getHasModels <em>Has Models</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Models</em>' containment reference.
+	 * @see #getHasModels()
+	 * @generated
+	 */
+	void setHasModels(Models value);
 
 } // Application

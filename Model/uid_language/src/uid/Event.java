@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uid.Event#getName <em>Name</em>}</li>
  *   <li>{@link uid.Event#getSendsNotification <em>Sends Notification</em>}</li>
+ *   <li>{@link uid.Event#getCallback <em>Callback</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +66,35 @@ public interface Event extends EObject {
 	 * @generated
 	 */
 	EList<Notification> getSendsNotification();
+
+	/**
+	 * Returns the value of the '<em><b>Callback</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * The literals are from the enumeration {@link uid.EuiEventCallbacks}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Callback</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Callback</em>' attribute.
+	 * @see uid.EuiEventCallbacks
+	 * @see #setCallback(EuiEventCallbacks)
+	 * @see uid.UidPackage#getEvent_Callback()
+	 * @model default=""
+	 * @generated
+	 */
+	EuiEventCallbacks getCallback();
+
+	/**
+	 * Sets the value of the '{@link uid.Event#getCallback <em>Callback</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Callback</em>' attribute.
+	 * @see uid.EuiEventCallbacks
+	 * @see #getCallback()
+	 * @generated
+	 */
+	void setCallback(EuiEventCallbacks value);
 
 } // Event

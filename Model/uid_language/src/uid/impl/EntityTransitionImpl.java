@@ -63,7 +63,7 @@ public class EntityTransitionImpl extends EObjectImpl implements EntityTransitio
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ETransitionTypesIn ANIMATION_TYPE_IN_EDEFAULT = ETransitionTypesIn.FADE_IN;
+	protected static final ETransitionTypesIn ANIMATION_TYPE_IN_EDEFAULT = ETransitionTypesIn.SWIPE_IN;
 
 	/**
 	 * The cached value of the '{@link #getAnimationTypeIn() <em>Animation Type In</em>}' attribute.

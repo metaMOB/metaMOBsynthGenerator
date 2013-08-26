@@ -14,6 +14,7 @@ package uid;
  *   <li>{@link uid.Button#getImage_on <em>Image on</em>}</li>
  *   <li>{@link uid.Button#getImage_off <em>Image off</em>}</li>
  *   <li>{@link uid.Button#getImage_disabled <em>Image disabled</em>}</li>
+ *   <li>{@link uid.Button#getLabel <em>Label</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,5 +100,31 @@ public interface Button extends Component {
 	 * @generated
 	 */
 	void setImage_disabled(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Label</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Label</em>' attribute.
+	 * @see #setLabel(String)
+	 * @see uid.UidPackage#getButton_Label()
+	 * @model
+	 * @generated
+	 */
+	String getLabel();
+
+	/**
+	 * Sets the value of the '{@link uid.Button#getLabel <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label</em>' attribute.
+	 * @see #getLabel()
+	 * @generated
+	 */
+	void setLabel(String value);
 
 } // Button

@@ -76,10 +76,6 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 				return createApplicationAdapter();
 			}
 			@Override
-			public Adapter caseView(View object) {
-				return createViewAdapter();
-			}
-			@Override
 			public Adapter caseComponent(Component object) {
 				return createComponentAdapter();
 			}
@@ -128,6 +124,26 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 				return createNotificationHandlerAdapter();
 			}
 			@Override
+			public Adapter caseStage(Stage object) {
+				return createStageAdapter();
+			}
+			@Override
+			public Adapter caseViews(Views object) {
+				return createViewsAdapter();
+			}
+			@Override
+			public Adapter caseControllers(Controllers object) {
+				return createControllersAdapter();
+			}
+			@Override
+			public Adapter caseModels(Models object) {
+				return createModelsAdapter();
+			}
+			@Override
+			public Adapter caseNotifications(Notifications object) {
+				return createNotificationsAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -172,20 +188,6 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createApplicationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uid.View <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uid.View
-	 * @generated
-	 */
-	public Adapter createViewAdapter() {
 		return null;
 	}
 
@@ -354,6 +356,76 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNotificationHandlerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.Stage <em>Stage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.Stage
+	 * @generated
+	 */
+	public Adapter createStageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.Views <em>Views</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.Views
+	 * @generated
+	 */
+	public Adapter createViewsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.Controllers <em>Controllers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.Controllers
+	 * @generated
+	 */
+	public Adapter createControllersAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.Models <em>Models</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.Models
+	 * @generated
+	 */
+	public Adapter createModelsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.Notifications <em>Notifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.Notifications
+	 * @generated
+	 */
+	public Adapter createNotificationsAdapter() {
 		return null;
 	}
 

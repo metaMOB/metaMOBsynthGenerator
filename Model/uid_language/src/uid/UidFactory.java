@@ -40,15 +40,6 @@ public interface UidFactory extends EFactory {
 	Application createApplication();
 
 	/**
-	 * Returns a new object of class '<em>View</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View</em>'.
-	 * @generated
-	 */
-	View createView();
-
-	/**
 	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +146,51 @@ public interface UidFactory extends EFactory {
 	 * @generated
 	 */
 	NotificationHandler createNotificationHandler();
+
+	/**
+	 * Returns a new object of class '<em>Stage</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Stage</em>'.
+	 * @generated
+	 */
+	Stage createStage();
+
+	/**
+	 * Returns a new object of class '<em>Views</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Views</em>'.
+	 * @generated
+	 */
+	Views createViews();
+
+	/**
+	 * Returns a new object of class '<em>Controllers</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Controllers</em>'.
+	 * @generated
+	 */
+	Controllers createControllers();
+
+	/**
+	 * Returns a new object of class '<em>Models</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Models</em>'.
+	 * @generated
+	 */
+	Models createModels();
+
+	/**
+	 * Returns a new object of class '<em>Notifications</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Notifications</em>'.
+	 * @generated
+	 */
+	Notifications createNotifications();
 
 	/**
 	 * Returns the package supported by this factory.

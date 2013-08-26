@@ -103,10 +103,10 @@ public class ApplicationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_ENTITY_TRANSITION);
-			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_MEDIATOR);
-			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_NOTIFICATION);
-			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_COMMAND);
-			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_VIEW);
+			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_VIEWS);
+			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_CONTROLLERS);
+			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_NOTIFICATIONS);
+			childrenFeatures.add(UidPackage.Literals.APPLICATION__HAS_MODELS);
 		}
 		return childrenFeatures;
 	}
@@ -165,10 +165,10 @@ public class ApplicationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case UidPackage.APPLICATION__HAS_ENTITY_TRANSITION:
-			case UidPackage.APPLICATION__HAS_MEDIATOR:
-			case UidPackage.APPLICATION__HAS_NOTIFICATION:
-			case UidPackage.APPLICATION__HAS_COMMAND:
-			case UidPackage.APPLICATION__HAS_VIEW:
+			case UidPackage.APPLICATION__HAS_VIEWS:
+			case UidPackage.APPLICATION__HAS_CONTROLLERS:
+			case UidPackage.APPLICATION__HAS_NOTIFICATIONS:
+			case UidPackage.APPLICATION__HAS_MODELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,23 +193,23 @@ public class ApplicationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_MEDIATOR,
-				 UidFactory.eINSTANCE.createMediator()));
+				(UidPackage.Literals.APPLICATION__HAS_VIEWS,
+				 UidFactory.eINSTANCE.createViews()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_NOTIFICATION,
-				 UidFactory.eINSTANCE.createNotification()));
+				(UidPackage.Literals.APPLICATION__HAS_CONTROLLERS,
+				 UidFactory.eINSTANCE.createControllers()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_COMMAND,
-				 UidFactory.eINSTANCE.createCommand()));
+				(UidPackage.Literals.APPLICATION__HAS_NOTIFICATIONS,
+				 UidFactory.eINSTANCE.createNotifications()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(UidPackage.Literals.APPLICATION__HAS_VIEW,
-				 UidFactory.eINSTANCE.createView()));
+				(UidPackage.Literals.APPLICATION__HAS_MODELS,
+				 UidFactory.eINSTANCE.createModels()));
 	}
 
 	/**

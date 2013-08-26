@@ -21,6 +21,7 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.ButtonImpl#getImage_on <em>Image on</em>}</li>
  *   <li>{@link uid.impl.ButtonImpl#getImage_off <em>Image off</em>}</li>
  *   <li>{@link uid.impl.ButtonImpl#getImage_disabled <em>Image disabled</em>}</li>
+ *   <li>{@link uid.impl.ButtonImpl#getLabel <em>Label</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,6 +87,26 @@ public class ButtonImpl extends ComponentImpl implements Button {
 	 * @ordered
 	 */
 	protected String image_disabled = IMAGE_DISABLED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LABEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String label = LABEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,6 +195,27 @@ public class ButtonImpl extends ComponentImpl implements Button {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLabel() {
+		return label;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLabel(String newLabel) {
+		String oldLabel = label;
+		label = newLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.BUTTON__LABEL, oldLabel, label));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -183,6 +225,8 @@ public class ButtonImpl extends ComponentImpl implements Button {
 				return getImage_off();
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				return getImage_disabled();
+			case UidPackage.BUTTON__LABEL:
+				return getLabel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,6 +247,9 @@ public class ButtonImpl extends ComponentImpl implements Button {
 				return;
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				setImage_disabled((String)newValue);
+				return;
+			case UidPackage.BUTTON__LABEL:
+				setLabel((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,6 +272,9 @@ public class ButtonImpl extends ComponentImpl implements Button {
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				setImage_disabled(IMAGE_DISABLED_EDEFAULT);
 				return;
+			case UidPackage.BUTTON__LABEL:
+				setLabel(LABEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,6 +293,8 @@ public class ButtonImpl extends ComponentImpl implements Button {
 				return IMAGE_OFF_EDEFAULT == null ? image_off != null : !IMAGE_OFF_EDEFAULT.equals(image_off);
 			case UidPackage.BUTTON__IMAGE_DISABLED:
 				return IMAGE_DISABLED_EDEFAULT == null ? image_disabled != null : !IMAGE_DISABLED_EDEFAULT.equals(image_disabled);
+			case UidPackage.BUTTON__LABEL:
+				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -263,6 +315,8 @@ public class ButtonImpl extends ComponentImpl implements Button {
 		result.append(image_off);
 		result.append(", image_disabled: ");
 		result.append(image_disabled);
+		result.append(", label: ");
+		result.append(label);
 		result.append(')');
 		return result.toString();
 	}
