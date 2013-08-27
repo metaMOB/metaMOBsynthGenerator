@@ -33,6 +33,7 @@ import uid.NotificationHandler;
 import uid.Notifications;
 import uid.Regulator;
 import uid.Stage;
+import uid.StateTransition;
 import uid.Switch;
 import uid.UidFactory;
 import uid.UidPackage;
@@ -177,6 +178,13 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * @generated
 	 */
 	private EClass notificationsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stateTransitionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -389,6 +397,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 */
 	public EReference getApplication_HasModels() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApplication_HasMediator() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -792,6 +809,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getNotificationHandler_ChangeStageTo() {
+		return (EReference)notificationHandlerEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStage() {
 		return stageEClass;
 	}
@@ -954,6 +980,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStateTransition() {
+		return stateTransitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getETransitionTypesIn() {
 		return eTransitionTypesInEEnum;
 	}
@@ -1019,6 +1054,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEReference(applicationEClass, APPLICATION__HAS_CONTROLLERS);
 		createEReference(applicationEClass, APPLICATION__HAS_NOTIFICATIONS);
 		createEReference(applicationEClass, APPLICATION__HAS_MODELS);
+		createEReference(applicationEClass, APPLICATION__HAS_MEDIATOR);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__NAME);
@@ -1075,6 +1111,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEAttribute(notificationHandlerEClass, NOTIFICATION_HANDLER__NAME);
 		createEReference(notificationHandlerEClass, NOTIFICATION_HANDLER__RECIEVES_NOTIFICATION);
 		createEReference(notificationHandlerEClass, NOTIFICATION_HANDLER__SENDS_NOTIFICATION);
+		createEReference(notificationHandlerEClass, NOTIFICATION_HANDLER__CHANGE_STAGE_TO);
 
 		stageEClass = createEClass(STAGE);
 		createEAttribute(stageEClass, STAGE__BACKGROUND);
@@ -1098,6 +1135,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 
 		notificationsEClass = createEClass(NOTIFICATIONS);
 		createEReference(notificationsEClass, NOTIFICATIONS__HAS_NOTIFICATION);
+
+		stateTransitionEClass = createEClass(STATE_TRANSITION);
 
 		// Create enums
 		eTransitionTypesInEEnum = createEEnum(ETRANSITION_TYPES_IN);
@@ -1159,6 +1198,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEReference(getApplication_HasControllers(), this.getControllers(), null, "hasControllers", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_HasNotifications(), this.getNotifications(), null, "hasNotifications", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_HasModels(), this.getModels(), null, "hasModels", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_HasMediator(), this.getMediator(), null, "hasMediator", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_Name(), theTypesPackage.getString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1217,6 +1257,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getNotificationHandler_Name(), ecorePackage.getEString(), "name", null, 0, 1, NotificationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNotificationHandler_RecievesNotification(), this.getNotification(), null, "recievesNotification", null, 0, 1, NotificationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNotificationHandler_SendsNotification(), this.getNotification(), null, "sendsNotification", null, 0, -1, NotificationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNotificationHandler_ChangeStageTo(), this.getStage(), null, "changeStageTo", null, 1, 1, NotificationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stageEClass, Stage.class, "Stage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStage_Background(), ecorePackage.getEString(), "background", null, 0, 1, Stage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1240,6 +1281,8 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 
 		initEClass(notificationsEClass, Notifications.class, "Notifications", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNotifications_HasNotification(), this.getNotification(), null, "hasNotification", null, 0, -1, Notifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stateTransitionEClass, StateTransition.class, "StateTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(eTransitionTypesInEEnum, ETransitionTypesIn.class, "ETransitionTypesIn");

@@ -29,6 +29,8 @@
         eType="#//Notifications" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasModels" lowerBound="1"
         eType="#//Models" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasMediator" lowerBound="1"
+        eType="#//Mediator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
@@ -102,6 +104,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="recievesNotification" eType="#//Notification"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sendsNotification" upperBound="-1"
         eType="#//Notification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changeStageTo" lowerBound="1"
+        eType="#//Stage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -142,4 +146,5 @@
     <eLiterals name="setOnTouchMove" value="2"/>
     <eLiterals name="setOnTouchUp" value="3"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateTransition"/>
 </ecore:EPackage>

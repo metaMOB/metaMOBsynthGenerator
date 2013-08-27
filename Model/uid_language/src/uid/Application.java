@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uid.Application#getHasControllers <em>Has Controllers</em>}</li>
  *   <li>{@link uid.Application#getHasNotifications <em>Has Notifications</em>}</li>
  *   <li>{@link uid.Application#getHasModels <em>Has Models</em>}</li>
+ *   <li>{@link uid.Application#getHasMediator <em>Has Mediator</em>}</li>
  * </ul>
  * </p>
  *
@@ -173,5 +174,31 @@ public interface Application extends EObject {
 	 * @generated
 	 */
 	void setHasModels(Models value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Mediator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Mediator</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Mediator</em>' containment reference.
+	 * @see #setHasMediator(Mediator)
+	 * @see uid.UidPackage#getApplication_HasMediator()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Mediator getHasMediator();
+
+	/**
+	 * Sets the value of the '{@link uid.Application#getHasMediator <em>Has Mediator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Mediator</em>' containment reference.
+	 * @see #getHasMediator()
+	 * @generated
+	 */
+	void setHasMediator(Mediator value);
 
 } // Application

@@ -193,6 +193,15 @@ public interface UidFactory extends EFactory {
 	Notifications createNotifications();
 
 	/**
+	 * Returns a new object of class '<em>State Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>State Transition</em>'.
+	 * @generated
+	 */
+	StateTransition createStateTransition();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

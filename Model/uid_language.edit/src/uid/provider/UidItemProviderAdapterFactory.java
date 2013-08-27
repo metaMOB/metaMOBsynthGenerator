@@ -509,6 +509,29 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uid.StateTransition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StateTransitionItemProvider stateTransitionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.StateTransition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStateTransitionAdapter() {
+		if (stateTransitionItemProvider == null) {
+			stateTransitionItemProvider = new StateTransitionItemProvider(this);
+		}
+
+		return stateTransitionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,6 +649,7 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 		if (controllersItemProvider != null) controllersItemProvider.dispose();
 		if (modelsItemProvider != null) modelsItemProvider.dispose();
 		if (notificationsItemProvider != null) notificationsItemProvider.dispose();
+		if (stateTransitionItemProvider != null) stateTransitionItemProvider.dispose();
 	}
 
 }

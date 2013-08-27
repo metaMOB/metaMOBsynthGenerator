@@ -76,6 +76,7 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 			case UidPackage.CONTROLLERS: return createControllers();
 			case UidPackage.MODELS: return createModels();
 			case UidPackage.NOTIFICATIONS: return createNotifications();
+			case UidPackage.STATE_TRANSITION: return createStateTransition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -307,6 +308,16 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	public Notifications createNotifications() {
 		NotificationsImpl notifications = new NotificationsImpl();
 		return notifications;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateTransition createStateTransition() {
+		StateTransitionImpl stateTransition = new StateTransitionImpl();
+		return stateTransition;
 	}
 
 	/**

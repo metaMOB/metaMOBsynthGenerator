@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uid.Application;
 import uid.Controllers;
 import uid.EntityTransition;
+import uid.Mediator;
 import uid.Models;
 import uid.Notifications;
 import uid.UidPackage;
@@ -39,6 +40,7 @@ import uid.Views;
  *   <li>{@link uid.impl.ApplicationImpl#getHasControllers <em>Has Controllers</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasNotifications <em>Has Notifications</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasModels <em>Has Models</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasMediator <em>Has Mediator</em>}</li>
  * </ul>
  * </p>
  *
@@ -114,6 +116,16 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @ordered
 	 */
 	protected Models hasModels;
+
+	/**
+	 * The cached value of the '{@link #getHasMediator() <em>Has Mediator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasMediator()
+	 * @generated
+	 * @ordered
+	 */
+	protected Mediator hasMediator;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -344,6 +356,49 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Mediator getHasMediator() {
+		return hasMediator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHasMediator(Mediator newHasMediator, NotificationChain msgs) {
+		Mediator oldHasMediator = hasMediator;
+		hasMediator = newHasMediator;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_MEDIATOR, oldHasMediator, newHasMediator);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasMediator(Mediator newHasMediator) {
+		if (newHasMediator != hasMediator) {
+			NotificationChain msgs = null;
+			if (hasMediator != null)
+				msgs = ((InternalEObject)hasMediator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_MEDIATOR, null, msgs);
+			if (newHasMediator != null)
+				msgs = ((InternalEObject)newHasMediator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UidPackage.APPLICATION__HAS_MEDIATOR, null, msgs);
+			msgs = basicSetHasMediator(newHasMediator, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_MEDIATOR, newHasMediator, newHasMediator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -357,6 +412,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return basicSetHasNotifications(null, msgs);
 			case UidPackage.APPLICATION__HAS_MODELS:
 				return basicSetHasModels(null, msgs);
+			case UidPackage.APPLICATION__HAS_MEDIATOR:
+				return basicSetHasMediator(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -381,6 +438,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return getHasNotifications();
 			case UidPackage.APPLICATION__HAS_MODELS:
 				return getHasModels();
+			case UidPackage.APPLICATION__HAS_MEDIATOR:
+				return getHasMediator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,6 +472,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__HAS_MODELS:
 				setHasModels((Models)newValue);
 				return;
+			case UidPackage.APPLICATION__HAS_MEDIATOR:
+				setHasMediator((Mediator)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -443,6 +505,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__HAS_MODELS:
 				setHasModels((Models)null);
 				return;
+			case UidPackage.APPLICATION__HAS_MEDIATOR:
+				setHasMediator((Mediator)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -467,6 +532,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return hasNotifications != null;
 			case UidPackage.APPLICATION__HAS_MODELS:
 				return hasModels != null;
+			case UidPackage.APPLICATION__HAS_MEDIATOR:
+				return hasMediator != null;
 		}
 		return super.eIsSet(featureID);
 	}

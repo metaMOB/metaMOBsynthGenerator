@@ -63,6 +63,7 @@ public class NotificationHandlerItemProvider
 			addNamePropertyDescriptor(object);
 			addRecievesNotificationPropertyDescriptor(object);
 			addSendsNotificationPropertyDescriptor(object);
+			addChangeStageToPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,6 +126,28 @@ public class NotificationHandlerItemProvider
 				 getString("_UI_NotificationHandler_sendsNotification_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NotificationHandler_sendsNotification_feature", "_UI_NotificationHandler_type"),
 				 UidPackage.Literals.NOTIFICATION_HANDLER__SENDS_NOTIFICATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Change Stage To feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChangeStageToPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NotificationHandler_changeStageTo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NotificationHandler_changeStageTo_feature", "_UI_NotificationHandler_type"),
+				 UidPackage.Literals.NOTIFICATION_HANDLER__CHANGE_STAGE_TO,
 				 true,
 				 false,
 				 true,

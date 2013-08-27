@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import uid.Notification;
 import uid.NotificationHandler;
+import uid.Stage;
 import uid.UidPackage;
 
 /**
@@ -28,6 +29,7 @@ import uid.UidPackage;
  *   <li>{@link uid.impl.NotificationHandlerImpl#getName <em>Name</em>}</li>
  *   <li>{@link uid.impl.NotificationHandlerImpl#getRecievesNotification <em>Recieves Notification</em>}</li>
  *   <li>{@link uid.impl.NotificationHandlerImpl#getSendsNotification <em>Sends Notification</em>}</li>
+ *   <li>{@link uid.impl.NotificationHandlerImpl#getChangeStageTo <em>Change Stage To</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,6 +75,16 @@ public class NotificationHandlerImpl extends EObjectImpl implements Notification
 	 * @ordered
 	 */
 	protected EList<Notification> sendsNotification;
+
+	/**
+	 * The cached value of the '{@link #getChangeStageTo() <em>Change Stage To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangeStageTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected Stage changeStageTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +181,44 @@ public class NotificationHandlerImpl extends EObjectImpl implements Notification
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Stage getChangeStageTo() {
+		if (changeStageTo != null && changeStageTo.eIsProxy()) {
+			InternalEObject oldChangeStageTo = (InternalEObject)changeStageTo;
+			changeStageTo = (Stage)eResolveProxy(oldChangeStageTo);
+			if (changeStageTo != oldChangeStageTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.RESOLVE, UidPackage.NOTIFICATION_HANDLER__CHANGE_STAGE_TO, oldChangeStageTo, changeStageTo));
+			}
+		}
+		return changeStageTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Stage basicGetChangeStageTo() {
+		return changeStageTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setChangeStageTo(Stage newChangeStageTo) {
+		Stage oldChangeStageTo = changeStageTo;
+		changeStageTo = newChangeStageTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, org.eclipse.emf.common.notify.Notification.SET, UidPackage.NOTIFICATION_HANDLER__CHANGE_STAGE_TO, oldChangeStageTo, changeStageTo));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -179,6 +229,9 @@ public class NotificationHandlerImpl extends EObjectImpl implements Notification
 				return basicGetRecievesNotification();
 			case UidPackage.NOTIFICATION_HANDLER__SENDS_NOTIFICATION:
 				return getSendsNotification();
+			case UidPackage.NOTIFICATION_HANDLER__CHANGE_STAGE_TO:
+				if (resolve) return getChangeStageTo();
+				return basicGetChangeStageTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,6 +255,9 @@ public class NotificationHandlerImpl extends EObjectImpl implements Notification
 				getSendsNotification().clear();
 				getSendsNotification().addAll((Collection<? extends Notification>)newValue);
 				return;
+			case UidPackage.NOTIFICATION_HANDLER__CHANGE_STAGE_TO:
+				setChangeStageTo((Stage)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,6 +279,9 @@ public class NotificationHandlerImpl extends EObjectImpl implements Notification
 			case UidPackage.NOTIFICATION_HANDLER__SENDS_NOTIFICATION:
 				getSendsNotification().clear();
 				return;
+			case UidPackage.NOTIFICATION_HANDLER__CHANGE_STAGE_TO:
+				setChangeStageTo((Stage)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,6 +300,8 @@ public class NotificationHandlerImpl extends EObjectImpl implements Notification
 				return recievesNotification != null;
 			case UidPackage.NOTIFICATION_HANDLER__SENDS_NOTIFICATION:
 				return sendsNotification != null && !sendsNotification.isEmpty();
+			case UidPackage.NOTIFICATION_HANDLER__CHANGE_STAGE_TO:
+				return changeStageTo != null;
 		}
 		return super.eIsSet(featureID);
 	}

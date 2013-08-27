@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uid.NotificationHandler#getName <em>Name</em>}</li>
  *   <li>{@link uid.NotificationHandler#getRecievesNotification <em>Recieves Notification</em>}</li>
  *   <li>{@link uid.NotificationHandler#getSendsNotification <em>Sends Notification</em>}</li>
+ *   <li>{@link uid.NotificationHandler#getChangeStageTo <em>Change Stage To</em>}</li>
  * </ul>
  * </p>
  *
@@ -92,5 +93,31 @@ public interface NotificationHandler extends EObject {
 	 * @generated
 	 */
 	EList<Notification> getSendsNotification();
+
+	/**
+	 * Returns the value of the '<em><b>Change Stage To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Change Stage To</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Change Stage To</em>' reference.
+	 * @see #setChangeStageTo(Stage)
+	 * @see uid.UidPackage#getNotificationHandler_ChangeStageTo()
+	 * @model required="true"
+	 * @generated
+	 */
+	Stage getChangeStageTo();
+
+	/**
+	 * Sets the value of the '{@link uid.NotificationHandler#getChangeStageTo <em>Change Stage To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Change Stage To</em>' reference.
+	 * @see #getChangeStageTo()
+	 * @generated
+	 */
+	void setChangeStageTo(Stage value);
 
 } // NotificationHandler

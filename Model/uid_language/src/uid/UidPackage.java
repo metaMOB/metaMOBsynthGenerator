@@ -195,13 +195,22 @@ public interface UidPackage extends EPackage {
 	int APPLICATION__HAS_MODELS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Has Mediator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__HAS_MEDIATOR = 6;
+
+	/**
 	 * The number of structural features of the '<em>Application</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = 6;
+	int APPLICATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.
@@ -1017,13 +1026,22 @@ public interface UidPackage extends EPackage {
 	int NOTIFICATION_HANDLER__SENDS_NOTIFICATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Change Stage To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATION_HANDLER__CHANGE_STAGE_TO = 3;
+
+	/**
 	 * The number of structural features of the '<em>Notification Handler</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOTIFICATION_HANDLER_FEATURE_COUNT = 3;
+	int NOTIFICATION_HANDLER_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.StageImpl <em>Stage</em>}' class.
@@ -1238,6 +1256,25 @@ public interface UidPackage extends EPackage {
 	int NOTIFICATIONS_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link uid.impl.StateTransitionImpl <em>State Transition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.StateTransitionImpl
+	 * @see uid.impl.UidPackageImpl#getStateTransition()
+	 * @generated
+	 */
+	int STATE_TRANSITION = 19;
+
+	/**
+	 * The number of structural features of the '<em>State Transition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_TRANSITION_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1245,7 +1282,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypesIn()
 	 * @generated
 	 */
-	int ETRANSITION_TYPES_IN = 19;
+	int ETRANSITION_TYPES_IN = 20;
 
 	/**
 	 * The meta object id for the '{@link uid.ETransitionTypeOut <em>ETransition Type Out</em>}' enum.
@@ -1255,7 +1292,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getETransitionTypeOut()
 	 * @generated
 	 */
-	int ETRANSITION_TYPE_OUT = 20;
+	int ETRANSITION_TYPE_OUT = 21;
 
 	/**
 	 * The meta object id for the '{@link uid.EuiEventCallbacks <em>Eui Event Callbacks</em>}' enum.
@@ -1265,7 +1302,7 @@ public interface UidPackage extends EPackage {
 	 * @see uid.impl.UidPackageImpl#getEuiEventCallbacks()
 	 * @generated
 	 */
-	int EUI_EVENT_CALLBACKS = 21;
+	int EUI_EVENT_CALLBACKS = 22;
 
 
 	/**
@@ -1419,6 +1456,17 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getApplication_HasModels();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uid.Application#getHasMediator <em>Has Mediator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Has Mediator</em>'.
+	 * @see uid.Application#getHasMediator()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_HasMediator();
 
 	/**
 	 * Returns the meta object for class '{@link uid.Component <em>Component</em>}'.
@@ -1893,6 +1941,17 @@ public interface UidPackage extends EPackage {
 	EReference getNotificationHandler_SendsNotification();
 
 	/**
+	 * Returns the meta object for the reference '{@link uid.NotificationHandler#getChangeStageTo <em>Change Stage To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Change Stage To</em>'.
+	 * @see uid.NotificationHandler#getChangeStageTo()
+	 * @see #getNotificationHandler()
+	 * @generated
+	 */
+	EReference getNotificationHandler_ChangeStageTo();
+
+	/**
 	 * Returns the meta object for class '{@link uid.Stage <em>Stage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2086,6 +2145,16 @@ public interface UidPackage extends EPackage {
 	EReference getNotifications_HasNotification();
 
 	/**
+	 * Returns the meta object for class '{@link uid.StateTransition <em>State Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>State Transition</em>'.
+	 * @see uid.StateTransition
+	 * @generated
+	 */
+	EClass getStateTransition();
+
+	/**
 	 * Returns the meta object for enum '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2252,6 +2321,14 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION__HAS_MODELS = eINSTANCE.getApplication_HasModels();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Mediator</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__HAS_MEDIATOR = eINSTANCE.getApplication_HasMediator();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.
@@ -2630,6 +2707,14 @@ public interface UidPackage extends EPackage {
 		EReference NOTIFICATION_HANDLER__SENDS_NOTIFICATION = eINSTANCE.getNotificationHandler_SendsNotification();
 
 		/**
+		 * The meta object literal for the '<em><b>Change Stage To</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NOTIFICATION_HANDLER__CHANGE_STAGE_TO = eINSTANCE.getNotificationHandler_ChangeStageTo();
+
+		/**
 		 * The meta object literal for the '{@link uid.impl.StageImpl <em>Stage</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2782,6 +2867,16 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NOTIFICATIONS__HAS_NOTIFICATION = eINSTANCE.getNotifications_HasNotification();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.StateTransitionImpl <em>State Transition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.StateTransitionImpl
+		 * @see uid.impl.UidPackageImpl#getStateTransition()
+		 * @generated
+		 */
+		EClass STATE_TRANSITION = eINSTANCE.getStateTransition();
 
 		/**
 		 * The meta object literal for the '{@link uid.ETransitionTypesIn <em>ETransition Types In</em>}' enum.

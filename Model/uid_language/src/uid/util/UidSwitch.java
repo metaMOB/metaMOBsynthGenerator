@@ -187,6 +187,12 @@ public class UidSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case UidPackage.STATE_TRANSITION: {
+				StateTransition stateTransition = (StateTransition)theEObject;
+				T result = caseStateTransition(stateTransition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -473,6 +479,21 @@ public class UidSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNotifications(Notifications object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Transition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateTransition(StateTransition object) {
 		return null;
 	}
 

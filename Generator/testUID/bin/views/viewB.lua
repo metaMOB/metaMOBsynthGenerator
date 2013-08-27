@@ -5,23 +5,24 @@ function viewB:new (parentGroup)
   	view.classType = "viewB"
 
 		function view:buttonstage1_touch(event)    
-			Runtime:dispatchEvent({name="tostate1"})
+			Runtime:dispatchEvent({name="toState1"})
 		end
 	
 
 		function view:init()
-			self.buttonstage1 = RNFactory.createButton ( 
-				"button_off.png"
-				, {
-				imageOver = "button_over.png" ,
-		  		imageDisabled = "button_disabled.png" ,
-				onTouchDown = self.buttonstage1_touch,
-				font = "arial.ttf",
-				width = 200,
-				height = 50,
-				left = 0,
-				top = 0
-		 	})
+					self.buttonstage1 = RNFactory.createButton ( 
+						"button_off.png"
+						, {
+						imageOver = "button_over.png" ,
+				  		imageDisabled = "button_disabled.png" ,
+						onTouchDown = self.buttonstage1_touch,
+						font = "arial.ttf",
+						width = 200,
+						height = 50,
+						left = 0,
+						top = 0
+				 	})
+			
 			Runtime:dispatchEvent({name="onRobotlegsViewCreated", target=self})
 		end
 
