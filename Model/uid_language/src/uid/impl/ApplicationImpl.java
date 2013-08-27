@@ -24,6 +24,7 @@ import uid.EntityTransition;
 import uid.Mediator;
 import uid.Models;
 import uid.Notifications;
+import uid.Stage;
 import uid.UidPackage;
 import uid.Views;
 
@@ -41,6 +42,7 @@ import uid.Views;
  *   <li>{@link uid.impl.ApplicationImpl#getHasNotifications <em>Has Notifications</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasModels <em>Has Models</em>}</li>
  *   <li>{@link uid.impl.ApplicationImpl#getHasMediator <em>Has Mediator</em>}</li>
+ *   <li>{@link uid.impl.ApplicationImpl#getHasInitialView <em>Has Initial View</em>}</li>
  * </ul>
  * </p>
  *
@@ -126,6 +128,16 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @ordered
 	 */
 	protected Mediator hasMediator;
+
+	/**
+	 * The cached value of the '{@link #getHasInitialView() <em>Has Initial View</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasInitialView()
+	 * @generated
+	 * @ordered
+	 */
+	protected Stage hasInitialView;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -399,6 +411,44 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Stage getHasInitialView() {
+		if (hasInitialView != null && hasInitialView.eIsProxy()) {
+			InternalEObject oldHasInitialView = (InternalEObject)hasInitialView;
+			hasInitialView = (Stage)eResolveProxy(oldHasInitialView);
+			if (hasInitialView != oldHasInitialView) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UidPackage.APPLICATION__HAS_INITIAL_VIEW, oldHasInitialView, hasInitialView));
+			}
+		}
+		return hasInitialView;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Stage basicGetHasInitialView() {
+		return hasInitialView;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasInitialView(Stage newHasInitialView) {
+		Stage oldHasInitialView = hasInitialView;
+		hasInitialView = newHasInitialView;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UidPackage.APPLICATION__HAS_INITIAL_VIEW, oldHasInitialView, hasInitialView));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -440,6 +490,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return getHasModels();
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return getHasMediator();
+			case UidPackage.APPLICATION__HAS_INITIAL_VIEW:
+				if (resolve) return getHasInitialView();
+				return basicGetHasInitialView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -475,6 +528,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				setHasMediator((Mediator)newValue);
 				return;
+			case UidPackage.APPLICATION__HAS_INITIAL_VIEW:
+				setHasInitialView((Stage)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -508,6 +564,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				setHasMediator((Mediator)null);
 				return;
+			case UidPackage.APPLICATION__HAS_INITIAL_VIEW:
+				setHasInitialView((Stage)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -534,6 +593,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return hasModels != null;
 			case UidPackage.APPLICATION__HAS_MEDIATOR:
 				return hasMediator != null;
+			case UidPackage.APPLICATION__HAS_INITIAL_VIEW:
+				return hasInitialView != null;
 		}
 		return super.eIsSet(featureID);
 	}

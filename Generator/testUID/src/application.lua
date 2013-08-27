@@ -1,6 +1,7 @@
 require "AppContext"
-require "views.viewA
-require "views.viewB
+require "views.viewA"
+require "views.viewB"
+require "views.viewC"
 
 application = {}
 
@@ -32,8 +33,10 @@ function application:new()
 
 		if name == "viewA" then
       		view = viewA:new(self)
-else		if name == "viewB" then
+    elseif name == "viewB" then
       		view = viewB:new(self)
+    elseif name == "viewC" then
+      		view = viewC:new(self)
 		end 
 
 		self.currentView = view

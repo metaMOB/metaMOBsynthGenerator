@@ -64,6 +64,7 @@ public class ApplicationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addHasInitialViewPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,28 @@ public class ApplicationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Initial View feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasInitialViewPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Application_hasInitialView_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Application_hasInitialView_feature", "_UI_Application_type"),
+				 UidPackage.Literals.APPLICATION__HAS_INITIAL_VIEW,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

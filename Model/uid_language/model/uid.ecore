@@ -31,6 +31,8 @@
         eType="#//Models" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasMediator" lowerBound="1"
         eType="#//Mediator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasInitialView" lowerBound="1"
+        eType="#//Stage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>

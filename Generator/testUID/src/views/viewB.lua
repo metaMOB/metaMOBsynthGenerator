@@ -11,16 +11,16 @@ function viewB:new (parentGroup)
 
 		function view:init()
 					self.buttonstage1 = RNFactory.createButton ( 
-						"button_off.png"
+						"./assets/images/button_off.png"
 						, {
-						imageOver = "button_over.png" ,
-				  		imageDisabled = "button_disabled.png" ,
+						imageOver = "/assets/images/button_over.png",
+				  		imageDisabled = "/assets/images/button_disabled.png",
 						onTouchDown = self.buttonstage1_touch,
-						font = "arial.ttf",
+						font = "./assets/fonts/arial.ttf",
 						width = 200,
 						height = 50,
-						left = 0,
-						top = 0
+						left = 150,
+						top = 50
 				 	})
 			
 			Runtime:dispatchEvent({name="onRobotlegsViewCreated", target=self})

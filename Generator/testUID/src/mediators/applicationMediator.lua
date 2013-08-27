@@ -7,6 +7,7 @@ function applicationMediator:new ()
 			local view = self.viewInstance
 			Runtime:addEventListener("showState1", self)
 			Runtime:addEventListener("showState2", self)
+			view:showView("viewA")
 		end
 		function mediator:onRemove()
 			local view = self.viewInstance

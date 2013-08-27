@@ -821,4 +821,17 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EvJrgw80EeOnGfk-hmUJXA" points="[1, -7, -5, 324]$[44, -323, 38, 8]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EvMHwA80EeOnGfk-hmUJXA" id="(0.4215686274509804,0.20408163265306123)"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_u71zkA9cEeOmR8sZE6rUXQ" type="3002" source="_stCuhA5QEeOFa5BFHFyWPw" target="_xlGFwA5UEeOoo64GKiVpCw">
+    <children xmi:type="notation:Node" xmi:id="_u73owA9cEeOmR8sZE6rUXQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u73owQ9cEeOmR8sZE6rUXQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_u74P0A9cEeOmR8sZE6rUXQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u74P0Q9cEeOmR8sZE6rUXQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_u71zkQ9cEeOmR8sZE6rUXQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_u71zkg9cEeOmR8sZE6rUXQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="uid.ecore#//Application/hasInitialView"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u71zkw9cEeOmR8sZE6rUXQ" points="[-17, -4, 208, 59]$[-176, -58, 49, 5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u8NnAA9cEeOmR8sZE6rUXQ" id="(0.22549019607843138,0.5510204081632653)"/>
+  </edges>
 </notation:Diagram>

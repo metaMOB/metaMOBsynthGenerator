@@ -18,8 +18,9 @@
 
 [comment Mediators/]
 [for (mediator : Mediator| anApp.hasViews.hasMediator->select(oclIsTypeOf(Mediator)))]
-	[generateMediator(mediator)/]
+	[generateMediator(mediator, anApp)/]
 [/for] 
+[generateMediator(anApp.hasMediator, anApp)/]
 
 [comment Controllers/]
 [for (command : Command| anApp.hasControllers.hasCommand->select(oclIsTypeOf(Command)))]
@@ -83,14 +84,14 @@ return [stage.name.toString().toLowerFirst()/]
 [comment init Buttons/]
 	[for (button : Button| stage.hasButton->select(oclIsTypeOf(Button)))]
 		self.[button.name.toString().toLowerCase()/] = RNFactory.createButton ( 
-			[if (button.image_off <> null)] [button.image_off/] [else]"button_off.png"[/if]
+			"./assets/images/[if (button.image_off <> null)][button.image_off/][else]button_off.png[/if]"
 			, {
-			imageOver = [if (button.image_on <> null)] [button.image_on/] [else]"button_over.png" [/if],
-	  		imageDisabled = [if (button.image_disabled <> null)] [button.image_disabled/] [else]"button_disabled.png" [/if],
+			imageOver = "/assets/images/[if (button.image_on <> null)][button.image_on/][else]button_over.png[/if]",
+	  		imageDisabled = "/assets/images/[if (button.image_disabled <> null)][button.image_disabled/][else]button_disabled.png[/if]",
 	[for (event : Event| button.hasEvents->select(oclIsTypeOf(Event)))]
 			[event.callback/] = self.[button.name.toString().toLowerCase()/]_[event.name.toString().toLowerCase()/],
 	[/for] 	
-			font = "arial.ttf",
+			font = "./assets/fonts/arial.ttf",
 			width = 200,
 			height = 50,
 			left = [button.x/],
@@ -110,14 +111,14 @@ return [stage.name.toString().toLowerFirst()/]
 [/template]
 	
 
-[template public generateMediator(mediator : Mediator)]
+[template public generateMediator(mediator : Mediator, anApp : Application)]
 [file ('/mediators/'+mediator.name.toString().toLowerFirst()+'.lua', false, 'UTF-8')]
 [mediator.name.toString().toLowerFirst()/] = {}
 
 function [mediator.name.toString().toLowerFirst()/]:new ()
 	local mediator = {}
 
-	[generateMediatorRegister(mediator)/]
+	[generateMediatorRegister(mediator, anApp)/]
 	[generateMediatorRemove(mediator)/]
    	[generateMediatorCallbacks(mediator)/]
   	return mediator
@@ -128,7 +129,7 @@ return [mediator.name.toString().toLowerFirst()/]
 [/template]
 
 
-[template public generateMediatorRegister(mediator : Mediator)]
+[template public generateMediatorRegister(mediator : Mediator, anApp : Application)]
 	function mediator:onRegister()
 		local view = self.viewInstance
 [for (notificationHandler : NotificationHandler| mediator.hasNotificationHandler->select(oclIsTypeOf(NotificationHandler)))]
@@ -136,6 +137,9 @@ return [mediator.name.toString().toLowerFirst()/]
 		Runtime:addEventListener("[notification.name.toLowerFirst()/]", self)
 	[/for]
 [/for] 
+[if (mediator = anApp.hasMediator)]
+		view:showView("[anApp.hasInitialView.name.toString().toLowerFirst()/]")
+[/if]
 	end
 [/template]
 
@@ -236,7 +240,7 @@ return AppContext
 [file ('/'+anApp.name.toString().toLowerFirst()+'.lua', false, 'UTF-8')]
 require "AppContext"
 [for (stage : Stage| anApp.hasViews.hasStage->select(oclIsTypeOf(Stage)))]
-require "views.[stage.name.toString().toLowerFirst()/]
+require "views.[stage.name.toString().toLowerFirst()/]"
 [/for]
 
 [anApp.name.toString().toLowerFirst()/] = {}
@@ -267,8 +271,7 @@ function [anApp.name.toString().toLowerFirst()/]:new()
 
 		self.currentViewName = name
 
-		[for (stage : Stage| anApp.hasViews.hasStage->select(oclIsTypeOf(Stage))) separator('else')]
-		if name == "[stage.name.toString().toLowerFirst()/]" then
+		if[for (stage : Stage| anApp.hasViews.hasStage->select(oclIsTypeOf(Stage))) separator('    elseif')] name == "[stage.name.toString().toLowerFirst()/]" then
       		view = [stage.name.toString().toLowerFirst()/]:new(self)
 		[/for]
 		end 
@@ -289,7 +292,29 @@ return [anApp.name.toString().toLowerFirst()/]
 
 [template public generateMain(anApp : Application)]
 [file ('main.lua', false, 'UTF-8')]
-	
+require("config")
+require("rapanui-sdk.rapanui")
+require("eventHandler")
+Runtime = eventHandler:new()
+
+local function startThisMug()
+  RNMainThread.removeAction(actionId)
+	local function bootstrap()
+		require "[anApp.name.toString().toLowerFirst()/]"
+		local app = [anApp.name.toString().toLowerFirst()/]:new()
+
+		function showProps(o)
+			for key,value in pairs(o) do
+				print("key: ", key, ", value: ", value);
+			end
+			print("-- end showProps --")
+		end
+	end
+
+	bootstrap()
+end	
+
+actionId = RNMainThread.addTimedAction(0.5, startThisMug)
 [/file]
 [/template]
 

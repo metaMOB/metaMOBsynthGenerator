@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uid.Application#getHasNotifications <em>Has Notifications</em>}</li>
  *   <li>{@link uid.Application#getHasModels <em>Has Models</em>}</li>
  *   <li>{@link uid.Application#getHasMediator <em>Has Mediator</em>}</li>
+ *   <li>{@link uid.Application#getHasInitialView <em>Has Initial View</em>}</li>
  * </ul>
  * </p>
  *
@@ -200,5 +201,31 @@ public interface Application extends EObject {
 	 * @generated
 	 */
 	void setHasMediator(Mediator value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Initial View</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Initial View</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Initial View</em>' reference.
+	 * @see #setHasInitialView(Stage)
+	 * @see uid.UidPackage#getApplication_HasInitialView()
+	 * @model required="true"
+	 * @generated
+	 */
+	Stage getHasInitialView();
+
+	/**
+	 * Sets the value of the '{@link uid.Application#getHasInitialView <em>Has Initial View</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Initial View</em>' reference.
+	 * @see #getHasInitialView()
+	 * @generated
+	 */
+	void setHasInitialView(Stage value);
 
 } // Application

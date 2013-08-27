@@ -204,13 +204,22 @@ public interface UidPackage extends EPackage {
 	int APPLICATION__HAS_MEDIATOR = 6;
 
 	/**
+	 * The feature id for the '<em><b>Has Initial View</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__HAS_INITIAL_VIEW = 7;
+
+	/**
 	 * The number of structural features of the '<em>Application</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = 7;
+	int APPLICATION_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.
@@ -1469,6 +1478,17 @@ public interface UidPackage extends EPackage {
 	EReference getApplication_HasMediator();
 
 	/**
+	 * Returns the meta object for the reference '{@link uid.Application#getHasInitialView <em>Has Initial View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Has Initial View</em>'.
+	 * @see uid.Application#getHasInitialView()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_HasInitialView();
+
+	/**
 	 * Returns the meta object for class '{@link uid.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2329,6 +2349,14 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION__HAS_MEDIATOR = eINSTANCE.getApplication_HasMediator();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Initial View</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__HAS_INITIAL_VIEW = eINSTANCE.getApplication_HasInitialView();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.ComponentImpl <em>Component</em>}' class.

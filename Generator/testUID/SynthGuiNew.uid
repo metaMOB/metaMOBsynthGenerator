@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uid:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uid="http://uid/1.0" name="Application">
+<uid:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uid="http://uid/1.0" name="Application" hasInitialView="//@hasViews/@hasStage.0">
   <hasViews>
     <hasStage name="ViewA">
-      <hasButton name="ButtonStage2">
+      <hasButton name="ButtonStage2" x="50" y="50">
         <hasEvents name="touch" sendsNotification="//@hasNotifications/@hasNotification.1"/>
+      </hasButton>
+      <hasButton name="ButtonStage13" x="50" y="100">
+        <hasEvents name="touch" sendsNotification="//@hasNotifications/@hasNotification.6"/>
       </hasButton>
     </hasStage>
     <hasStage name="ViewB">
-      <hasButton name="ButtonStage1">
+      <hasButton name="ButtonStage1" x="150" y="50">
+        <hasEvents name="touch" sendsNotification="//@hasNotifications/@hasNotification.0"/>
+      </hasButton>
+    </hasStage>
+    <hasStage name="ViewC">
+      <hasButton name="ButtonStage31">
         <hasEvents name="touch" sendsNotification="//@hasNotifications/@hasNotification.0"/>
       </hasButton>
     </hasStage>
@@ -17,10 +25,14 @@
     <hasMediator name="ViewBMediator">
       <hasNotificationHandler name="ViewBMediatorHandler" recievesNotification="//@hasNotifications/@hasNotification.0" sendsNotification="//@hasNotifications/@hasNotification.2"/>
     </hasMediator>
+    <hasMediator name="ViewCMediator">
+      <hasNotificationHandler name="ViewCMediatorHandler" changeStageTo="//@hasViews/@hasStage.2"/>
+    </hasMediator>
   </hasViews>
   <hasControllers>
     <hasCommand name="State1Command" hasNotification="//@hasNotifications/@hasNotification.4"/>
     <hasCommand name="State2Command" hasNotification="//@hasNotifications/@hasNotification.5"/>
+    <hasCommand name="State3Command"/>
   </hasControllers>
   <hasNotifications>
     <hasNotification name="toState1"/>
@@ -29,6 +41,8 @@
     <hasNotification name="toState2Notification" recievedByCommand="//@hasControllers/@hasCommand.1"/>
     <hasNotification name="showState1"/>
     <hasNotification name="showState2"/>
+    <hasNotification name="toState3"/>
+    <hasNotification name="showState3" recievedByCommand="//@hasControllers/@hasCommand.2"/>
   </hasNotifications>
   <hasMediator name="ApplicationMediator">
     <hasNotificationHandler name="handlerA" recievesNotification="//@hasNotifications/@hasNotification.4" changeStageTo="//@hasViews/@hasStage.0"/>
