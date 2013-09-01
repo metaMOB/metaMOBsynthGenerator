@@ -1,33 +1,33 @@
-viewC = {}
+StageA = {}
 
-function viewC:new (parentGroup)
+function StageA:new (parentGroup)
 	local view = RNGroup:new()
-  	view.classType = "viewC"
+  	view.classType = "StageA"
 
-		function view:buttonstage31_touch(event)    
-			Runtime:dispatchEvent({name="toState1"})
+		function view:buttona_eventtoucha(event)    
+			Runtime:dispatchEvent({name="eventTouchButtonA"})
 		end
 	
 
 		function view:init()
-					self.buttonstage31 = RNFactory.createButton ( 
+					self.buttona = RNFactory.createButton ( 
 						"./assets/images/button_off.png"
 						, {
 						imageOver = "/assets/images/button_over.png",
 				  		imageDisabled = "/assets/images/button_disabled.png",
-						onTouchDown = self.buttonstage31_touch,
+						onTouchDown = self.buttona_eventtoucha,
 						font = "./assets/fonts/arial.ttf",
 						width = 200,
 						height = 50,
-						left = 0,
-						top = 0
+						left = 100,
+						top = 200
 				 	})
 			
 			Runtime:dispatchEvent({name="onRobotlegsViewCreated", target=self})
 		end
 
 		function view:destroy()
-			self.buttonstage31:remove()
+			self.buttona:remove()
 			Runtime:dispatchEvent({name="onRobotlegsViewDestroyed", target=self})
 			self:removeSelf()
 		end
@@ -35,4 +35,4 @@ function viewC:new (parentGroup)
 	view:init()
 	return view
 end
-return viewC
+return StageA

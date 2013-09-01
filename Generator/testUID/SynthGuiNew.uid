@@ -30,18 +30,13 @@
     </hasMediator>
   </hasViews>
   <hasControllers>
-    <hasCommand name="State1Command" hasNotification="//@hasNotifications/@hasNotification.4"/>
-    <hasCommand name="State2Command" hasNotification="//@hasNotifications/@hasNotification.5"/>
+    <hasCommand name="State1Command"/>
+    <hasCommand name="State2Command"/>
     <hasCommand name="State3Command"/>
   </hasControllers>
   <hasNotifications>
-    <hasNotification name="toState1"/>
-    <hasNotification name="toState2"/>
     <hasNotification name="toState1Notification" recievedByCommand="//@hasControllers/@hasCommand.0"/>
     <hasNotification name="toState2Notification" recievedByCommand="//@hasControllers/@hasCommand.1"/>
-    <hasNotification name="showState1"/>
-    <hasNotification name="showState2"/>
-    <hasNotification name="toState3"/>
     <hasNotification name="showState3" recievedByCommand="//@hasControllers/@hasCommand.2"/>
   </hasNotifications>
   <hasMediator name="ApplicationMediator">

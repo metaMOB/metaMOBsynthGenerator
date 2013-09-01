@@ -1,27 +1,27 @@
-applicationMediator = {}
+ApplicationMediator = {}
 
-function applicationMediator:new ()
+function ApplicationMediator:new ()
 	local mediator = {}
 
 		function mediator:onRegister()
 			local view = self.viewInstance
-			Runtime:addEventListener("showState1", self)
-			Runtime:addEventListener("showState2", self)
-			view:showView("viewA")
+			Runtime:addEventListener("showStageA", self)
+			Runtime:addEventListener("showStageB", self)
+			view:showView("stageA")
 		end
 		function mediator:onRemove()
 			local view = self.viewInstance
-			Runtime:removeEventListener("showState1", self)
-			Runtime:removeEventListener("showState2", self)
+			Runtime:removeEventListener("showStageA", self)
+			Runtime:removeEventListener("showStageB", self)
 		end
-   		function mediator:showState1(event)  
-   			self.viewInstance:showView("viewA")
+   		function mediator:showStageA(event)  
+   			self.viewInstance:showView("stageA")
    		end
-   		function mediator:showState2(event)  
-   			self.viewInstance:showView("viewB")
+   		function mediator:showStageB(event)  
+   			self.viewInstance:showView("stageB")
    		end
    	
   	return mediator
 end
 
-return applicationMediator
+return ApplicationMediator

@@ -39,12 +39,12 @@
 
 
 [template public generateStage(stage : Stage)]
-[file ('/views/'+stage.name.toString().toLowerFirst()+'.lua', false, 'UTF-8')]
-[stage.name.toString().toLowerFirst()/] = {}
+[file ('/views/'+stage.name.toString().toUpperFirst()+'.lua', false, 'UTF-8')]
+[stage.name.toString().toUpperFirst()/] = {}
 
-function [stage.name.toString().toLowerFirst()/]:new (parentGroup)
+function [stage.name.toString().toUpperFirst()/]:new (parentGroup)
 	local view = RNGroup:new()
-  	view.classType = "[stage.name.toString().toLowerFirst()/]"
+  	view.classType = "[stage.name.toString().toUpperFirst()/]"
 
 	[comment Funktionen generiert durch die in den Komponenten hinterlegten Events/]
 	[generateStageComponentEventFunction(stage)/]
@@ -56,7 +56,7 @@ function [stage.name.toString().toLowerFirst()/]:new (parentGroup)
 	view:init()
 	return view
 end
-return [stage.name.toString().toLowerFirst()/]
+return [stage.name.toString().toUpperFirst()/]
 [/file]
 [/template]
 
@@ -112,10 +112,10 @@ return [stage.name.toString().toLowerFirst()/]
 	
 
 [template public generateMediator(mediator : Mediator, anApp : Application)]
-[file ('/mediators/'+mediator.name.toString().toLowerFirst()+'.lua', false, 'UTF-8')]
-[mediator.name.toString().toLowerFirst()/] = {}
+[file ('/mediators/'+mediator.name.toString().toUpperFirst()+'.lua', false, 'UTF-8')]
+[mediator.name.toString().toUpperFirst()/] = {}
 
-function [mediator.name.toString().toLowerFirst()/]:new ()
+function [mediator.name.toString().toUpperFirst()/]:new ()
 	local mediator = {}
 
 	[generateMediatorRegister(mediator, anApp)/]
@@ -124,7 +124,7 @@ function [mediator.name.toString().toLowerFirst()/]:new ()
   	return mediator
 end
 
-return [mediator.name.toString().toLowerFirst()/]
+return [mediator.name.toString().toUpperFirst()/]
 [/file]
 [/template]
 
@@ -170,10 +170,10 @@ return [mediator.name.toString().toLowerFirst()/]
 [/template]
 
 [template public generateCommand(command : Command)]
-[file ('/commands/'+command.name.toString().toLowerFirst()+'.lua', false, 'UTF-8')]
-[command.name.toString().toLowerFirst()/] = {}
+[file ('/commands/'+command.name.toString().toUpperFirst()+'.lua', false, 'UTF-8')]
+[command.name.toString().toUpperFirst()/] = {}
 
-function [command.name.toString().toLowerFirst()/]:new()
+function [command.name.toString().toUpperFirst()/]:new()
 	local command = {}
 
 	function command:execute(event)
@@ -185,7 +185,7 @@ function [command.name.toString().toLowerFirst()/]:new()
 	return command
 end
 
-return [command.name.toString().toLowerFirst()/]
+return [command.name.toString().toUpperFirst()/]
 [/file]
 [/template]
 
@@ -208,7 +208,7 @@ function AppContext:new()
 					[for (notificationHandler : NotificationHandler| mediator.hasNotificationHandler->select(oclIsTypeOf(NotificationHandler)))]
 						[for (notificationMediator : Notification| notificationHandler.recievesNotification->select(oclIsTypeOf(Notification)))]
 							[if (notificationView.name = notificationMediator.name)]
-		self:mapMediator("views.[stage.name.toString().toLowerFirst()/]", "mediators.[mediator.name.toString().toLowerFirst()/]")
+		self:mapMediator("views.[stage.name.toString().toUpperFirst()/]", "mediators.[mediator.name.toString().toUpperFirst()/]")
 							[/if]
 						[/for] 
 					[/for] 
@@ -218,11 +218,11 @@ function AppContext:new()
 	[/for] 
 [/for] 
 [if (anApp.hasMediator <> null)]
-		self:mapMediator("[anApp.name.toString().toLowerFirst()/]", "mediators.[hasMediator.name.toString().toLowerFirst()/]")
+		self:mapMediator("[anApp.name.toString().toUpperFirst()/]", "mediators.[hasMediator.name.toString().toUpperFirst()/]")
 [/if]
 [for (notification : Notification | anApp.hasNotifications.hasNotification->select(oclIsTypeOf(Notification)))]		
 	[for (command : Command | notification.recievedByCommand->select(oclIsTypeOf(Command)))]		
-		self:mapCommand("[notification.name.toString().toLowerFirst()/]", "commands.[command.name.toString().toLowerFirst()/]")
+		self:mapCommand("[notification.name.toString().toLowerFirst()/]", "commands.[command.name.toString().toUpperFirst()/]")
 	[/for] 
 [/for] 		
 		
@@ -237,17 +237,17 @@ return AppContext
 [/template]
 
 [template public generateApplication(anApp : Application)]
-[file ('/'+anApp.name.toString().toLowerFirst()+'.lua', false, 'UTF-8')]
+[file ('/'+anApp.name.toString().toUpperFirst()+'.lua', false, 'UTF-8')]
 require "AppContext"
 [for (stage : Stage| anApp.hasViews.hasStage->select(oclIsTypeOf(Stage)))]
-require "views.[stage.name.toString().toLowerFirst()/]"
+require "views.[stage.name.toString().toUpperFirst()/]"
 [/for]
 
-[anApp.name.toString().toLowerFirst()/] = {}
+[anApp.name.toString().toUpperFirst()/] = {}
 
-function [anApp.name.toString().toLowerFirst()/]:new()
+function [anApp.name.toString().toUpperFirst()/]:new()
 	local application = RNGroup:new()
-	application.classType = "[anApp.name.toString().toLowerFirst()/]"
+	application.classType = "[anApp.name.toString().toUpperFirst()/]"
 	application.currentView = nil
 	application.currentViewName = nil
 
@@ -272,7 +272,7 @@ function [anApp.name.toString().toLowerFirst()/]:new()
 		self.currentViewName = name
 
 		if[for (stage : Stage| anApp.hasViews.hasStage->select(oclIsTypeOf(Stage))) separator('    elseif')] name == "[stage.name.toString().toLowerFirst()/]" then
-      		view = [stage.name.toString().toLowerFirst()/]:new(self)
+      		view = [stage.name.toString().toUpperFirst()/]:new(self)
 		[/for]
 		end 
 
@@ -284,7 +284,7 @@ function [anApp.name.toString().toLowerFirst()/]:new()
 	return application
 end
 
-return [anApp.name.toString().toLowerFirst()/]
+return [anApp.name.toString().toUpperFirst()/]
 
 
 [/file]
@@ -300,8 +300,8 @@ Runtime = eventHandler:new()
 local function startThisMug()
   RNMainThread.removeAction(actionId)
 	local function bootstrap()
-		require "[anApp.name.toString().toLowerFirst()/]"
-		local app = [anApp.name.toString().toLowerFirst()/]:new()
+		require "[anApp.name.toString().toUpperFirst()/]"
+		local app = [anApp.name.toString().toUpperFirst()/]:new()
 
 		function showProps(o)
 			for key,value in pairs(o) do

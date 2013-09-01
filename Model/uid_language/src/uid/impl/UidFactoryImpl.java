@@ -28,7 +28,7 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	 */
 	public static UidFactory init() {
 		try {
-			UidFactory theUidFactory = (UidFactory)EPackage.Registry.INSTANCE.getEFactory("http://uid/1.0"); 
+			UidFactory theUidFactory = (UidFactory)EPackage.Registry.INSTANCE.getEFactory(UidPackage.eNS_URI);
 			if (theUidFactory != null) {
 				return theUidFactory;
 			}

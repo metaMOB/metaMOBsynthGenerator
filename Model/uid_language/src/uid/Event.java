@@ -69,7 +69,6 @@ public interface Event extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Callback</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link uid.EuiEventCallbacks}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -81,7 +80,7 @@ public interface Event extends EObject {
 	 * @see uid.EuiEventCallbacks
 	 * @see #setCallback(EuiEventCallbacks)
 	 * @see uid.UidPackage#getEvent_Callback()
-	 * @model default=""
+	 * @model
 	 * @generated
 	 */
 	EuiEventCallbacks getCallback();

@@ -6,8 +6,8 @@ Runtime = eventHandler:new()
 local function startThisMug()
   RNMainThread.removeAction(actionId)
 	local function bootstrap()
-		require "application"
-		local app = application:new()
+		require "SeTestApp"
+		local app = SeTestApp:new()
 
 		function showProps(o)
 			for key,value in pairs(o) do

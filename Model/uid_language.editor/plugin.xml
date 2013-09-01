@@ -7,6 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated uid -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -22,6 +23,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated uid -->
       <editor
             id="uid.presentation.UidEditorID"
             name="%_UI_UidEditor_label"

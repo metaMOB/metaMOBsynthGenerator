@@ -98,8 +98,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sendsNotification" upperBound="-1"
         eType="#//Notification"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="callback" eType="#//EuiEventCallbacks"
-        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="callback" eType="#//EuiEventCallbacks"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NotificationHandler">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

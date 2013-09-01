@@ -1,13 +1,12 @@
 require "AppContext"
-require "views.viewA"
-require "views.viewB"
-require "views.viewC"
+require "views.StageA"
+require "views.StageB"
 
-application = {}
+SeTestApp = {}
 
-function application:new()
+function SeTestApp:new()
 	local application = RNGroup:new()
-	application.classType = "application"
+	application.classType = "SeTestApp"
 	application.currentView = nil
 	application.currentViewName = nil
 
@@ -31,12 +30,10 @@ function application:new()
 
 		self.currentViewName = name
 
-		if name == "viewA" then
-      		view = viewA:new(self)
-    elseif name == "viewB" then
-      		view = viewB:new(self)
-    elseif name == "viewC" then
-      		view = viewC:new(self)
+		if name == "stageA" then
+      		view = StageA:new(self)
+    elseif name == "stageB" then
+      		view = StageB:new(self)
 		end 
 
 		self.currentView = view
@@ -47,6 +44,6 @@ function application:new()
 	return application
 end
 
-return application
+return SeTestApp
 
 

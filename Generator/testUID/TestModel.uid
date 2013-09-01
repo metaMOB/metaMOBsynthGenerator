@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uid:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uid="http://uid/1.0" xmi:id="_0hcQABMTEeOoD4kHbZC9Vw" name="seTestApp" hasInitialView="_8mymgBMTEeOoD4kHbZC9Vw">
+  <hasViews xmi:type="uid:Views" xmi:id="_4qESQBMTEeOoD4kHbZC9Vw">
+    <hasStage xmi:type="uid:Stage" xmi:id="_8mymgBMTEeOoD4kHbZC9Vw" background="" name="StageA">
+      <hasButton xmi:type="uid:Button" xmi:id="_JiYTMBMUEeOoD4kHbZC9Vw" name="buttonA" x="100" y="200" label="to stage B">
+        <hasEvents xmi:type="uid:Event" xmi:id="_Q9_wMBMUEeOoD4kHbZC9Vw" name="eventTouchA" sendsNotification="_bCG5cBMUEeOoD4kHbZC9Vw"/>
+      </hasButton>
+    </hasStage>
+    <hasStage xmi:type="uid:Stage" xmi:id="_-AWacBMTEeOoD4kHbZC9Vw" name="StageB">
+      <hasButton xmi:type="uid:Button" xmi:id="_Lwsk4BMUEeOoD4kHbZC9Vw" name="buttonB" x="100" y="100" label="to stage B">
+        <hasEvents xmi:type="uid:Event" xmi:id="_TJWNcBMUEeOoD4kHbZC9Vw" name="eventTouchB" sendsNotification="_jxNXkBMUEeOoD4kHbZC9Vw"/>
+      </hasButton>
+    </hasStage>
+    <hasMediator xmi:type="uid:Mediator" xmi:id="__NGhcBMTEeOoD4kHbZC9Vw" name="MediatorA">
+      <hasNotificationHandler xmi:type="uid:NotificationHandler" xmi:id="_Uihm4BMUEeOoD4kHbZC9Vw" name="handlerA" recievesNotification="_bCG5cBMUEeOoD4kHbZC9Vw" sendsNotification="_olsaQBMUEeOoD4kHbZC9Vw"/>
+    </hasMediator>
+    <hasMediator xmi:type="uid:Mediator" xmi:id="_AVqE8BMUEeOoD4kHbZC9Vw" name="MediatorB">
+      <hasNotificationHandler xmi:type="uid:NotificationHandler" xmi:id="_W01nwBMUEeOoD4kHbZC9Vw" name="handlerB" recievesNotification="_jxNXkBMUEeOoD4kHbZC9Vw" sendsNotification="_tyi5oBMUEeOoD4kHbZC9Vw"/>
+    </hasMediator>
+  </hasViews>
+  <hasControllers xmi:type="uid:Controllers" xmi:id="_5HKd8BMTEeOoD4kHbZC9Vw">
+    <hasCommand xmi:type="uid:Command" xmi:id="_YR2YUBMUEeOoD4kHbZC9Vw" name="CMDStageA" hasNotification="_41he4BMUEeOoD4kHbZC9Vw"/>
+    <hasCommand xmi:type="uid:Command" xmi:id="_Zgt_MBMUEeOoD4kHbZC9Vw" name="CMDStageB" hasNotification="_3eRYEBMUEeOoD4kHbZC9Vw"/>
+  </hasControllers>
+  <hasNotifications xmi:type="uid:Notifications" xmi:id="_6KN2YBMTEeOoD4kHbZC9Vw">
+    <hasNotification xmi:type="uid:Notification" xmi:id="_bCG5cBMUEeOoD4kHbZC9Vw" name="eventTouchButtonA"/>
+    <hasNotification xmi:type="uid:Notification" xmi:id="_jxNXkBMUEeOoD4kHbZC9Vw" name="eventTouchButtonB"/>
+    <hasNotification xmi:type="uid:Notification" xmi:id="_3eRYEBMUEeOoD4kHbZC9Vw" name="showStageA"/>
+    <hasNotification xmi:type="uid:Notification" xmi:id="_olsaQBMUEeOoD4kHbZC9Vw" name="commandTouchButtonA" recievedByCommand="_YR2YUBMUEeOoD4kHbZC9Vw"/>
+    <hasNotification xmi:type="uid:Notification" xmi:id="_tyi5oBMUEeOoD4kHbZC9Vw" name="commandTouchButtonB" recievedByCommand="_Zgt_MBMUEeOoD4kHbZC9Vw"/>
+    <hasNotification xmi:type="uid:Notification" xmi:id="_41he4BMUEeOoD4kHbZC9Vw" name="showStageB"/>
+  </hasNotifications>
+  <hasMediator xmi:type="uid:Mediator" xmi:id="_6qJToBMTEeOoD4kHbZC9Vw" name="ApplicationMediator">
+    <hasNotificationHandler xmi:type="uid:NotificationHandler" xmi:id="_6TTrgBMUEeOoD4kHbZC9Vw" name="showStageAHandler" recievesNotification="_3eRYEBMUEeOoD4kHbZC9Vw" changeStageTo="_8mymgBMTEeOoD4kHbZC9Vw"/>
+    <hasNotificationHandler xmi:type="uid:NotificationHandler" xmi:id="_DHLU4BMVEeOoD4kHbZC9Vw" name="showStageBHandler" recievesNotification="_41he4BMUEeOoD4kHbZC9Vw" changeStageTo="_-AWacBMTEeOoD4kHbZC9Vw"/>
+  </hasMediator>
+</uid:Application>
